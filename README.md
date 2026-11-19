@@ -16,11 +16,11 @@ fan project. Current release: **V0.1**. Join the community on [Discord](https://
 This is an **unfinished game**: a December 2005 Xbox prototype that was never completed or released. We restore
 and fix what exists and add nothing new.
 
-- **Playable:** the solo campaign (the tutorial and missions 2, 4, 7, 10 and 12 to 21, 61 chapters in all) and
+- **Playable:** the solo campaign (the tutorial and missions 2, 4, 7, 10 and 12 to 21) and
   multiplayer (DeathMatch, Team DeathMatch, Capture the Flag and Last Man Standing, on ten maps).
 - **Expect flaws:** some surfaces are plain white or grey where the 2005 data has no texture; a few sounds and HUD
-  icons are missing; mouths move only in some dialogues; some features are empty placeholders (*Extras*) or absent
-  (co-op, split-screen); Capture the Flag with bots is rough.
+  icons are missing; mouths move only in some dialogues; some features were never built
+  (co-op, split-screen, the *Extras* page) and are hidden; Capture the Flag with bots is rough.
 - **The story may not make full sense:** missions 1, 3, 5, 6, 8, 9 and 11 are not in the build (the first one,
   *Replicator Attack*, was cut), so the story jumps between missions, and some recorded scenes are never played.
 
@@ -117,11 +117,11 @@ d'**Unreal Tournament 2004** avec le patch OldUnreal. Un projet de fans
 C'est un **jeu inachevé** : un prototype Xbox de décembre 2005, jamais terminé ni publié. Nous restaurons et
 corrigeons l'existant, sans rien ajouter de nouveau.
 
-- **Jouable :** la campagne solo (le tutoriel et les missions 2, 4, 7, 10 et 12 à 21, soit 61 chapitres) et le
+- **Jouable :** la campagne solo (le tutoriel et les missions 2, 4, 7, 10 et 12 à 21) et le
   multijoueur (DeathMatch, Team DeathMatch, Capture du drapeau et Last Man Standing, sur dix cartes).
 - **Attendez-vous à des défauts :** certaines surfaces sont blanches ou grises faute de texture dans les données de
   2005 ; quelques sons et icônes d'interface manquent ; les bouches ne bougent que dans certains dialogues ;
-  certaines fonctions sont des coquilles vides (*Extras*) ou absentes (coop, écran partagé) ; la Capture du drapeau
+  certaines fonctions n'ont jamais été faites (coop, écran partagé, la page *Extras*) et sont masquées ; la Capture du drapeau
   avec bots est rudimentaire.
 - **L'histoire peut manquer de cohérence :** les missions 1, 3, 5, 6, 8, 9 et 11 ne sont pas dans la version (la
   première, *Replicator Attack*, a été coupée) : l'histoire saute d'une mission à l'autre, et certaines scènes
