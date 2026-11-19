@@ -16,6 +16,11 @@ fan project. Current release: **V0.1**. Join the community on [Discord](https://
 This is an **unfinished game**: a December 2005 Xbox prototype that was never completed or released. We restore
 and fix what exists and add nothing new.
 
+- **The real SG-1:** voiced by the show's cast, Richard Dean Anderson (O'Neill), Amanda Tapping (Carter),
+  Michael Shanks (Daniel Jackson) and Christopher Judge (Teal'c), with Carmen Argenziano as Jacob Carter, in
+  sessions directed by the series' Peter DeLuise. The SGC is there too: even Walter is a playable character in
+  multiplayer.
+- **Stargate action:** give orders to your squad, drive vehicles, and dial the Stargates on the multiplayer maps.
 - **Playable:** the solo campaign (the tutorial and missions 2, 4, 7, 10 and 12 to 21) and
   multiplayer (DeathMatch, Team DeathMatch, Capture the Flag and Last Man Standing, on ten maps).
 - **Expect flaws:** some surfaces are plain white or grey where the 2005 data has no texture; a few sounds and HUD
@@ -157,6 +162,12 @@ d'**Unreal Tournament 2004** avec le patch OldUnreal. Un projet de fans
 C'est un **jeu inachevé** : un prototype Xbox de décembre 2005, jamais terminé ni publié. Nous restaurons et
 corrigeons l'existant, sans rien ajouter de nouveau.
 
+- **Le vrai SG-1 :** les voix des acteurs de la série, Richard Dean Anderson (O'Neill), Amanda Tapping (Carter),
+  Michael Shanks (Daniel Jackson) et Christopher Judge (Teal'c), avec Carmen Argenziano dans le rôle de Jacob
+  Carter, sous la direction de Peter DeLuise, réalisateur de la série. Le SGC est là aussi : même Walter est un
+  personnage jouable en multijoueur.
+- **L'action Stargate :** donnez des ordres à votre escouade, pilotez des véhicules et composez l'adresse des
+  portes des étoiles sur les cartes multijoueur.
 - **Jouable :** la campagne solo (le tutoriel et les missions 2, 4, 7, 10 et 12 à 21) et le
   multijoueur (DeathMatch, Team DeathMatch, Capture du drapeau et Last Man Standing, sur dix cartes).
 - **Attendez-vous à des défauts :** certaines surfaces sont blanches ou grises faute de texture dans les données de
