@@ -13,6 +13,13 @@ fan project by the [Stargate Database](https://stargatedatabase.link/en/) team. 
 > own copy of the 2019 release. Fan project, not affiliated with or endorsed by MGM, Perception, JoWooD,
 > Microsoft or Epic Games. See [NOTICE.md](NOTICE.md).
 
+## 🎬 The 2005 trailer
+
+[![Stargate SG-1: The Alliance, E3 2005 trailer (YouTube)](https://img.youtube.com/vi/gzdhYxwh2Uc/hqdefault.jpg)](https://www.youtube.com/watch?v=gzdhYxwh2Uc)
+
+The E3 2005 trailer by JoWooD and Perception (YouTube), and the [first teaser](https://www.youtube.com/watch?v=ZrCbDSjDTZ0) from March 2005. Some
+scenes may differ from the December 2005 build.
+
 ## 🛸 About this prototype
 
 This is an **unfinished game**: a December 2005 Xbox prototype that was never completed or released. We restore
@@ -168,6 +175,13 @@ d'**Unreal Tournament 2004** avec le patch OldUnreal. Un projet de fans
 > Hormis son image de titre, aucune donnée du jeu n'est incluse : l'installeur reconstruit le jeu sur votre PC à
 > partir de votre propre copie de la publication de 2019. Projet de fans, sans lien avec MGM, Perception, JoWooD,
 > Microsoft ou Epic Games, ni autorisé par eux. Voir [NOTICE.md](NOTICE.md).
+
+### 🎬 La bande-annonce de 2005
+
+[![Stargate SG-1: The Alliance, bande-annonce de l'E3 2005 (YouTube)](https://img.youtube.com/vi/gzdhYxwh2Uc/hqdefault.jpg)](https://www.youtube.com/watch?v=gzdhYxwh2Uc)
+
+La bande-annonce de l'E3 2005, par JoWooD et Perception (YouTube), et le [premier teaser](https://www.youtube.com/watch?v=ZrCbDSjDTZ0) de mars 2005.
+Certaines scènes peuvent différer de la version de décembre 2005.
 
 ### 🛸 À propos de ce prototype
 
