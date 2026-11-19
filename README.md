@@ -48,6 +48,8 @@ A few highlights (the [CHANGELOG](CHANGELOG.md) has the full list):
 - Menus that work with a mouse click, and graphics at their highest by default.
 
 **🌐 Online**
+- **Official servers online 24/7** (Deathmatch, Team Deathmatch, Last Man Standing), with bots so there is always
+  a game going: *Multi-Player → Internet → Find Match*.
 - Internet and LAN games, and dedicated servers for Windows and Linux.
 - Bots in every multiplayer mode.
 - A weapon pack per side, and a *Change Character* option in game.
@@ -198,6 +200,8 @@ Quelques points forts (le [CHANGELOG](CHANGELOG.md), en anglais, donne la liste 
 - Des menus utilisables à la souris, et des graphismes au maximum par défaut.
 
 **🌐 En ligne**
+- **Des serveurs officiels en ligne 24 h/24** (Deathmatch, Team Deathmatch, Last Man Standing), avec des bots pour
+  qu'il y ait toujours une partie en cours : *Multi-Player → Internet → Find Match*.
 - Parties Internet et en réseau local, et serveurs dédiés pour Windows et Linux.
 - Des bots dans tous les modes multijoueur.
 - Un pack d'armes par camp, et un choix de *Change Character* en cours de partie.
