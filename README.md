@@ -141,6 +141,8 @@ Open an [issue](https://github.com/Stargate-Redial/alliance-redial/issues) or as
 - **Co-op campaign**: play the story missions with friends online. The 2005 build still holds traces of a
   co-op mode (a lobby screen, a split co-op mode with two squads, objects reserved for co-op games). We will see
   how far they can take us.
+- **Kull disruptor in multiplayer**: the 2005 build has the Kull disruptor (Disruptor MKI) in the single-player
+  campaign only. We would like to try it in multiplayer on the Tau'ri / Tok'ra side, if it fits the balance.
 
 ## 🙏 Thanks
 
@@ -324,6 +326,9 @@ joignez `<UT2004>\System\UT2004.log` (voir [Signaler un problème](docs/GUIDE.md
 - **Campagne en coopération** : jouer les missions de l'histoire à plusieurs, en ligne. La version de 2005
   contient encore des traces d'un mode coopératif (un écran d'attente des joueurs, un mode coop à deux escouades,
   des objets réservés aux parties coop). Nous verrons jusqu'où elles peuvent nous mener.
+- **Disrupteur Kull en multijoueur** : dans la version de 2005, le disrupteur Kull (Disruptor MKI) n'existe que
+  dans la campagne solo. Nous aimerions l'essayer en multijoueur, côté Tau'ri / Tok'ra, s'il trouve sa place dans
+  l'équilibrage.
 
 ### 🙏 Remerciements
 
