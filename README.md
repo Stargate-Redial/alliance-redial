@@ -32,7 +32,8 @@ A few highlights (the [CHANGELOG](CHANGELOG.md) has the full list):
 
 **🧩 Restored from the 2005 data**
 - Last Man Standing is back in the multiplayer mode list.
-- Lip sync plays in every mission, where the 2005 build had it in only a few.
+- About 150 recorded voice lines that the 2005 game never played are back in the squad's chatter.
+- The SG-1 crew's lip sync plays in every mission, where the 2005 build had it in only a few.
 - Cheat codes work from the console in single player ([docs/CHEATS.md](docs/CHEATS.md)).
 - Menu and HUD features that were left unwired are back, such as Options from the pause menu and the binocular read-out.
 
@@ -174,7 +175,9 @@ Quelques points forts (le [CHANGELOG](CHANGELOG.md), en anglais, donne la liste 
 
 **🧩 Restauré à partir des données de 2005**
 - Last Man Standing est de retour dans la liste des modes multijoueur.
-- La synchro labiale joue dans toutes les missions, alors que la version de 2005 ne l'avait que dans quelques-unes.
+- Environ 150 répliques enregistrées que le jeu de 2005 ne jouait jamais reviennent dans les échanges de l'équipe.
+- La synchro labiale de l'équipe SG-1 joue dans toutes les missions, alors que la version de 2005 ne l'avait que
+  dans quelques-unes.
 - Les codes de triche fonctionnent depuis la console en solo ([docs/CHEATS.md](docs/CHEATS.md#français)).
 - Des fonctions de menu et d'interface laissées de côté sont de retour, comme les Options depuis le menu pause et l'affichage des jumelles.
 
