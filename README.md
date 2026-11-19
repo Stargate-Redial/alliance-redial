@@ -59,23 +59,30 @@ A few highlights (the [CHANGELOG](CHANGELOG.md) has the full list):
 - The SG-1 crew's lip sync plays in every mission, where the 2005 build had it in only a few.
 - Cheat codes work from the console in single player ([docs/CHEATS.md](docs/CHEATS.md)).
 - Menu and HUD features that were left unwired are back, such as Options from the pause menu and the binocular read-out.
+- Each chapter's mission briefing (location, local time, objective) is shown in Chapter Selection.
+- Loading screens use the game's own loading art, as Perception's PC version did, instead of the Xbox controller
+  picture.
 
 **🖥️ Made for PC**
 - Mouse and keyboard, or an Xbox controller with the original 2005 layout.
 - Any resolution up to 4K, widescreen field of view, and quick save (F5) and quick load (F9).
-- Menus that work with a mouse click, and graphics at their highest by default.
+- Menus that work with a mouse click, with real buttons on every page, and graphics at their highest by default.
+- Its own name and icon in the Windows taskbar, with desktop and Start menu shortcuts.
 
 **🌐 Online**
 - **Official servers online 24/7** (Deathmatch, Team Deathmatch, Last Man Standing), with bots so there is always
   a game going: *Multi-Player → Internet → Find Match*.
 - Internet and LAN games, and dedicated servers for Windows and Linux.
-- Bots in every multiplayer mode.
+- Bots in every multiplayer mode, and fair ones: they fire at a player's rate, and Zat, shock grenade and ribbon
+  device hits count on them too.
 - A weapon pack per side, and a *Change Character* option in game.
 - A quick voice menu (V) with each character's own 2005 voice, and text chat that servers can relay to Discord.
 
 **⚙️ Easy to live with**
 - One-click automatic updates, with your settings and saves kept.
-- Your solo progress shown in the Single Player menu.
+- Your solo progress at a glance: a percentage in the Single Player menu, a tick on every chapter you finished,
+  and Chapter Selection opens on the one you are at.
+- *Continue* in the Single Player menu too, and no profile to manage: the game makes one for you.
 
 ---
 
@@ -94,7 +101,7 @@ A few highlights (the [CHANGELOG](CHANGELOG.md) has the full list):
    [Releases page](https://github.com/Stargate-Redial/alliance-redial/releases), extract it and run
    **Stargate Redial Setup.exe** (if SmartScreen appears: *More info*, then *Run anyway*).
 4. **Install, then play.** The window finds the `.7z` and UT2004 by itself: click *Install* (a few minutes), then
-   *Play*. Next time, start the game from its desktop shortcut: it checks for updates automatically and installs them in one
+   *Play*. Next time, start the game from its Start menu or desktop shortcut: it checks for updates automatically and installs them in one
    click.
 
 ## 🔄 Automatic updates
@@ -230,23 +237,30 @@ Quelques points forts (le [CHANGELOG](CHANGELOG.md), en anglais, donne la liste 
   dans quelques-unes.
 - Les codes de triche fonctionnent depuis la console en solo ([docs/CHEATS.md](docs/CHEATS.md#français)).
 - Des fonctions de menu et d'interface laissées de côté sont de retour, comme les Options depuis le menu pause et l'affichage des jumelles.
+- Le briefing de chaque chapitre (lieu, heure locale, objectif) s'affiche dans la sélection de chapitre.
+- Les écrans de chargement utilisent l'image de chargement du jeu, comme la version PC de Perception, au lieu du
+  schéma de la manette Xbox.
 
 **🖥️ Pensé pour le PC**
 - Souris et clavier, ou manette Xbox avec la disposition d'origine de 2005.
 - Toutes les résolutions jusqu'à la 4K, champ de vision adapté au grand écran, sauvegarde rapide (F5) et chargement rapide (F9).
-- Des menus utilisables à la souris, et des graphismes au maximum par défaut.
+- Des menus utilisables à la souris, avec de vrais boutons sur chaque page, et des graphismes au maximum par défaut.
+- Son propre nom et sa propre icône dans la barre des tâches, avec des raccourcis sur le bureau et dans le menu Démarrer.
 
 **🌐 En ligne**
 - **Des serveurs officiels en ligne 24 h/24** (Deathmatch, Team Deathmatch, Last Man Standing), avec des bots pour
   qu'il y ait toujours une partie en cours : *Multi-Player → Internet → Find Match*.
 - Parties Internet et en réseau local, et serveurs dédiés pour Windows et Linux.
-- Des bots dans tous les modes multijoueur.
+- Des bots dans tous les modes multijoueur, et des bots loyaux : ils tirent à la cadence d'un joueur, et les coups de
+  Zat, de grenade à choc et de ruban les touchent aussi.
 - Un pack d'armes par camp, et un choix de *Change Character* en cours de partie.
 - Un menu vocal rapide (V) avec la voix d'origine de 2005 de chaque personnage, et un chat texte que les serveurs peuvent relayer vers Discord.
 
 **⚙️ Simple au quotidien**
 - Mises à jour automatiques en un clic, avec vos réglages et vos sauvegardes conservés.
-- Votre progression solo affichée dans le menu Solo.
+- Votre progression solo d'un coup d'œil : un pourcentage dans le menu Solo, une coche sur chaque chapitre terminé,
+  et la sélection de chapitre qui s'ouvre sur celui où vous en êtes.
+- *Continue* aussi dans le menu Solo, et aucun profil à gérer : le jeu en crée un pour vous.
 
 ---
 
@@ -266,7 +280,7 @@ Quelques points forts (le [CHANGELOG](CHANGELOG.md), en anglais, donne la liste 
    **Stargate Redial Setup.exe** (si SmartScreen s'affiche : *Informations complémentaires*, puis *Exécuter quand
    même*).
 4. **Installez, puis jouez.** La fenêtre trouve seule le `.7z` et UT2004 : cliquez sur *Installer* (quelques
-   minutes), puis sur *Jouer*. Les fois suivantes, lancez le jeu par son raccourci sur le bureau : il cherche seul les
+   minutes), puis sur *Jouer*. Les fois suivantes, lancez le jeu par son raccourci du menu Démarrer ou du bureau : il cherche seul les
    mises à jour et les installe en un clic.
 
 ### 🔄 Mises à jour automatiques
