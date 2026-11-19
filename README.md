@@ -69,6 +69,8 @@ Open an [issue](https://github.com/Stargate-Redial/alliance-redial/issues) or as
 
 ## Roadmap (ideas, no promises)
 
+- **French translation**: subtitles, menus, HUD and objectives in French (the voices stay in English), with a
+  language choice in the options and in the installer.
 - **Replicators**: the 2005 build still holds unused Replicator code and models (the spider-like Replicator, the
   Queen, a playable Replicator with its own HUD) from a cut mission. We will see whether they can be brought
   back to life.
@@ -177,6 +179,8 @@ joignez `<UT2004>\System\UT2004.log` (voir [Signaler un problème](docs/GUIDE.md
 
 ### Feuille de route (idées, sans promesse)
 
+- **Traduction française** : sous-titres, menus, HUD et objectifs en français (les voix restent en anglais),
+  avec un choix de langue dans les options et dans l'installeur.
 - **Réplicateurs** : la version de 2005 contient encore du code et des modèles de Réplicateurs inutilisés (le
   Réplicateur araignée, la reine, un Réplicateur jouable avec son propre HUD), issus d'une mission coupée. Nous
   regarderons s'il est possible de leur redonner vie.
