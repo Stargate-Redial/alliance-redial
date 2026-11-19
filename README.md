@@ -1,7 +1,7 @@
 <!-- Public repository https://github.com/Stargate-Redial/alliance-redial: this README, CHANGELOG.md, NOTICE.md, docs/GUIDE.md, docs/KNOWN_ISSUES.md, docs/CHEATS.md and docs/SERVER.md only; the installer is a Release asset. Also shipped inside the release zip. -->
 # Stargate SG-1 The Alliance: Redial
 
-**English** · [Français](#français)
+:gb: **English** · :fr: [Français](#français)
 
 The unreleased *Stargate SG-1: The Alliance* (an Xbox prototype from December 2005), playable on your PC as a
 mod for **Unreal Tournament 2004** with the OldUnreal patch. A [Stargate Redial](https://github.com/Stargate-Redial)
@@ -104,6 +104,8 @@ character and logo belongs to its owner.
 Free to use, non-commercial. Third-party licences: [NOTICE.md](NOTICE.md).
 
 ## Français
+
+:gb: [English](#stargate-sg-1-the-alliance-redial) · :fr: **Français**
 
 Le prototype inédit *Stargate SG-1: The Alliance* (version Xbox de décembre 2005), jouable sur PC comme mod
 d'**Unreal Tournament 2004** avec le patch OldUnreal. Un projet de fans
