@@ -1,11 +1,13 @@
 <!-- Public repository https://github.com/Stargate-Redial/alliance-redial: this README, CHANGELOG.md, NOTICE.md, docs/GUIDE.md, docs/KNOWN_ISSUES.md, docs/CHEATS.md and docs/SERVER.md only; the installer is a Release asset. Also shipped inside the release zip. -->
 # Stargate SG-1 The Alliance: Redial
 
+*A [Stargate Database](https://stargatedatabase.link/en/) project* · *Un projet [Stargate Database](https://stargatedatabase.link/fr/)*
+
 :gb: **English** · :fr: [Français](#français)
 
 The unreleased *Stargate SG-1: The Alliance* (an Xbox prototype from December 2005), playable on your PC as a
 mod for **Unreal Tournament 2004** with the OldUnreal patch. A [Stargate Redial](https://github.com/Stargate-Redial)
-fan project. Current release: **V0.1**. Join the community on [Discord](https://discord.gg/SgHPP4mZyB).
+fan project by the [Stargate Database](https://stargatedatabase.link/en/) team. Current release: **V0.1**. Join the community on [Discord](https://discord.gg/SgHPP4mZyB).
 
 > Apart from its title picture, no game data is included: the installer rebuilds the game on your PC from your
 > own copy of the 2019 release. Fan project, not affiliated with or endorsed by MGM, Perception, JoWooD,
@@ -113,6 +115,9 @@ Open an [issue](https://github.com/Stargate-Redial/alliance-redial/issues) or as
 - **Replicators**: the 2005 build still holds unused Replicator code and models (the spider-like Replicator, the
   Queen, a playable Replicator with its own HUD) from a cut mission. We will see whether they can be brought
   back to life.
+- **Co-op campaign**: play the story missions with friends online. The 2005 build still holds traces of a
+  co-op mode (a lobby screen, a split co-op mode with two squads, objects reserved for co-op games). We will see
+  how far they can take us.
 
 ## 🙏 Thanks
 
@@ -126,7 +131,7 @@ Open an [issue](https://github.com/Stargate-Redial/alliance-redial/issues) or as
 
 ## ⚖️ Legal
 
-Stargate Redial is a free, non-commercial fan project that aims to preserve an unreleased prototype. It has no
+Stargate Redial is a free, non-commercial fan project by the Stargate Database team that aims to preserve an unreleased prototype. It has no
 link with MGM, Perception, JoWooD, Microsoft or Epic Games, and none of them has approved it. Every name,
 character and logo belongs to its owner.
 
@@ -146,13 +151,18 @@ Free to use, non-commercial. Third-party licences: [NOTICE.md](NOTICE.md).
 
 ---
 
+Made by the **Stargate Database team** · [stargatedatabase.link](https://stargatedatabase.link/en/) · [Redial on Stargate Database](https://stargatedatabase.link/en/games/) ·
+[Discord](https://discord.gg/SgHPP4mZyB)
+
+---
+
 ## Français
 
 :gb: [English](#stargate-sg-1-the-alliance-redial) · :fr: **Français**
 
 Le prototype inédit *Stargate SG-1: The Alliance* (version Xbox de décembre 2005), jouable sur PC comme mod
 d'**Unreal Tournament 2004** avec le patch OldUnreal. Un projet de fans
-[Stargate Redial](https://github.com/Stargate-Redial). Version actuelle : **V0.1**. Retrouvez la communauté sur
+[Stargate Redial](https://github.com/Stargate-Redial) par l'équipe [Stargate Database](https://stargatedatabase.link/fr/). Version actuelle : **V0.1**. Retrouvez la communauté sur
 [Discord](https://discord.gg/SgHPP4mZyB).
 
 > Hormis son image de titre, aucune donnée du jeu n'est incluse : l'installeur reconstruit le jeu sur votre PC à
@@ -270,6 +280,9 @@ joignez `<UT2004>\System\UT2004.log` (voir [Signaler un problème](docs/GUIDE.md
 - **Réplicateurs** : la version de 2005 contient encore du code et des modèles de Réplicateurs inutilisés (le
   Réplicateur araignée, la reine, un Réplicateur jouable avec son propre HUD), issus d'une mission coupée. Nous
   regarderons s'il est possible de leur redonner vie.
+- **Campagne en coopération** : jouer les missions de l'histoire à plusieurs, en ligne. La version de 2005
+  contient encore des traces d'un mode coopératif (un écran d'attente des joueurs, un mode coop à deux escouades,
+  des objets réservés aux parties coop). Nous verrons jusqu'où elles peuvent nous mener.
 
 ### 🙏 Remerciements
 
@@ -283,7 +296,7 @@ joignez `<UT2004>\System\UT2004.log` (voir [Signaler un problème](docs/GUIDE.md
 
 ### ⚖️ Mentions légales
 
-Stargate Redial est un projet de fans gratuit et non commercial qui vise à préserver un prototype inédit. Il n'a
+Stargate Redial est un projet de fans gratuit et non commercial de l'équipe Stargate Database, qui vise à préserver un prototype inédit. Il n'a
 aucun lien avec MGM, Perception, JoWooD, Microsoft ou Epic Games, et aucune de ces sociétés ne l'a approuvé. Noms,
 personnages et logos appartiennent à leurs propriétaires.
 
@@ -301,3 +314,8 @@ personnages et logos appartiennent à leurs propriétaires.
 ### 📜 Licence
 
 Utilisation libre, non commerciale. Licences tierces : [NOTICE.md](NOTICE.md).
+
+---
+
+Réalisé par l'**équipe Stargate Database** · [stargatedatabase.link](https://stargatedatabase.link/fr/) · [Redial sur Stargate Database](https://stargatedatabase.link/fr/jeux/) ·
+[Discord](https://discord.gg/SgHPP4mZyB)

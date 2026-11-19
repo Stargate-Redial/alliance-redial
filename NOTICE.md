@@ -2,7 +2,7 @@
 
 ## Disclaimer
 
-This is an independent, non-commercial fan preservation project of
+This is an independent, non-commercial fan preservation project by the [Stargate Database](https://stargatedatabase.link/en/) team, part of
 [Stargate Redial](https://github.com/Stargate-Redial), which brings Stargate mods back on today's platforms. It
 is **not affiliated with, authorised, sponsored or endorsed by** Metro-Goldwyn-Mayer (MGM), Perception Pty Ltd,
 JoWooD Productions, Microsoft or Epic Games, nor by any other rights holder.
@@ -31,7 +31,8 @@ This software is provided "as is", without warranty of any kind.
 
 ### En français
 
-Projet de fans indépendant et non commercial de [Stargate Redial](https://github.com/Stargate-Redial), qui fait
+Projet de fans indépendant et non commercial de l'équipe [Stargate Database](https://stargatedatabase.link/fr/), dans le cadre de
+[Stargate Redial](https://github.com/Stargate-Redial), qui fait
 revivre des mods Stargate sur les plateformes actuelles. Il n'est **ni affilié à, ni autorisé, parrainé ou
 soutenu par** Metro-Goldwyn-Mayer (MGM), Perception Pty Ltd, JoWooD Productions, Microsoft ou Epic Games, ni
 par aucun autre ayant droit. *Stargate SG-1* et les noms et marques associés appartiennent à MGM ; *Unreal*,
