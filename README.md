@@ -76,6 +76,8 @@ A few highlights (the [CHANGELOG](CHANGELOG.md) has the full list):
 - Bots in every multiplayer mode, and fair ones: they fire at a player's rate, and Zat, shock grenade and ribbon
   device hits count on them too.
 - A weapon pack per side, and a *Change Character* option in game.
+- The Zat'nik'tel needs two hits to kill in multiplayer: the first one knocks you back (in 2005 one hit killed a
+  player). Knock-backs no longer make you jump on your own screen online.
 - A quick voice menu (V) with each character's own 2005 voice, and text chat that servers can relay to Discord.
 
 **⚙️ Easy to live with**
@@ -256,6 +258,8 @@ Quelques points forts (le [CHANGELOG](CHANGELOG.md), en anglais, donne la liste 
 - Des bots dans tous les modes multijoueur, et des bots loyaux : ils tirent à la cadence d'un joueur, et les coups de
   Zat, de grenade à choc et de ruban les touchent aussi.
 - Un pack d'armes par camp, et un choix de *Change Character* en cours de partie.
+- Le Zat'nik'tel doit toucher deux fois pour tuer en multijoueur : le premier tir vous repousse (en 2005, un seul tir
+  tuait un joueur). En ligne, les projections ne vous font plus sauter à l'écran.
 - Un menu vocal rapide (V) avec la voix d'origine de 2005 de chaque personnage, et un chat texte que les serveurs peuvent relayer vers Discord.
 
 **⚙️ Simple au quotidien**
