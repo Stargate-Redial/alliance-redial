@@ -15,11 +15,11 @@ fan project. Current release: **V0.1**. Join the community on [Discord](https://
 
 1. **UT2004 with the OldUnreal patch.**
    - **No UT2004 yet?** Install it with OldUnreal's
-     [full-game installer](https://www.oldunreal.com/downloads/ut2004/full-game-installers/).
-   - **Already have it** (Steam, GOG, CD)? Use that install.
-   - Then, in both cases, make sure the latest
-     [OldUnreal patch](https://github.com/OldUnreal/UT2004Patches/releases) is installed (3374, 2026-10-20 or
-     later). Our installer checks it and tells you if it is missing.
+     [full-game installer](https://www.oldunreal.com/downloads/ut2004/full-game-installers/): it also installs
+     the latest OldUnreal patch, nothing else to do.
+   - **Already have it** (Steam, GOG, CD)? Add the latest
+     [OldUnreal patch](https://github.com/OldUnreal/UT2004Patches/releases) (3374, 2026-10-20 or later).
+   - Our installer checks the patch version and tells you if it is too old.
 2. **The 2005 game files.** Download `Stargate_SG-1_-_The_Alliance-2005-12-15.7z` (about 1 GB) from
    [archive.org](https://archive.org/details/StargateSG1TheAlliance20051215) and leave it in your Downloads folder.
 3. **The installer.** Download `Stargate-Redial-Alliance-v<version>-win64.zip` from the
@@ -88,11 +88,11 @@ d'**Unreal Tournament 2004** avec le patch OldUnreal. Un projet de fans
 
 1. **UT2004 avec le patch OldUnreal.**
    - **Pas encore UT2004 ?** Installez-le avec
-     l'[installeur complet](https://www.oldunreal.com/downloads/ut2004/full-game-installers/) d'OldUnreal.
-   - **Vous l'avez déjà** (Steam, GOG, CD) ? Utilisez cette installation.
-   - Dans les deux cas, vérifiez ensuite que le dernier
-     [patch OldUnreal](https://github.com/OldUnreal/UT2004Patches/releases) est installé (3374 du 20/10/2026 ou plus
-     récent). Notre installeur le vérifie et vous prévient s'il manque.
+     l'[installeur complet](https://www.oldunreal.com/downloads/ut2004/full-game-installers/) d'OldUnreal : il
+     installe aussi le dernier patch OldUnreal, rien d'autre à faire.
+   - **Vous l'avez déjà** (Steam, GOG, CD) ? Ajoutez le dernier
+     [patch OldUnreal](https://github.com/OldUnreal/UT2004Patches/releases) (3374 du 20/10/2026 ou plus récent).
+   - Notre installeur vérifie la version du patch et vous prévient si elle est trop ancienne.
 2. **Les fichiers du jeu de 2005.** Téléchargez `Stargate_SG-1_-_The_Alliance-2005-12-15.7z` (environ 1 Go) sur
    [archive.org](https://archive.org/details/StargateSG1TheAlliance20051215) et laissez-le dans vos Téléchargements.
 3. **L'installeur.** Téléchargez `Stargate-Redial-Alliance-v<version>-win64.zip` sur la
