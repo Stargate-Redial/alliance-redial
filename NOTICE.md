@@ -62,6 +62,15 @@ with or endorsed by any rights holder.
 droits appartiennent à leurs propriétaires. C'est le seul élément du jeu présent dans l'installeur, et l'avis
 ci-dessus s'applique toujours : ce projet n'est ni affilié à, ni soutenu par aucun ayant droit.
 
+The README on GitHub shows one frame of the E3 2005 trailer (JoWooD Productions / Perception), with a play button
+added, as a link to the trailer on YouTube. It is shown for illustration only; all rights belong to their owners.
+It is not part of the installer.
+
+*En français :* le README sur GitHub montre une image de la bande-annonce de l'E3 2005 (JoWooD Productions /
+Perception), avec un bouton de lecture ajouté, comme lien vers la bande-annonce sur YouTube. Elle n'est montrée
+qu'à titre d'illustration ; tous les droits appartiennent à leurs propriétaires. Elle ne fait pas partie de
+l'installeur.
+
 ## Licence
 
 The installer and its tools are provided free of charge for non-commercial use, without warranty of any kind.

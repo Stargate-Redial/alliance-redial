@@ -15,10 +15,13 @@ fan project by the [Stargate Database](https://stargatedatabase.link/en/) team. 
 
 ## 🎬 The 2005 trailer
 
-[![Stargate SG-1: The Alliance, E3 2005 trailer (YouTube)](https://img.youtube.com/vi/gzdhYxwh2Uc/hqdefault.jpg)](https://www.youtube.com/watch?v=gzdhYxwh2Uc)
-
-The E3 2005 trailer by JoWooD and Perception (YouTube), and the [first teaser](https://www.youtube.com/watch?v=ZrCbDSjDTZ0) from March 2005. Some
-scenes may differ from the December 2005 build.
+<p align="center">
+  <a href="https://www.youtube.com/watch?v=gzdhYxwh2Uc"><img src="docs/img/trailer.jpg" width="720" alt="Play the E3 2005 trailer of Stargate SG-1: The Alliance on YouTube"></a>
+</p>
+<p align="center">
+  The E3 2005 trailer by JoWooD and Perception, on YouTube. See also the <a href="https://www.youtube.com/watch?v=ZrCbDSjDTZ0">first teaser</a> (March 2005).<br>
+  <sub>Some scenes may differ from the December 2005 build.</sub>
+</p>
 
 ## 🛸 About this prototype
 
@@ -142,8 +145,9 @@ Stargate Redial is a free, non-commercial fan project by the Stargate Database t
 link with MGM, Perception, JoWooD, Microsoft or Epic Games, and none of them has approved it. Every name,
 character and logo belongs to its owner.
 
-- **What we publish:** only our own work (installer, tools, documents) and one title picture credited in
-  [NOTICE.md](NOTICE.md). No file from the game, and nothing built from one.
+- **What we publish:** our own work (installer, tools, documents) and one title picture credited in
+  [NOTICE.md](NOTICE.md). The installer holds no file from the game, and nothing built from one. This page also
+  shows a frame of the 2005 trailer, for illustration only.
 - **What stays with you:** the installer turns *your* copy of the 2019 release into a mod on *your* PC. The files
   it generates come from the game: do not upload, share, bundle or sell them, and do not let a server hand them
   out (see [docs/SERVER.md](docs/SERVER.md)).
@@ -178,10 +182,13 @@ d'**Unreal Tournament 2004** avec le patch OldUnreal. Un projet de fans
 
 ### 🎬 La bande-annonce de 2005
 
-[![Stargate SG-1: The Alliance, bande-annonce de l'E3 2005 (YouTube)](https://img.youtube.com/vi/gzdhYxwh2Uc/hqdefault.jpg)](https://www.youtube.com/watch?v=gzdhYxwh2Uc)
-
-La bande-annonce de l'E3 2005, par JoWooD et Perception (YouTube), et le [premier teaser](https://www.youtube.com/watch?v=ZrCbDSjDTZ0) de mars 2005.
-Certaines scènes peuvent différer de la version de décembre 2005.
+<p align="center">
+  <a href="https://www.youtube.com/watch?v=gzdhYxwh2Uc"><img src="docs/img/trailer.jpg" width="720" alt="Lire la bande-annonce de l'E3 2005 de Stargate SG-1: The Alliance sur YouTube"></a>
+</p>
+<p align="center">
+  La bande-annonce de l'E3 2005, par JoWooD et Perception, sur YouTube. Voir aussi le <a href="https://www.youtube.com/watch?v=ZrCbDSjDTZ0">premier teaser</a> (mars 2005).<br>
+  <sub>Certaines scènes peuvent différer de la version de décembre 2005.</sub>
+</p>
 
 ### 🛸 À propos de ce prototype
 
@@ -314,8 +321,9 @@ Stargate Redial est un projet de fans gratuit et non commercial de l'équipe Sta
 aucun lien avec MGM, Perception, JoWooD, Microsoft ou Epic Games, et aucune de ces sociétés ne l'a approuvé. Noms,
 personnages et logos appartiennent à leurs propriétaires.
 
-- **Ce que nous publions :** uniquement notre propre travail (installeur, outils, documents) et une image de titre
-  créditée dans [NOTICE.md](NOTICE.md). Aucun fichier du jeu, rien qui en soit tiré.
+- **Ce que nous publions :** notre propre travail (installeur, outils, documents) et une image de titre créditée
+  dans [NOTICE.md](NOTICE.md). L'installeur ne contient aucun fichier du jeu, rien qui en soit tiré. Cette page
+  montre aussi une image de la bande-annonce de 2005, à titre d'illustration uniquement.
 - **Ce qui reste chez vous :** l'installeur transforme *votre* copie de la publication de 2019 en un mod sur
   *votre* PC. Les fichiers qu'il génère viennent du jeu : ne les mettez pas en ligne, ne les partagez pas, ne les
   incluez dans aucun paquet, ne les vendez pas, et ne laissez pas un serveur les distribuer (voir
