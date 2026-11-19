@@ -11,6 +11,21 @@ fan project. Current release: **V0.1**. Join the community on [Discord](https://
 > own copy of the 2019 release. Fan project, not affiliated with or endorsed by MGM, Perception, JoWooD,
 > Microsoft or Epic Games. See [NOTICE.md](NOTICE.md).
 
+## About this prototype
+
+This is an **unfinished game**: a December 2005 Xbox prototype that was never completed or released. We restore
+and fix what exists and add nothing new.
+
+- **Playable:** the solo campaign (the tutorial and missions 2, 4, 7, 10 and 12 to 21, 61 chapters in all) and
+  multiplayer (DeathMatch, Team DeathMatch, Capture the Flag and Last Man Standing, on ten maps).
+- **Expect flaws:** some surfaces are plain white or grey where the 2005 data has no texture; a few sounds and HUD
+  icons are missing; mouths move only in some dialogues; some features are empty placeholders (*Extras*) or absent
+  (co-op, split-screen); Capture the Flag with bots is rough.
+- **The story may not make full sense:** missions 1, 3, 5, 6, 8, 9 and 11 are not in the build (the first one,
+  *Replicator Attack*, was cut), so the story jumps between missions, and some recorded scenes are never played.
+
+See [KNOWN_ISSUES.md](docs/KNOWN_ISSUES.md) and the [CHANGELOG](CHANGELOG.md).
+
 ## Quick start
 
 1. **UT2004 with the OldUnreal patch.**
@@ -26,18 +41,31 @@ fan project. Current release: **V0.1**. Join the community on [Discord](https://
    [Releases page](https://github.com/Stargate-Redial/alliance-redial/releases), extract it and run
    **Stargate Redial Setup.exe** (if SmartScreen appears: *More info*, then *Run anyway*).
 4. **Install, then play.** The window finds the `.7z` and UT2004 by itself: click *Install* (a few minutes), then
-   *Play*. Next time, start the game from its desktop shortcut: it also offers new versions.
+   *Play*. Next time, start the game from its desktop shortcut: it checks for updates automatically and installs them in one
+   click.
+
+## Automatic updates
+
+- Starting the game from its shortcut checks this GitHub page for a new version: no account, no personal data.
+- A window shows what is new and updates in one click; the download is signature-checked.
+- Your settings and saves are kept.
+- You can turn this off in the installer. Details: [Updating in detail](docs/GUIDE.md#updating-in-detail).
 
 ## Good to know
 
 - The installer is not signed: Windows SmartScreen may warn you. Click *More info*, then *Run anyway*.
 - Windows 11 *Smart App Control*, when on, blocks unsigned programs: the installer cannot run there.
-- When you start the game, it checks for a new version and offers to update it.
 - Plan about 9 GB of free space and an Internet connection during the install.
 
 More: [player guide](docs/GUIDE.md) · [installer details](docs/GUIDE.md#installer-details) (options, files written,
 updating, uninstalling) · [known issues](docs/KNOWN_ISSUES.md) · [cheats](docs/CHEATS.md) ·
 [dedicated servers](docs/SERVER.md) · [CHANGELOG](CHANGELOG.md)
+
+## Problem?
+
+Open an [issue](https://github.com/Stargate-Redial/alliance-redial/issues) or ask on
+[Discord](https://discord.gg/SgHPP4mZyB). Please give the version, what you did and what happened, and attach
+`<UT2004>\System\UT2004.log` (see [Troubleshooting](docs/GUIDE.md#reporting-a-problem)).
 
 ## Roadmap (ideas, no promises)
 
@@ -84,6 +112,23 @@ d'**Unreal Tournament 2004** avec le patch OldUnreal. Un projet de fans
 > partir de votre propre copie de la publication de 2019. Projet de fans, sans lien avec MGM, Perception, JoWooD,
 > Microsoft ou Epic Games, ni autorisé par eux. Voir [NOTICE.md](NOTICE.md).
 
+### À propos de ce prototype
+
+C'est un **jeu inachevé** : un prototype Xbox de décembre 2005, jamais terminé ni publié. Nous restaurons et
+corrigeons l'existant, sans rien ajouter de nouveau.
+
+- **Jouable :** la campagne solo (le tutoriel et les missions 2, 4, 7, 10 et 12 à 21, soit 61 chapitres) et le
+  multijoueur (DeathMatch, Team DeathMatch, Capture du drapeau et Last Man Standing, sur dix cartes).
+- **Attendez-vous à des défauts :** certaines surfaces sont blanches ou grises faute de texture dans les données de
+  2005 ; quelques sons et icônes d'interface manquent ; les bouches ne bougent que dans certains dialogues ;
+  certaines fonctions sont des coquilles vides (*Extras*) ou absentes (coop, écran partagé) ; la Capture du drapeau
+  avec bots est rudimentaire.
+- **L'histoire peut manquer de cohérence :** les missions 1, 3, 5, 6, 8, 9 et 11 ne sont pas dans la version (la
+  première, *Replicator Attack*, a été coupée) : l'histoire saute d'une mission à l'autre, et certaines scènes
+  enregistrées ne sont jamais jouées.
+
+Voir [KNOWN_ISSUES.md](docs/KNOWN_ISSUES.md#français) et le [CHANGELOG](CHANGELOG.md) (en anglais).
+
 ### Démarrage rapide
 
 1. **UT2004 avec le patch OldUnreal.**
@@ -100,8 +145,16 @@ d'**Unreal Tournament 2004** avec le patch OldUnreal. Un projet de fans
    **Stargate Redial Setup.exe** (si SmartScreen s'affiche : *Informations complémentaires*, puis *Exécuter quand
    même*).
 4. **Installez, puis jouez.** La fenêtre trouve seule le `.7z` et UT2004 : cliquez sur *Installer* (quelques
-   minutes), puis sur *Jouer*. Les fois suivantes, lancez le jeu par son raccourci sur le bureau : il propose aussi
-   les nouvelles versions.
+   minutes), puis sur *Jouer*. Les fois suivantes, lancez le jeu par son raccourci sur le bureau : il cherche seul les
+   mises à jour et les installe en un clic.
+
+### Mises à jour automatiques
+
+- Lancer le jeu par son raccourci cherche une nouvelle version sur cette page GitHub : aucun compte, aucune donnée
+  personnelle.
+- Une fenêtre montre les nouveautés et met à jour en un clic ; le téléchargement est vérifié par signature.
+- Vos réglages et vos sauvegardes sont conservés.
+- Vous pouvez le désactiver dans l'installeur. Détails : [Mise à jour en détail](docs/GUIDE.md#mise-à-jour-en-détail).
 
 ### À savoir
 
@@ -109,13 +162,18 @@ d'**Unreal Tournament 2004** avec le patch OldUnreal. Un projet de fans
   *Exécuter quand même*.
 - Le *Contrôle intelligent des applications* de Windows 11, s'il est activé, bloque les programmes non signés :
   l'installeur ne peut pas s'y exécuter.
-- Au lancement, le jeu cherche une nouvelle version et propose de la mettre à jour.
 - Prévoyez environ 9 Go d'espace libre et une connexion Internet pendant l'installation.
 
 Pour aller plus loin : [guide du joueur](docs/GUIDE.md#français) ·
 [détails de l'installeur](docs/GUIDE.md#détails-de-linstalleur) (options, fichiers écrits, mise à jour,
 désinstallation) · [problèmes connus](docs/KNOWN_ISSUES.md#français) · [triches](docs/CHEATS.md#français) ·
 [serveurs dédiés](docs/SERVER.md#français) · [CHANGELOG](CHANGELOG.md) (en anglais)
+
+### Un problème ?
+
+Ouvrez une [issue](https://github.com/Stargate-Redial/alliance-redial/issues) ou demandez sur
+[Discord](https://discord.gg/SgHPP4mZyB). Indiquez la version, ce que vous avez fait et ce qui s'est passé, et
+joignez `<UT2004>\System\UT2004.log` (voir [Signaler un problème](docs/GUIDE.md#signaler-un-problème)).
 
 ### Feuille de route (idées, sans promesse)
 
