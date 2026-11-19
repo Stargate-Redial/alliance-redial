@@ -1,6 +1,12 @@
 <!-- Public repository https://github.com/Stargate-Redial/alliance-redial: this README, CHANGELOG.md, NOTICE.md, docs/GUIDE.md, docs/KNOWN_ISSUES.md, docs/CHEATS.md and docs/SERVER.md only; the installer is a Release asset. Also shipped inside the release zip. -->
 # Stargate SG-1 The Alliance: Redial
 
+<p align="center">
+  <a href="docs/img/shot1.jpg"><img src="docs/img/shot1.jpg" width="32%" alt="O'Neill and Teal'c at the Stargate (campaign cutscene)"></a>
+  <a href="docs/img/shot2.jpg"><img src="docs/img/shot2.jpg" width="32%" alt="Teal'c in the jungle"></a>
+  <a href="docs/img/shot3.jpg"><img src="docs/img/shot3.jpg" width="32%" alt="Carter with a P90 (multiplayer, DM-Tomb)"></a>
+</p>
+
 *A [Stargate Database](https://stargatedatabase.link/en/) project* · *Un projet [Stargate Database](https://stargatedatabase.link/fr/)*
 
 :gb: **English** · :fr: [Français](#français)
@@ -147,7 +153,7 @@ character and logo belongs to its owner.
 
 - **What we publish:** our own work (installer, tools, documents) and one title picture credited in
   [NOTICE.md](NOTICE.md). The installer holds no file from the game, and nothing built from one. This page also
-  shows a frame of the 2005 trailer, for illustration only.
+  shows a frame of the 2005 trailer and screenshots of the game running with Redial, for illustration only.
 - **What stays with you:** the installer turns *your* copy of the 2019 release into a mod on *your* PC. The files
   it generates come from the game: do not upload, share, bundle or sell them, and do not let a server hand them
   out (see [docs/SERVER.md](docs/SERVER.md)).
@@ -323,7 +329,8 @@ personnages et logos appartiennent à leurs propriétaires.
 
 - **Ce que nous publions :** notre propre travail (installeur, outils, documents) et une image de titre créditée
   dans [NOTICE.md](NOTICE.md). L'installeur ne contient aucun fichier du jeu, rien qui en soit tiré. Cette page
-  montre aussi une image de la bande-annonce de 2005, à titre d'illustration uniquement.
+  montre aussi une image de la bande-annonce de 2005 et des captures du jeu lancé avec Redial, à titre
+  d'illustration uniquement.
 - **Ce qui reste chez vous :** l'installeur transforme *votre* copie de la publication de 2019 en un mod sur
   *votre* PC. Les fichiers qu'il génère viennent du jeu : ne les mettez pas en ligne, ne les partagez pas, ne les
   incluez dans aucun paquet, ne les vendez pas, et ne laissez pas un serveur les distribuer (voir

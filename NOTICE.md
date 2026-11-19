@@ -63,13 +63,13 @@ droits appartiennent à leurs propriétaires. C'est le seul élément du jeu pr�
 ci-dessus s'applique toujours : ce projet n'est ni affilié à, ni soutenu par aucun ayant droit.
 
 The README on GitHub shows one frame of the E3 2005 trailer (JoWooD Productions / Perception), with a play button
-added, as a link to the trailer on YouTube. It is shown for illustration only; all rights belong to their owners.
-It is not part of the installer.
+added, as a link to the trailer on YouTube, and three screenshots of the game running with Redial. They are shown
+for illustration only; all rights belong to their owners. They are not part of the installer.
 
 *En français :* le README sur GitHub montre une image de la bande-annonce de l'E3 2005 (JoWooD Productions /
-Perception), avec un bouton de lecture ajouté, comme lien vers la bande-annonce sur YouTube. Elle n'est montrée
-qu'à titre d'illustration ; tous les droits appartiennent à leurs propriétaires. Elle ne fait pas partie de
-l'installeur.
+Perception), avec un bouton de lecture ajouté, comme lien vers la bande-annonce sur YouTube, et trois captures du
+jeu lancé avec Redial. Elles ne sont montrées qu'à titre d'illustration ; tous les droits appartiennent à leurs
+propriétaires. Elles ne font pas partie de l'installeur.
 
 ## Licence
 
