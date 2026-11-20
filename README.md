@@ -67,8 +67,10 @@ A few highlights (the [CHANGELOG](CHANGELOG.md) has the full list):
 - Mouse and keyboard, or an Xbox controller with the original 2005 layout.
 - Any resolution up to 4K, widescreen field of view, and quick save (F5) and quick load (F9).
 - Menus that work with a mouse click, with real buttons on every page, and graphics at their highest by default.
-- Better graphics than 2005: sharper character and vehicle shadows, a fixed and cleaner bloom, and bloom together
-  with anti-aliasing when you pick Direct3D 11.
+- Better graphics than 2005: Direct3D 11 with 4x anti-aliasing and bloom by default (with an automatic fallback to
+  Direct3D 9), sharper character and vehicle shadows, smoother skies, a fixed and cleaner bloom, and the electric arcs
+  of the Zat'nik'tel and the Kull disruptor back on screen.
+- Pausing also pauses dialogue and music, and the campaign's one-weapon-per-slot rule works again.
 - Its own name and icon in the Windows taskbar, with desktop and Start menu shortcuts.
 
 **🌐 Online**
@@ -79,8 +81,8 @@ A few highlights (the [CHANGELOG](CHANGELOG.md) has the full list):
   device hits count on them too.
 - A weapon pack per side, and a *Change Character* option in game.
 - The Zat'nik'tel and the shock grenade need two hits to kill in multiplayer: the first one knocks you back (in 2005
-  one hit killed a player). The shock grenade no longer hits your own team. Knock-backs no longer make you jump on
-  your own screen online.
+  one hit killed a player). The shock grenade no longer hits your own team or through walls. Knock-backs no longer
+  make you jump on your own screen online, and the cloak works online for every player, not only for the host.
 - A quick voice menu (V) with each character's own 2005 voice, and text chat that servers can relay to Discord.
 
 **⚙️ Easy to live with**
@@ -252,8 +254,11 @@ Quelques points forts (le [CHANGELOG](CHANGELOG.md), en anglais, donne la liste 
 - Souris et clavier, ou manette Xbox avec la disposition d'origine de 2005.
 - Toutes les résolutions jusqu'à la 4K, champ de vision adapté au grand écran, sauvegarde rapide (F5) et chargement rapide (F9).
 - Des menus utilisables à la souris, avec de vrais boutons sur chaque page, et des graphismes au maximum par défaut.
-- De meilleurs graphismes qu'en 2005 : des ombres de personnages et de véhicules plus nettes, un bloom corrigé et plus
-  propre, et le bloom avec l'anticrénelage si vous choisissez Direct3D 11.
+- De meilleurs graphismes qu'en 2005 : Direct3D 11 avec anticrénelage 4x et bloom par défaut (avec un repli automatique
+  sur Direct3D 9), des ombres de personnages et de véhicules plus nettes, des ciels plus lisses, un bloom corrigé et plus
+  propre, et le retour des arcs électriques du Zat'nik'tel et du disrupteur Kull.
+- La pause arrête aussi les dialogues et la musique, et la règle d'une arme par emplacement de la campagne fonctionne de
+  nouveau.
 - Son propre nom et sa propre icône dans la barre des tâches, avec des raccourcis sur le bureau et dans le menu Démarrer.
 
 **🌐 En ligne**
@@ -264,8 +269,9 @@ Quelques points forts (le [CHANGELOG](CHANGELOG.md), en anglais, donne la liste 
   Zat, de grenade à choc et de ruban les touchent aussi.
 - Un pack d'armes par camp, et un choix de *Change Character* en cours de partie.
 - Le Zat'nik'tel et la grenade à choc doivent toucher deux fois pour tuer en multijoueur : le premier coup vous repousse
-  (en 2005, un seul coup tuait un joueur). La grenade à choc ne touche plus votre propre équipe. En ligne, les
-  projections ne vous font plus sauter à l'écran.
+  (en 2005, un seul coup tuait un joueur). La grenade à choc ne touche plus votre équipe ni à travers les murs. En
+  ligne, les projections ne vous font plus sauter à l'écran, et l'invisibilité marche pour tous les joueurs, pas
+  seulement pour l'hôte.
 - Un menu vocal rapide (V) avec la voix d'origine de 2005 de chaque personnage, et un chat texte que les serveurs peuvent relayer vers Discord.
 
 **⚙️ Simple au quotidien**
