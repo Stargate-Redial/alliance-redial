@@ -82,6 +82,9 @@ A few highlights (the [CHANGELOG](CHANGELOG.md) has the full list):
 - Each chapter's mission briefing (location, local time, objective) is shown in Chapter Selection.
 - Loading screens use the game's own loading art, as Perception's PC version did, instead of the Xbox controller
   picture.
+- Characters move as in 2005 again: each weapon's own torso pose, idle gestures, crouching on bent legs, jumps and
+  landings, also for other players online. Characters no longer slide upright before they start walking.
+- The squad's Hold Position (H) and Follow Me (G) orders, finished in 2005 but never given a key, have keys now.
 
 **🖥️ Made for PC**
 - Mouse and keyboard, or an Xbox controller with the original 2005 layout.
@@ -95,6 +98,9 @@ A few highlights (the [CHANGELOG](CHANGELOG.md) has the full list):
   lights and consoles, windows shatter again, and an optional depth of field blurs the scenery around your scope's
   target.
 - The weapon panel shows the clip and the reserve (e.g. 30 / 250), and characters no longer sink into some floors.
+- Fixes for 2005 placeholders: no stray arms around the C4 in first person, a grey ribbon device icon instead of the
+  violet one, real models for the ribbon device, frag grenade and C4 instead of a P90, and every campaign P90 now has
+  the torch (L).
 - Menus made easier: readable drop-down lists, a restart prompt for settings that need one, and a chapter list where
   one click shows the briefing and Start launches the mission.
 - Pausing also pauses dialogue and music, and the campaign's one-weapon-per-slot rule works again.
@@ -111,6 +117,14 @@ A few highlights (the [CHANGELOG](CHANGELOG.md) has the full list):
   one hit killed a player). The shock grenade no longer hits your own team or through walls. Knock-backs no longer
   make you jump on your own screen online, and the cloak works online for every player, not only for the host.
 - A quick voice menu (V) with each character's own 2005 voice, and text chat that servers can relay to Discord.
+- You respawn with your pack's main weapon in hand and every pack weapon listed at once. Other players' bullet
+  tracers reach your screen, the shock grenade's flash no longer floods rooms through walls, every character holds
+  its weapon (the Tok'ra included), and Team Deathmatch names show their team colour.
+- Online you now see other players flinch when hit and fly back, land and get up after a Zat knock-back, as the
+  2005 game showed only on the server.
+- Last Man Standing: bots come looking for you (but never all at once), a player joining a bots-only round restarts
+  it, and a round ends as soon as one player is left. Bots wait for Langara's trains, and the missile launcher riding
+  the train now rides it for everyone.
 
 **⚙️ Easy to live with**
 - One-click automatic updates, with your settings and saves kept.
@@ -317,6 +331,11 @@ Quelques points forts (le [CHANGELOG](CHANGELOG.md), en anglais, donne la liste 
 - Le briefing de chaque chapitre (lieu, heure locale, objectif) s'affiche dans la sélection de chapitre.
 - Les écrans de chargement utilisent l'image de chargement du jeu, comme la version PC de Perception, au lieu du
   schéma de la manette Xbox.
+- Les personnages bougent de nouveau comme en 2005 : la pose du torse propre à chaque arme, les gestes d'attente,
+  l'accroupi sur les jambes, les sauts et les réceptions, aussi pour les autres joueurs en ligne. Les personnages ne
+  glissent plus debout avant de se mettre à marcher.
+- Les ordres Tenir la position (H) et Suivre (G), terminés en 2005 mais jamais reliés à une touche, ont maintenant
+  leurs touches.
 
 **🖥️ Pensé pour le PC**
 - Souris et clavier, ou manette Xbox avec la disposition d'origine de 2005.
@@ -331,6 +350,9 @@ Quelques points forts (le [CHANGELOG](CHANGELOG.md), en anglais, donne la liste 
   le décor autour de la cible de votre lunette.
 - Le panneau d'arme affiche le chargeur et la réserve (par exemple 30 / 250), et les personnages ne s'enfoncent plus
   dans certains sols.
+- Des éléments provisoires de 2005 corrigés : plus de bras en trop autour du C4 en vue subjective, une icône grise
+  pour le ruban au lieu du violet, de vrais modèles pour le ruban, la grenade et le C4 au lieu d'un P90, et la lampe
+  (L) sur tous les P90 de la campagne.
 - Des menus plus simples : des listes déroulantes lisibles, une proposition de redémarrage pour les réglages qui en ont
   besoin, et une liste des chapitres où un clic affiche le briefing et Start lance la mission.
 - La pause arrête aussi les dialogues et la musique, et la règle d'une arme par emplacement de la campagne fonctionne de
@@ -349,6 +371,15 @@ Quelques points forts (le [CHANGELOG](CHANGELOG.md), en anglais, donne la liste 
   ligne, les projections ne vous font plus sauter à l'écran, et l'invisibilité marche pour tous les joueurs, pas
   seulement pour l'hôte.
 - Un menu vocal rapide (V) avec la voix d'origine de 2005 de chaque personnage, et un chat texte que les serveurs peuvent relayer vers Discord.
+- Vous réapparaissez avec l'arme principale de votre pack en main et toutes ses armes listées d'emblée. Les traçantes
+  des autres joueurs arrivent sur votre écran, le flash de la grenade à choc n'inonde plus les pièces à travers les
+  murs, chaque personnage tient son arme (Tok'ra compris), et les noms du Team Deathmatch ont la couleur de leur
+  équipe.
+- En ligne, vous voyez maintenant les autres joueurs réagir quand ils sont touchés, et être projetés, retomber et
+  se relever après un coup de Zat, ce que le jeu de 2005 ne montrait que sur le serveur.
+- Last Man Standing : les bots viennent vous chercher (mais jamais tous à la fois), un joueur qui rejoint une manche
+  de bots la relance, et une manche s'arrête dès qu'il ne reste qu'un joueur. Les bots attendent le passage des
+  trains de Langara, et le lance-missiles posé sur le train roule maintenant avec lui pour tout le monde.
 
 **⚙️ Simple au quotidien**
 - Mises à jour automatiques en un clic, avec vos réglages et vos sauvegardes conservés.
