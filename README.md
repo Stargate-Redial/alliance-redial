@@ -195,6 +195,8 @@ Open an [issue](https://github.com/Stargate-Redial/alliance-redial/issues) or as
 - **Cut story archive**: a menu to listen to the story pieces that the 2005 build holds but never plays: the
   interludes between missions (about 380 voice recordings), the audio briefings, the finale with Oma, Haaken and
   Thor, the epilogue and other unused lines, in story order, so the whole story can be followed.
+- **Achievements**: a list of achievements to unlock, in the campaign (missions, difficulty levels, secrets) and in
+  multiplayer, kept on the player's PC.
 
 ## 🙏 Thanks
 
@@ -441,6 +443,8 @@ joignez `<UT2004>\System\UT2004.log` (voir [Signaler un problème](docs/GUIDE.md
   mais ne joue jamais : les interludes entre les missions (environ 380 enregistrements de voix), les briefings
   audio, la fin avec Oma, Haaken et Thor, l'épilogue et d'autres répliques inutilisées, dans l'ordre de
   l'histoire, pour pouvoir suivre le récit en entier.
+- **Succès** : une liste de succès à débloquer, dans la campagne (missions, niveaux de difficulté, secrets) et en
+  multijoueur, enregistrés sur le PC du joueur.
 
 ### 🙏 Remerciements
 
