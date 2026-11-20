@@ -177,6 +177,10 @@ Open an [issue](https://github.com/Stargate-Redial/alliance-redial/issues) or as
   how far they can take us.
 - **Kull disruptor in multiplayer**: the 2005 build has the Kull disruptor (Disruptor MKI) in the single-player
   campaign only. We would like to try it in multiplayer on the Tau'ri / Tok'ra side, if it fits the balance.
+- **Community maps**: a "Stargate Redial map editor" shortcut that opens UnrealEd, the editor that comes with
+  UT2004, with the mod loaded, plus a short guide for mappers (what to place in a multiplayer map, how to share it).
+  The game's textures, models and sounds are already on every player's PC, so a community map is shared as a
+  single file, with no game asset inside.
 
 ## 🙏 Thanks
 
@@ -401,6 +405,10 @@ joignez `<UT2004>\System\UT2004.log` (voir [Signaler un problème](docs/GUIDE.md
 - **Disrupteur Kull en multijoueur** : dans la version de 2005, le disrupteur Kull (Disruptor MKI) n'existe que
   dans la campagne solo. Nous aimerions l'essayer en multijoueur, côté Tau'ri / Tok'ra, s'il trouve sa place dans
   l'équilibrage.
+- **Maps de la communauté** : un raccourci « éditeur de maps Stargate Redial » qui ouvre UnrealEd, l'éditeur
+  fourni avec UT2004, avec le mod chargé, et un petit guide pour les mappeurs (quoi placer dans une map
+  multijoueur, comment la partager). Les textures, modèles et sons du jeu sont déjà sur le PC de chaque joueur :
+  une map de la communauté se partage donc en un seul fichier, sans aucun élément du jeu dedans.
 
 ### 🙏 Remerciements
 
