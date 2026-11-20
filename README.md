@@ -29,6 +29,13 @@ fan project by the [Stargate Database](https://stargatedatabase.link/en/) team. 
   <sub>Some scenes may differ from the December 2005 build.</sub>
 </p>
 
+### 🎙️ The story behind the game
+
+In August 2025, *Dial the Gate* (episode 349) welcomed **Ben Lenzo**, CEO of Perception at the time, to talk about
+The Alliance: the deal with MGM, the story he wrote, the new Haaken enemy, each team member's abilities, the planned
+four-player co-op, and what happened to the game, with nearly half an hour of game footage.
+▶ **[Watch the interview on YouTube](https://www.youtube.com/watch?v=raCHv9FzVNU)** (about 2 h 8 min, in English).
+
 ## 🛸 About this prototype
 
 This is an **unfinished game**: a December 2005 Xbox prototype that was never completed or released. We restore
@@ -67,9 +74,11 @@ A few highlights (the [CHANGELOG](CHANGELOG.md) has the full list):
 - Mouse and keyboard, or an Xbox controller with the original 2005 layout.
 - Any resolution up to 4K, widescreen field of view, and quick save (F5) and quick load (F9).
 - Menus that work with a mouse click, with real buttons on every page, and graphics at their highest by default.
-- Better graphics than 2005: Direct3D 11 with 4x anti-aliasing and bloom by default (with an automatic fallback to
-  Direct3D 9), sharper character and vehicle shadows, smoother skies, a fixed and cleaner bloom, and the electric arcs
-  of the Zat'nik'tel and the Kull disruptor back on screen.
+- Better graphics than 2005: sharper character and vehicle shadows, smoother skies, a fixed and cleaner bloom, the
+  electric arcs of the Zat'nik'tel and the Kull disruptor back on screen, and scenery that no longer blinks in and out.
+  Direct3D 9 is the default; Direct3D 11 is offered as an experimental option with anti-aliasing.
+- Menus made easier: readable drop-down lists, a restart prompt for settings that need one, and a chapter list where
+  one click shows the briefing and Start launches the mission.
 - Pausing also pauses dialogue and music, and the campaign's one-weapon-per-slot rule works again.
 - Its own name and icon in the Windows taskbar, with desktop and Start menu shortcuts.
 
@@ -212,6 +221,14 @@ d'**Unreal Tournament 2004** avec le patch OldUnreal. Un projet de fans
   <sub>Certaines scènes peuvent différer de la version de décembre 2005.</sub>
 </p>
 
+#### 🎙️ Les coulisses du jeu
+
+En août 2025, *Dial the Gate* (épisode 349) a reçu **Ben Lenzo**, PDG de Perception à l'époque, pour parler de
+The Alliance : l'accord avec la MGM, l'histoire qu'il avait écrite, le nouvel ennemi Haaken, les capacités de chaque
+membre de l'équipe, la coopération à quatre joueurs prévue, et ce qu'il est advenu du jeu, avec près d'une demi-heure
+d'images du jeu.
+▶ **[Voir l'interview sur YouTube](https://www.youtube.com/watch?v=raCHv9FzVNU)** (environ 2 h 08, en anglais).
+
 ### 🛸 À propos de ce prototype
 
 C'est un **jeu inachevé** : un prototype Xbox de décembre 2005, jamais terminé ni publié. Nous restaurons et
@@ -254,9 +271,11 @@ Quelques points forts (le [CHANGELOG](CHANGELOG.md), en anglais, donne la liste 
 - Souris et clavier, ou manette Xbox avec la disposition d'origine de 2005.
 - Toutes les résolutions jusqu'à la 4K, champ de vision adapté au grand écran, sauvegarde rapide (F5) et chargement rapide (F9).
 - Des menus utilisables à la souris, avec de vrais boutons sur chaque page, et des graphismes au maximum par défaut.
-- De meilleurs graphismes qu'en 2005 : Direct3D 11 avec anticrénelage 4x et bloom par défaut (avec un repli automatique
-  sur Direct3D 9), des ombres de personnages et de véhicules plus nettes, des ciels plus lisses, un bloom corrigé et plus
-  propre, et le retour des arcs électriques du Zat'nik'tel et du disrupteur Kull.
+- De meilleurs graphismes qu'en 2005 : des ombres de personnages et de véhicules plus nettes, des ciels plus lisses, un
+  bloom corrigé et plus propre, le retour des arcs électriques du Zat'nik'tel et du disrupteur Kull, et un décor qui ne
+  clignote plus. Direct3D 9 est le moteur par défaut ; Direct3D 11 est proposé en option expérimentale, avec anticrénelage.
+- Des menus plus simples : des listes déroulantes lisibles, une proposition de redémarrage pour les réglages qui en ont
+  besoin, et une liste des chapitres où un clic affiche le briefing et Start lance la mission.
 - La pause arrête aussi les dialogues et la musique, et la règle d'une arme par emplacement de la campagne fonctionne de
   nouveau.
 - Son propre nom et sa propre icône dans la barre des tâches, avec des raccourcis sur le bureau et dans le menu Démarrer.
