@@ -181,6 +181,9 @@ Open an [issue](https://github.com/Stargate-Redial/alliance-redial/issues) or as
   UT2004, with the mod loaded, plus a short guide for mappers (what to place in a multiplayer map, how to share it).
   The game's textures, models and sounds are already on every player's PC, so a community map is shared as a
   single file, with no game asset inside.
+- **Cut story archive**: a menu to listen to the story pieces that the 2005 build holds but never plays: the
+  interludes between missions (about 380 voice recordings), the audio briefings, the finale with Oma, Haaken and
+  Thor, the epilogue and other unused lines, in story order, so the whole story can be followed.
 
 ## 🙏 Thanks
 
@@ -409,6 +412,10 @@ joignez `<UT2004>\System\UT2004.log` (voir [Signaler un problème](docs/GUIDE.md
   fourni avec UT2004, avec le mod chargé, et un petit guide pour les mappeurs (quoi placer dans une map
   multijoueur, comment la partager). Les textures, modèles et sons du jeu sont déjà sur le PC de chaque joueur :
   une map de la communauté se partage donc en un seul fichier, sans aucun élément du jeu dedans.
+- **Archives de l'histoire coupée** : un menu pour écouter les morceaux d'histoire que la version de 2005 contient
+  mais ne joue jamais : les interludes entre les missions (environ 380 enregistrements de voix), les briefings
+  audio, la fin avec Oma, Haaken et Thor, l'épilogue et d'autres répliques inutilisées, dans l'ordre de
+  l'histoire, pour pouvoir suivre le récit en entier.
 
 ### 🙏 Remerciements
 
