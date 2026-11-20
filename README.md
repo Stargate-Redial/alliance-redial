@@ -90,6 +90,11 @@ A few highlights (the [CHANGELOG](CHANGELOG.md) has the full list):
 - Better graphics than 2005: sharper character and vehicle shadows, smoother skies, a fixed and cleaner bloom, the
   electric arcs of the Zat'nik'tel and the Kull disruptor back on screen, and scenery that no longer blinks in and out.
   Direct3D 9 is the default; Direct3D 11 is offered as an experimental option with anti-aliasing.
+- Real-time shadows the 2005 build never had: trees, rocks, statues, walls and other outdoor scenery now cast their
+  shape on the ground, and every character has a shadow. The emissive glow the Xbox switched off is back on the
+  lights and consoles, windows shatter again, and an optional depth of field blurs the scenery around your scope's
+  target.
+- The weapon panel shows the clip and the reserve (e.g. 30 / 250), and characters no longer sink into some floors.
 - Menus made easier: readable drop-down lists, a restart prompt for settings that need one, and a chapter list where
   one click shows the briefing and Start launches the mission.
 - Pausing also pauses dialogue and music, and the campaign's one-weapon-per-slot rule works again.
@@ -300,6 +305,12 @@ Quelques points forts (le [CHANGELOG](CHANGELOG.md), en anglais, donne la liste 
 - De meilleurs graphismes qu'en 2005 : des ombres de personnages et de véhicules plus nettes, des ciels plus lisses, un
   bloom corrigé et plus propre, le retour des arcs électriques du Zat'nik'tel et du disrupteur Kull, et un décor qui ne
   clignote plus. Direct3D 9 est le moteur par défaut ; Direct3D 11 est proposé en option expérimentale, avec anticrénelage.
+- Des ombres en temps réel que la version de 2005 n'avait pas : les arbres, rochers, statues, murs et autres éléments
+  du décor extérieur projettent leur forme au sol, et chaque personnage a son ombre. La lueur émissive coupée sur Xbox
+  revient sur les lumières et les consoles, les vitres éclatent de nouveau, et une profondeur de champ en option floute
+  le décor autour de la cible de votre lunette.
+- Le panneau d'arme affiche le chargeur et la réserve (par exemple 30 / 250), et les personnages ne s'enfoncent plus
+  dans certains sols.
 - Des menus plus simples : des listes déroulantes lisibles, une proposition de redémarrage pour les réglages qui en ont
   besoin, et une liste des chapitres où un clic affiche le briefing et Start lance la mission.
 - La pause arrête aussi les dialogues et la musique, et la règle d'une arme par emplacement de la campagne fonctionne de
