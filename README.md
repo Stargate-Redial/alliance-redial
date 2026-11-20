@@ -46,13 +46,26 @@ and fix what exists and add nothing new.
   sessions directed by the series' Peter DeLuise. The SGC is there too: even Walter is a playable character in
   multiplayer.
 - **Stargate action:** give orders to your squad, drive vehicles, and dial the Stargates on the multiplayer maps.
-- **Playable:** the solo campaign (the tutorial and missions 2, 4, 7, 10 and 12 to 21) and
-  multiplayer (DeathMatch, Team DeathMatch, Capture the Flag and Last Man Standing, on ten maps).
+- **Playable:** the solo campaign, from your training at Cheyenne Mountain to the final battle:
+  - a jungle at night, on the trail of the first piece of the artifact;
+  - the rescue of SG-2 on P8J-331;
+  - an ancient city and its catacombs, following the Reetou's lead;
+  - Langara under attack by Anubis, from the wetlands to the mines;
+  - Anubis' shipyard in the Lamoora system;
+  - the Tok'ra base on P7C-103, before Anubis strikes;
+  - the search for Grey, in the crystal forest where Oma Desala appears;
+  - the moon base on P4J-549;
+  - the evacuation of the Beta Site;
+  - Stargate Command overrun by Anubis' Jaffa and Super Soldiers;
+  - the assault on Tartarus, Anubis' fortress;
+  - and the Haaken mothership.
+
+  And multiplayer: DeathMatch, Team DeathMatch, Capture the Flag and Last Man Standing, on ten maps.
 - **Expect flaws:** some surfaces are plain white or grey where the 2005 data has no texture; a few sounds and HUD
   icons are missing; mouths move only in some dialogues; some features were never built
   (co-op, split-screen, the *Extras* page) and are hidden; Capture the Flag with bots is rough.
-- **The story may not make full sense:** missions 1, 3, 5, 6, 8, 9 and 11 are not in the build (the first one,
-  *Replicator Attack*, was cut), so the story jumps between missions, and some recorded scenes are never played.
+- **The story may not make full sense:** seven missions are not in the build (the first one, *Replicator Attack*
+  aboard Thor's ship, was cut), so the story jumps between missions, and some recorded scenes are never played.
 
 See [KNOWN_ISSUES.md](docs/KNOWN_ISSUES.md) and the [CHANGELOG](CHANGELOG.md).
 
@@ -240,14 +253,27 @@ corrigeons l'existant, sans rien ajouter de nouveau.
   personnage jouable en multijoueur.
 - **L'action Stargate :** donnez des ordres à votre escouade, pilotez des véhicules et composez l'adresse des
   portes des étoiles sur les cartes multijoueur.
-- **Jouable :** la campagne solo (le tutoriel et les missions 2, 4, 7, 10 et 12 à 21) et le
-  multijoueur (DeathMatch, Team DeathMatch, Capture du drapeau et Last Man Standing, sur dix cartes).
+- **Jouable :** la campagne solo, de votre entraînement à Cheyenne Mountain jusqu'à la bataille finale :
+  - une jungle de nuit, sur la piste du premier fragment de l'artefact ;
+  - le sauvetage de SG-2 sur P8J-331 ;
+  - une cité antique et ses catacombes, sur une piste donnée par les Reetou ;
+  - Langara attaquée par Anubis, des marais jusqu'aux mines ;
+  - le chantier naval d'Anubis dans le système de Lamoora ;
+  - la base Tok'ra de P7C-103, avant l'attaque d'Anubis ;
+  - la recherche de Grey, dans la forêt de cristaux où apparaît Oma Desala ;
+  - la base lunaire de P4J-549 ;
+  - l'évacuation du site Bêta ;
+  - le SGC envahi par les Jaffa et les Super Soldats d'Anubis ;
+  - l'assaut de Tartarus, la forteresse d'Anubis ;
+  - et le vaisseau-mère des Haakens.
+
+  Et le multijoueur : DeathMatch, Team DeathMatch, Capture du drapeau et Last Man Standing, sur dix cartes.
 - **Attendez-vous à des défauts :** certaines surfaces sont blanches ou grises faute de texture dans les données de
   2005 ; quelques sons et icônes d'interface manquent ; les bouches ne bougent que dans certains dialogues ;
   certaines fonctions n'ont jamais été faites (coop, écran partagé, la page *Extras*) et sont masquées ; la Capture du drapeau
   avec bots est rudimentaire.
-- **L'histoire peut manquer de cohérence :** les missions 1, 3, 5, 6, 8, 9 et 11 ne sont pas dans la version (la
-  première, *Replicator Attack*, a été coupée) : l'histoire saute d'une mission à l'autre, et certaines scènes
+- **L'histoire peut manquer de cohérence :** sept missions ne sont pas dans la version (la première, *Replicator
+  Attack* à bord du vaisseau de Thor, a été coupée) : l'histoire saute d'une mission à l'autre, et certaines scènes
   enregistrées ne sont jamais jouées.
 
 Voir [KNOWN_ISSUES.md](docs/KNOWN_ISSUES.md#français) et le [CHANGELOG](CHANGELOG.md) (en anglais).
