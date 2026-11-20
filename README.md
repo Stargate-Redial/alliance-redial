@@ -172,11 +172,17 @@ Open an [issue](https://github.com/Stargate-Redial/alliance-redial/issues) or as
 - **Replicators**: the 2005 build still holds unused Replicator code and models (the spider-like Replicator, the
   Queen, a playable Replicator with its own HUD) from a cut mission. We will see whether they can be brought
   back to life.
+- **Reetou**: the 2005 build also holds the code of hostile Reetou, invisible enemies that only the TER can hurt,
+  and the sets, sounds and music of a cut mission, "Reetou Infiltration". The Reetou you meet in the campaign
+  are allies. We will see whether the hostile ones can be brought back to life too.
 - **Co-op campaign**: play the story missions with friends online. The 2005 build still holds traces of a
   co-op mode (a lobby screen, a split co-op mode with two squads, objects reserved for co-op games). We will see
   how far they can take us.
 - **Kull disruptor in multiplayer**: the 2005 build has the Kull disruptor (Disruptor MKI) in the single-player
   campaign only. We would like to try it in multiplayer on the Tau'ri / Tok'ra side, if it fits the balance.
+- **TER in multiplayer**: the TER (Transphase Eradication Rod) is a complete weapon in the 2005 code, but no map
+  gives it. It was tuned to kill invisible Reetou in one shot, five shots a second, so it would need a real
+  rebalance before joining a multiplayer pack.
 - **Community maps**: a "Stargate Redial map editor" shortcut that opens UnrealEd, the editor that comes with
   UT2004, with the mod loaded, plus a short guide for mappers (what to place in a multiplayer map, how to share it).
   The game's textures, models and sounds are already on every player's PC, so a community map is shared as a
@@ -402,12 +408,19 @@ joignez `<UT2004>\System\UT2004.log` (voir [Signaler un problème](docs/GUIDE.md
 - **Réplicateurs** : la version de 2005 contient encore du code et des modèles de Réplicateurs inutilisés (le
   Réplicateur araignée, la reine, un Réplicateur jouable avec son propre HUD), issus d'une mission coupée. Nous
   regarderons s'il est possible de leur redonner vie.
+- **Reetou** : la version de 2005 contient aussi le code des Reetou hostiles, des ennemis invisibles que seul le TER
+  peut blesser, ainsi que les décors, les sons et la musique d'une mission coupée, « Reetou Infiltration ». Les
+  Reetou que l'on croise dans la campagne sont des alliés. Nous regarderons si les hostiles peuvent eux aussi
+  reprendre vie.
 - **Campagne en coopération** : jouer les missions de l'histoire à plusieurs, en ligne. La version de 2005
   contient encore des traces d'un mode coopératif (un écran d'attente des joueurs, un mode coop à deux escouades,
   des objets réservés aux parties coop). Nous verrons jusqu'où elles peuvent nous mener.
 - **Disrupteur Kull en multijoueur** : dans la version de 2005, le disrupteur Kull (Disruptor MKI) n'existe que
   dans la campagne solo. Nous aimerions l'essayer en multijoueur, côté Tau'ri / Tok'ra, s'il trouve sa place dans
   l'équilibrage.
+- **TER en multijoueur** : le TER (Transphase Eradication Rod) est une arme complète dans le code de 2005, mais
+  aucune map ne la donne. Il a été réglé pour tuer des Reetou invisibles d'un seul tir, cinq tirs par seconde :
+  il faudrait un vrai rééquilibrage avant de l'ajouter à un pack multijoueur.
 - **Maps de la communauté** : un raccourci « éditeur de maps Stargate Redial » qui ouvre UnrealEd, l'éditeur
   fourni avec UT2004, avec le mod chargé, et un petit guide pour les mappeurs (quoi placer dans une map
   multijoueur, comment la partager). Les textures, modèles et sons du jeu sont déjà sur le PC de chaque joueur :
