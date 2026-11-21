@@ -125,6 +125,10 @@ A few highlights (the [CHANGELOG](CHANGELOG.md) has the full list):
 - Last Man Standing: bots come looking for you (but never all at once), a player joining a bots-only round restarts
   it, and a round ends as soon as one player is left. Bots wait for Langara's trains, and the missile launcher riding
   the train now rides it for everyone.
+- Smarter bots in every mode: they no longer jump off the Kelownan train into the void, no longer blow themselves
+  up with a grenade thrown at a nearby wall or a charged staff blast at point-blank range, charge an enemy out of
+  reach instead of sniping across Ha'tak's decks, no longer chase each other through the rings, and no longer dodge
+  a grenade onto Langara's tracks in front of a train.
 
 **⚙️ Easy to live with**
 - One-click automatic updates, with your settings and saves kept.
@@ -380,6 +384,10 @@ Quelques points forts (le [CHANGELOG](CHANGELOG.md), en anglais, donne la liste 
 - Last Man Standing : les bots viennent vous chercher (mais jamais tous à la fois), un joueur qui rejoint une manche
   de bots la relance, et une manche s'arrête dès qu'il ne reste qu'un joueur. Les bots attendent le passage des
   trains de Langara, et le lance-missiles posé sur le train roule maintenant avec lui pour tout le monde.
+- Des bots plus malins dans tous les modes : ils ne sautent plus dans le vide depuis le train kelownien, ne se font
+  plus sauter avec une grenade lancée contre un mur tout proche ou une décharge de lance à bout portant, foncent sur
+  un ennemi hors de portée au lieu de le canarder d'un pont à l'autre du Ha'tak, ne se poursuivent plus à travers les
+  anneaux, et n'esquivent plus une grenade en se jetant sur la voie de Langara devant un train.
 
 **⚙️ Simple au quotidien**
 - Mises à jour automatiques en un clic, avec vos réglages et vos sauvegardes conservés.
