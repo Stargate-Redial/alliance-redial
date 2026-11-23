@@ -132,7 +132,10 @@ mod, so the installer copies these there: `Tweak_*.ini` (the game's tuning value
 `SGAMusic.ini`, `SGSpeechData.ini`, `SGLipSyncData.ini`, `SGMeshMaterials.ini` and `SGChapterBriefings.ini`. The
 game itself later writes
 `SGSpeech.ini` (settings) and `SGASaves.ini`, `PlayerProfile.ini`, `Stats.ini` (saves, settings, statistics)
-there. No UT2004 file is replaced. Every file the installer wrote, in the mod folder and in
+there. After each install or update the installer also has UT2004's own tool write the game's map list for the
+mod's maps there (`SGA-*.ucl`, one per map: the files the game would otherwise write at its first start, which made
+that start take minutes); uninstalling removes them. No UT2004 file is replaced. Every file the installer wrote, in
+the mod folder and in
 `<UT2004>\System`, is listed with its SHA-256 in `SGAlliance\.redial\manifest.json` (the ones in
 `<UT2004>\System` also in `SGAlliance\installed-outside-mod.txt`). With the update check (the default),
 `SGAlliance\Launcher` holds a copy of the installer program (about 40 MB) that the Play shortcut starts.
@@ -204,7 +207,9 @@ settings and statistics* only if you want that. From a command prompt: `app\tool
 
 1. Start **Stargate Redial - The Alliance**. The game opens in full screen at your desktop resolution, shows
    the original logo screen, then the main menu over a Stargate scene. The main menu shows "Stargate Redial
-   V0.1" in its bottom-right corner.
+   V0.1" in its bottom-right corner. The installer has already prepared the map list of the mod; if UT2004 itself
+   was never started before, its first start still lists UT2004's own maps once, so the logo screen stays a little
+   longer that one time.
 2. **Nothing to set up.** The game keeps your saves, progress, difficulty, volumes, keys, mouse settings and
    multiplayer name, outfit and packs by itself; there is no profile to create or choose. (An install that already
    had profiles keeps using the one played last; the others stay on disk.)
@@ -530,7 +535,7 @@ attack the enemy flag, defend their base, bring their flag back and escort their
 | "UT2004 was not found" | Click *Browse…* on the *UT2004 folder* step and choose the folder that holds `System\UT2004.exe`. No UT2004 yet: the window links to OldUnreal's full-game installers, then to the patch. |
 | The `.7z` is not found, "not the archive.org release", "SHA-256 mismatch" | Download the archive again from archive.org: the file must be exactly 1,015,500,550 bytes. Do not repack it. |
 | "the release files do not match the 2005-12-15 release" | Your extracted folder was changed or is incomplete: give the installer the `.7z` instead. |
-| "close … first" | Quit the game (and anything using UT2004's files), then run the installer again. |
+| "close … first" | Quit the game, UCC or UnrealEd started from the UT2004 folder the message names, then run the installer again. Copies running from other folders do not count. |
 | "not enough space" | Free some space, or choose another work folder under *More options* (`--workdir <folder>` on the command line). |
 | "could not fetch a third-party program" | Check the Internet connection or firewall. |
 | "Access is denied" or a permission error | UT2004 is in a protected folder (such as Program Files): install UT2004 in a folder your user can write to. |
@@ -728,7 +733,10 @@ même pour un mod ; l'installeur y copie donc `Tweak_*.ini` (les valeurs de rég
 fichiers), `SGAMusic.ini`, `SGSpeechData.ini`, `SGLipSyncData.ini`, `SGMeshMaterials.ini` et
 `SGChapterBriefings.ini`. Le jeu y écrit
 ensuite lui-même `SGSpeech.ini` (réglages) et `SGASaves.ini`, `PlayerProfile.ini`, `Stats.ini` (sauvegardes,
-réglages, statistiques). Aucun fichier d'UT2004 n'est remplacé. Chaque fichier écrit par l'installeur, dans le
+réglages, statistiques). Après chaque installation ou mise à jour, l'installeur y fait aussi écrire par l'outil
+d'UT2004 la liste des cartes du mod (`SGA-*.ucl`, un par carte : les fichiers que le jeu écrirait sinon à son
+premier lancement, qui prenait alors plusieurs minutes) ; la désinstallation les supprime. Aucun fichier d'UT2004
+n'est remplacé. Chaque fichier écrit par l'installeur, dans le
 dossier du mod et dans `<UT2004>\System`, est listé avec son SHA-256 dans `SGAlliance\.redial\manifest.json` (ceux
 de `<UT2004>\System` aussi dans `SGAlliance\installed-outside-mod.txt`). Avec la vérification des mises à jour
 (par défaut), `SGAlliance\Launcher` contient une copie du programme de l'installeur (environ 40 Mo), que le
@@ -810,7 +818,9 @@ commandes : `app\tools\sgredial.exe --uninstall` (ajoutez `--dry-run` pour voir 
 
 1. Lancez **Stargate Redial - The Alliance**. Le jeu s'ouvre en plein écran à la résolution du bureau, affiche
    l'écran des logos d'origine, puis le menu principal devant une scène de la Porte des étoiles. Le menu
-   principal affiche « Stargate Redial V0.1 » dans son coin en bas à droite.
+   principal affiche « Stargate Redial V0.1 » dans son coin en bas à droite. L'installeur a déjà préparé la liste
+   des cartes du mod ; si UT2004 lui-même n'a jamais été lancé, son premier lancement liste encore une fois ses
+   propres cartes, et l'écran des logos reste alors un peu plus longtemps.
 2. **Rien à configurer.** Le jeu garde lui-même vos sauvegardes, votre progression, la difficulté, les volumes, les
    touches, les réglages de souris et vos nom, tenue et paquetages en multijoueur ; il n'y a aucun profil à créer ni
    à choisir. (Une installation qui avait déjà des profils continue avec le dernier utilisé ; les autres restent sur
@@ -1160,7 +1170,7 @@ escortent leur porteur.
 | « UT2004 est introuvable » | À l'étape *Dossier UT2004*, cliquez sur *Parcourir…* et choisissez le dossier qui contient `System\UT2004.exe`. Pas encore UT2004 : la fenêtre renvoie vers les installeurs complets d'OldUnreal, puis vers le patch. |
 | Le `.7z` est introuvable, « not the archive.org release », « SHA-256 mismatch » | Retéléchargez l'archive sur archive.org : le fichier doit faire exactement 1 015 500 550 octets. Ne la recompressez pas. |
 | « the release files do not match the 2005-12-15 release » | Votre dossier décompressé a été modifié ou est incomplet : donnez plutôt le `.7z` à l'installeur. |
-| « close … first » | Quittez le jeu (et tout ce qui utilise les fichiers d'UT2004), puis relancez l'installeur. |
+| « close … first » | Quittez le jeu, UCC ou UnrealEd lancés depuis le dossier UT2004 que le message indique, puis relancez l'installeur. Les copies lancées depuis d'autres dossiers ne comptent pas. |
 | « not enough space » | Libérez de la place, ou choisissez un autre dossier de travail sous *Plus d'options* (`--workdir <dossier>` en ligne de commande). |
 | « could not fetch a third-party program » | Vérifiez la connexion Internet ou le pare-feu. |
 | « Accès refusé » ou erreur de permission | UT2004 est dans un dossier protégé (comme Program Files) : installez UT2004 dans un dossier où votre utilisateur peut écrire. |

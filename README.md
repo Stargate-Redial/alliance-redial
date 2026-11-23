@@ -13,7 +13,7 @@
 
 The unreleased *Stargate SG-1: The Alliance* (an Xbox prototype from December 2005), as a native PC port. It runs
 on the **Unreal Tournament 2004** engine with the OldUnreal patch, so you need UT2004 to play. A [Stargate Redial](https://github.com/Stargate-Redial)
-fan project by the [Stargate Database](https://stargatedatabase.link/en/) team. Current release: **V0.1**. Join the community on [Discord](https://discord.gg/SgHPP4mZyB).
+fan project by the [Stargate Database](https://stargatedatabase.link/en/) team. Current release: **V0.1.1**. Join the community on [Discord](https://discord.gg/SgHPP4mZyB).
 
 > Apart from its title picture, no game data is included: the installer rebuilds the game on your PC from your
 > own copy of the 2019 release. Fan project, not affiliated with or endorsed by MGM, Perception, JoWooD,
@@ -105,6 +105,8 @@ A few highlights (the [CHANGELOG](CHANGELOG.md) has the full list):
   landings, also for other players online. Characters no longer slide upright before they start walking.
 - Characters standing still no longer make footstep noises that kept enemies suspicious: in M13C the Jaffa blow
   the crystal wall open after Carter's "Incoming", as in 2005.
+- Mission 10 (the mines) can be finished: the SuperSoldier follows Teal'c onto the bait ledge instead of standing
+  still after the dialogue.
 - The squad's Hold Position (H) and Follow Me (G) orders, finished in 2005 but never given a key, have keys now.
 
 **🖥️ Made for PC**
@@ -136,16 +138,19 @@ A few highlights (the [CHANGELOG](CHANGELOG.md) has the full list):
   device hits count on them too.
 - A weapon pack per side, and a *Change Character* option in game.
 - The Zat'nik'tel and the shock grenade need two hits to kill in multiplayer: the first one slows you to half speed
-  for 5 seconds, but you can still fire, and a second hit within that time kills (in 2005 one hit killed a player).
-  The shock grenade no longer hits your own team or through walls. Knock-backs no longer make you jump on your own
-  screen online, and the cloak works online for every player, not only for the host.
+  for 5 seconds, but you can still fire, and a second hit within that time kills (in 2005 one Zat hit killed). The
+  ribbon device slows you the same way instead of throwing you back, and a charged personal shield protects you from
+  the slow. Nothing knocks you down in multiplayer any more: grenades, C4, the Stinger and staff strikes only do
+  their damage (blasts still push you as in UT2004, but you keep control). The shock grenade no longer hits your own
+  team or through walls, and the cloak works online for every player, not only for the host.
 - A quick voice menu (V) with each character's own 2005 voice, and text chat that servers can relay to Discord.
 - You respawn with your pack's main weapon in hand and every pack weapon listed at once. Other players' bullet
   tracers reach your screen, the shock grenade's flash no longer floods rooms through walls, every character holds
   its weapon (the Tok'ra included), and Team Deathmatch names show their team colour.
 - The Assault pack's P90 now shows in your hands online, with its tracers.
-- Online you now see other players flinch when hit and fly back, land and get up after a knock-back, as the 2005
-  game showed only on the server.
+- Online, the weapon menu lists every weapon you carry after a respawn (the Zat could be missing), and the staff
+  weapon's charge % goes back to 0 after each shot.
+- Online you now see other players flinch when hit, as the 2005 game showed only on the server.
 - Last Man Standing: bots come looking for you (but never all at once), a player joining a bots-only round restarts
   it, and a round ends as soon as one player is left. Bots wait for Langara's trains, and the missile launcher riding
   the train now rides it for everyone.
@@ -159,6 +164,8 @@ A few highlights (the [CHANGELOG](CHANGELOG.md) has the full list):
 - Your solo progress at a glance: a percentage in the Single Player menu, a tick on every chapter you finished,
   and Chapter Selection opens on the one you are at.
 - *Continue* in the Single Player menu too, and no profile to manage: the game makes one for you.
+- A quicker first launch: the installer prepares the game's map list itself, so the game no longer builds it on the
+  logo screen. A UT2004 started from another folder no longer blocks the install.
 
 ---
 
@@ -266,7 +273,7 @@ Made by the **Stargate Database team** · [stargatedatabase.link](https://starga
 
 Le prototype inédit *Stargate SG-1: The Alliance* (version Xbox de décembre 2005), en portage PC natif. Il tourne
 sur le moteur d'**Unreal Tournament 2004** avec le patch OldUnreal : il vous faut donc UT2004 pour jouer. Un projet de fans
-[Stargate Redial](https://github.com/Stargate-Redial) par l'équipe [Stargate Database](https://stargatedatabase.link/fr/). Version actuelle : **V0.1**. Retrouvez la communauté sur
+[Stargate Redial](https://github.com/Stargate-Redial) par l'équipe [Stargate Database](https://stargatedatabase.link/fr/). Version actuelle : **V0.1.1**. Retrouvez la communauté sur
 [Discord](https://discord.gg/SgHPP4mZyB).
 
 > Hormis son image de titre, aucune donnée du jeu n'est incluse : l'installeur reconstruit le jeu sur votre PC à
@@ -366,6 +373,8 @@ Quelques points forts (le [CHANGELOG](CHANGELOG.md), en anglais, donne la liste 
   glissent plus debout avant de se mettre à marcher.
 - Les personnages immobiles ne font plus de bruits de pas qui tenaient les ennemis en alerte : dans M13C, les Jaffas
   font sauter le mur de cristal après le « Incoming » de Carter, comme en 2005.
+- La mission 10 (les mines) peut être terminée : le Super Soldat suit Teal'c sur la corniche servant d'appât au lieu
+  de rester immobile après le dialogue.
 - Les ordres Tenir la position (H) et Suivre (G), terminés en 2005 mais jamais reliés à une touche, ont maintenant
   leurs touches.
 
@@ -402,17 +411,21 @@ Quelques points forts (le [CHANGELOG](CHANGELOG.md), en anglais, donne la liste 
 - Un pack d'armes par camp, et un choix de *Change Character* en cours de partie.
 - Le Zat'nik'tel et la grenade à choc doivent toucher deux fois pour tuer en multijoueur : le premier coup vous
   ralentit de moitié pendant 5 secondes, mais vous pouvez toujours tirer, et un second coup dans ce délai tue (en 2005,
-  un seul coup tuait un joueur). La grenade à choc ne touche plus votre équipe ni à travers les murs. En
-  ligne, les projections ne vous font plus sauter à l'écran, et l'invisibilité marche pour tous les joueurs, pas
-  seulement pour l'hôte.
+  un seul coup de Zat tuait). Le ruban vous ralentit de la même façon au lieu de vous projeter, et un bouclier
+  personnel chargé vous protège du ralentissement. Plus rien ne vous renverse en multijoueur : grenades, C4, Stinger
+  et coups de lance ne font que leurs dégâts (les explosions vous poussent toujours comme dans UT2004, mais vous
+  gardez le contrôle). La grenade à choc ne touche plus votre équipe ni à travers les murs, et l'invisibilité marche
+  en ligne pour tous les joueurs, pas seulement pour l'hôte.
 - Un menu vocal rapide (V) avec la voix d'origine de 2005 de chaque personnage, et un chat texte que les serveurs peuvent relayer vers Discord.
 - Vous réapparaissez avec l'arme principale de votre pack en main et toutes ses armes listées d'emblée. Les traçantes
   des autres joueurs arrivent sur votre écran, le flash de la grenade à choc n'inonde plus les pièces à travers les
   murs, chaque personnage tient son arme (Tok'ra compris), et les noms du Team Deathmatch ont la couleur de leur
   équipe.
 - Le P90 du pack Assault s'affiche maintenant dans vos mains en ligne, avec ses traçantes.
-- En ligne, vous voyez maintenant les autres joueurs réagir quand ils sont touchés, et être projetés, retomber et
-  se relever après une projection, ce que le jeu de 2005 ne montrait que sur le serveur.
+- En ligne, le menu des armes liste toutes vos armes après une réapparition (le Zat pouvait manquer), et le % de
+  charge de la lance Goa'uld revient à 0 après chaque tir.
+- En ligne, vous voyez maintenant les autres joueurs réagir quand ils sont touchés, ce que le jeu de 2005 ne
+  montrait que sur le serveur.
 - Last Man Standing : les bots viennent vous chercher (mais jamais tous à la fois), un joueur qui rejoint une manche
   de bots la relance, et une manche s'arrête dès qu'il ne reste qu'un joueur. Les bots attendent le passage des
   trains de Langara, et le lance-missiles posé sur le train roule maintenant avec lui pour tout le monde.
@@ -426,6 +439,8 @@ Quelques points forts (le [CHANGELOG](CHANGELOG.md), en anglais, donne la liste 
 - Votre progression solo d'un coup d'œil : un pourcentage dans le menu Solo, une coche sur chaque chapitre terminé,
   et la sélection de chapitre qui s'ouvre sur celui où vous en êtes.
 - *Continue* aussi dans le menu Solo, et aucun profil à gérer : le jeu en crée un pour vous.
+- Un premier lancement plus rapide : l'installeur prépare lui-même la liste des cartes du jeu, que le jeu ne
+  construit donc plus sur l'écran du logo. Un UT2004 lancé depuis un autre dossier ne bloque plus l'installation.
 
 ---
 

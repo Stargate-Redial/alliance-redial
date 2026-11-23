@@ -58,6 +58,9 @@ Each entry says why it exists. No game data is in this repository; all fixes are
 - **DM-KelownanTrain** no longer shows a debug "got it..." message to every player during the plane crash.
 - **M19D**: the first Jaffa wave after the second wall now attacks (its two spawners carried a misspelled name the
   level's enemy script never called).
+- **Mission 10 (mines, M10D)**: the SuperSoldier now follows Teal'c onto the bait ledge; it stood still after the
+  dialogue and the level could not be finished (an enemy-tracking flag left set by a scripted state, apparently
+  already in the 2005 build).
 - **M07D**: the third Jaffa wave of the priests' puzzle comes when the team returns to the alcove after deciphering (its
   trigger was never switched on; it now arms together with the alcove trigger next to it).
 - **M02A**: after the intro, Major Gray finishes his animation and walks off instead of standing frozen (he waited for
@@ -198,11 +201,16 @@ Each entry says why it exists. No game data is in this repository; all fixes are
 - **Charge of the Zat gun, ribbon device and staff weapon in network games**: the HUD showed 0 and an empty bar on a
   client; it shows the charge. The 2005 charge itself is kept: about two Zat or ribbon shots on a full charge, full
   again in 6 seconds.
+- **Staff weapon charge in network games**: the HUD's charge percentage goes back to 0 % after each shot, as in
+  single player (online it kept the last charge until the next one). Damage, charge time and blasts are unchanged.
 - **Sniper rifle and binoculars in network games**: after leaving the scope the weapon stayed raised to the eye until
   the next shot, and the scope toggle right after a shot was ignored. With the mouse scope, a right button still held
   when the scope animation ends no longer strikes with the weapon (single player too).
 - **Weapon menu in network games**: each weapon you selected was greyed out a moment later (UT2004 reported it out of
   ammunition), until the mouse wheel and the number keys only opened the menu without switching.
+- **Weapon menu in network games after a respawn**: two weapons of the same slot (the pistol and the Zat gun, the C4
+  and the frag grenade) shared one menu entry, so one of them, often the Zat, could no longer be chosen from the
+  menu while the HUD showed it in hand. Each weapon has its own entry again (single player was not affected).
 - **Mouse wheel in network games with a weapon pack**: the weapons the server gives at spawn reached your game
   after the weapon menu was built, so no weapon was highlighted: the wheel could not leave the first weapon and the
   HUD showed no weapon (the number keys worked). The menu now follows the weapons you really hold (spawn, respawn,
@@ -220,10 +228,6 @@ Each entry says why it exists. No game data is in this repository; all fixes are
   They were the upper arms of the first-person arms, which the 2005 C4 animations hang right in front of the eye.
   The upper arms are now kept out of view; the hands, forearms, charge and detonator move exactly as in 2005, in
   single player and online, at every screen shape.
-- **Knocked back in network games** (client of a server: Zat, ribbon device, blasts): your own body stayed where it
-  was hit while the server threw it, then jumped to where it had landed when you got up; and if you got up first,
-  the server could knock you down a second time on your screen. The flight now plays on your screen as on the
-  server, and both end together.
 - **Reload key (R)**: it did nothing, in single player and online (UT2004's own reload command is empty; Perception's
   engine passed it to the weapon). It reloads the weapon in hand again, with its reload animation, on a server too
   (P90, pistol, shotgun shell by shell, sniper rifle). An empty clip still reloads by itself.
@@ -277,9 +281,8 @@ Each entry says why it exists. No game data is in this repository; all fixes are
 
 ## Additions for PC playability and modern standards
 
-- **Online, other players now visibly react to hits and fly back when knocked back** (purely visual): in 2005 the
-  hit reactions (the flinch when shot) and the knock-back animation (thrown back, lands, gets up) played on the
-  server only, so a network client saw the other characters stay upright. The server now tells the other
+- **Online, other players now visibly react to hits** (purely visual): in 2005 the hit reactions (the flinch when
+  shot) played on the server only, so a network client saw the other characters stay upright. The server now tells the other
   machines about each hit and they play the same 2005 animations (at most one flinch every 0.3 s, so a burst of
   P90 fire does not make a character shiver). No change to damage, timing or the single-player campaign.
 - **P90 torch: soft light and an on/off key** (deviation, project lead's decision): the torch projects the
@@ -382,9 +385,9 @@ Each entry says why it exists. No game data is in this repository; all fixes are
   dropped flag back, escort their flag carrier and hunt the enemy's.
   Bots playing O'Neill, Carter, Jackson or Teal'c sometimes say one of their character's own game lines (a taunt or
   an "enemy down" line) after a frag, at most once every 25 seconds; the Jaffa and the other characters stay silent.
-  Bots are hurt by the Zat gun, the shock grenade and the ribbon device as players are (the Zat and the shock grenade
-  slow, then kill, by the rule below; the ribbon device hurts and throws back; before, these three weapons did nothing
-  to a bot, whoever fired them), and they use the Zat's and the ribbon device's 2005 charge as players do (about two
+  Bots are hurt by the Zat gun, the shock grenade and the ribbon device as players are (all three slow, and the Zat
+  and the shock grenade then kill, by the rule below; before, these three weapons did nothing to a bot, whoever fired
+  them), and they use the Zat's and the ribbon device's 2005 charge as players do (about two
   shots, then another weapon, or a grenade, while it refills). Bots fire the pistol, the P90, the shotgun and the
   sniper rifle at a player's rate (they fired two shots per firing animation).
   Bots play with UT2004's bot AI on a navigation network the
@@ -410,6 +413,17 @@ Each entry says why it exists. No game data is in this repository; all fixes are
 
 - **Installer**: every tool it runs is the project's own code (no third-party decompilation tools are downloaded),
   and the game files are checked against the project's own hash list.
+- **Faster first start**: at its first start UT2004 lists the maps of the mod by loading each one's summary, which
+  kept the logo screen up for minutes on a slow disk. The installer now has UT2004's own tool write that list
+  (`<UT2004>\System\<map>.ucl`, the same files the game writes) after each install or update, in a few seconds, so
+  the first launch reaches the main menu about as fast as the next ones. A UT2004 never started before still lists
+  its own maps once. Uninstalling removes these files.
+- **Installer: a game running from another folder no longer blocks the install.** The installer refused to run
+  ("close UT2004.exe, UCC.exe first") whenever any UT2004, UCC or UnrealEd ran on the PC, even from another UT2004
+  folder. It now counts only the ones started from the UT2004 folder it installs into (and names that folder).
+- **Updates replace the update-check launcher**: an updated install kept the `SGAlliance\Launcher\Stargate
+  Redial.exe` of its first version (the installer took it for unchanged: same size and same file date in every
+  release zip). It is now compared by content and replaced when it changed.
 - **Quick save and quick load** (F5 / F9; rows Quick Save and Quick Load on Options → Controls): Perception's own
   QuickSave/QuickLoad commands, which no key or menu reached in 2005, on the port's save system. A quick load puts you
   back where you saved, and the level's scripted events carry on from there. F9 also works on the pause menu and on
@@ -490,12 +504,25 @@ Each entry says why it exists. No game data is in this repository; all fixes are
   fire, aim, jump and change weapons, and Zat arcs crawl over them so everyone sees who is slowed. A second hit, Zat
   or shock grenade, from anyone, within those 5 seconds kills, credited to whoever fired it; once the 5 seconds are
   over, the next hit slows again. Nobody is knocked down any more (earlier Redial releases knocked the player down
-  at the first hit). A charged personal shield still absorbs the hit first; a teammate's Zat or shock grenade does
-  nothing while friendly fire is off (in 2005 both killed teammates, and the shock grenade its thrower too); your
+  at the first hit). A charged personal shield still absorbs the hit first and prevents the slow; a teammate's Zat or
+  shock grenade does nothing while friendly fire is off (in 2005 both killed teammates, and the shock grenade its thrower too); your
   own grenade follows the same rule; the shock blast reaches only the players in its line of sight (in 2005 it went
   through walls and floors). Bots are slowed and killed the same way and follow a slow up with a second Zat shot.
   Servers can tune the slow under `[StargateGame.StargateDeathMatch]`: `ZatSlowPct=0.5` (speed factor) and
   `ZatSlowTime=5.0` (seconds). The single player game keeps the 2005 rule.
+- **Ribbon device in multiplayer: it slows instead of throwing back** (project lead's decision, as for the Zat and
+  the shock grenade): its ball still does its 150 damage at once, then slows the player hit to half speed for 5
+  seconds, with the Zat arcs, instead of throwing them back and keeping them down for 2 to 3 seconds. Every ball
+  starts the 5 seconds again; the ribbon device never kills by the two-hit rule itself, but a Zat hit or shock
+  grenade blast on a player it slowed kills. A charged personal shield (any charge left) prevents the slow and still
+  absorbs the damage. Bots are slowed the same way and follow the slow up with the Zat. The single player game keeps
+  the 2005 knock-back.
+- **No knock-back in multiplayer** (project lead's decision): in every multiplayer game nothing throws a player or a
+  bot back, knocks them down or makes them stagger any more. The frag grenade, the C4, the Stinger, the staff
+  weapon's strikes and the other 2005 knock-backs only deal their damage, unchanged (a C4 charge or a melee strike
+  deals it at once instead of when the victim lands). Blasts still push you as in UT2004, but you keep control. The
+  Zat gun, the shock grenade and the ribbon device slow, as above. The single player game keeps the 2005
+  knock-backs.
 - **Change Character in game** (PC convenience): Escape → *Change Character* opens the character page (character,
   outfit, name, pack; in team games your team's characters only); *Apply* respawns you at once at a spawn point with
   the new character and pack, with no death, score or life counted. If you were hit in the last 5 seconds, carry a
