@@ -99,8 +99,8 @@ A few highlights (the [CHANGELOG](CHANGELOG.md) has the full list):
   target.
 - The weapon panel shows the clip and the reserve (e.g. 30 / 250), and characters no longer sink into some floors.
 - Fixes for 2005 placeholders: no stray arms around the C4 in first person, a grey ribbon device icon instead of the
-  violet one, real models for the ribbon device, frag grenade and C4 instead of a P90, and every campaign P90 now has
-  the torch (L).
+  violet one, real models for the ribbon device, frag grenade and C4 instead of a P90, every campaign P90 now has
+  the torch (L), and no more "PLACE-HOLDER" banner over the unfinished cutscenes.
 - Menus made easier: readable drop-down lists, a restart prompt for settings that need one, and a chapter list where
   one click shows the briefing and Start launches the mission.
 - Pausing also pauses dialogue and music, and the campaign's one-weapon-per-slot rule works again.
@@ -355,8 +355,8 @@ Quelques points forts (le [CHANGELOG](CHANGELOG.md), en anglais, donne la liste 
 - Le panneau d'arme affiche le chargeur et la réserve (par exemple 30 / 250), et les personnages ne s'enfoncent plus
   dans certains sols.
 - Des éléments provisoires de 2005 corrigés : plus de bras en trop autour du C4 en vue subjective, une icône grise
-  pour le ruban au lieu du violet, de vrais modèles pour le ruban, la grenade et le C4 au lieu d'un P90, et la lampe
-  (L) sur tous les P90 de la campagne.
+  pour le ruban au lieu du violet, de vrais modèles pour le ruban, la grenade et le C4 au lieu d'un P90, la lampe
+  (L) sur tous les P90 de la campagne, et plus de bandeau « PLACE-HOLDER » sur les cinématiques inachevées.
 - Des menus plus simples : des listes déroulantes lisibles, une proposition de redémarrage pour les réglages qui en ont
   besoin, et une liste des chapitres où un clic affiche le briefing et Start lance la mission.
 - La pause arrête aussi les dialogues et la musique, et la règle d'une arme par emplacement de la campagne fonctionne de

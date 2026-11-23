@@ -145,17 +145,21 @@ server at the map start, the usual start applies. These bots do not pause on the
 
 ### Weapon packs
 
-Each player chooses a weapon pack with the character (Tau'ri: Assault = P90 + frag grenades, Close Quarters =
-Shotgun + C4, Marksman = Sniper rifle + shock grenades; Goa'uld: Warrior = Staff weapon + frag grenades, Zat = Zat
-gun + shock grenades, Lord = Ribbon device + frag grenades) and starts with it and the pistol. Bots take a random
-pack of their side. To keep the 2005 start (the pistol only), add `ExtraURL=?SGPacks=0` to an instance's section, or
+Each player chooses a weapon pack with the character and starts with it. Tau'ri, with the pistol: Assault = P90 +
+frag grenades, Close Quarters = Shotgun + C4, Marksman = Sniper rifle + frag grenades, Zat = Zat gun + frag grenades,
+Staff = Staff weapon + frag grenades. Goa'uld, without the pistol: Warrior = Staff weapon + shock grenades, Zat = Zat
+gun + shock grenades, Lord = Ribbon device + personal shield + Zat gun. Bots take a random pack of their side. During
+a game, players can change character and pack (Escape → Change Character): they respawn at once with no death or
+score counted, or at their next respawn if hit in the last 5 s, carrying a flag or in a vehicle. To keep the 2005
+start for everyone (the pistol only, no packs), add `ExtraURL=?SGPacks=0` to an instance's section, or
 `bPacks=False` in a `[SGBase.SGPacks]` section (`[dm:SGBase.SGPacks]` for one instance). On by default.
 
 ### Discord activity feed (optional)
 
 The server can post its activity in a channel of your Discord server: players joining (with their character) and
 leaving, kills where a player is the killer or the victim (grouped in one message every 45 s), match start and results (winner,
-scores), map changes, and a summary when the last player leaves. Bring your own bot: in the Discord Developer Portal
+scores), map changes, a summary when the last player leaves, and the players' **public chat** (`💬 Name: text`).
+Team chat is never posted: it is private to a team. Bots' lines are never posted. Bring your own bot: in the Discord Developer Portal
 create an application, add a bot, copy its token, invite it to your server with the *View Channel* and *Send
 Messages* permissions on the channel, and copy the channel's id (Discord settings: Developer Mode, then right-click the
 channel → Copy Channel ID).
@@ -172,11 +176,15 @@ channel → Copy Channel ID).
    server.
 
 The relay posts at most one message every 1.2 s and 120 per hour, never shows addresses, and shows player names
-as code (no mentions). The bot's status shows the server's state once a minute, e.g. `DM-LostCity [1/16] +5 bots`
+as code (no mentions). Chat lines are sanitised: control characters removed, at most 300 characters, Discord
+formatting escaped, `@everyone`, `@here` and `<@…>`/`<#…>`/`<@&…>` mentions neutralised (and every post is sent with
+no allowed mentions and no link preview); one line per player every 2 s at most (more are dropped and counted in the
+relay's log), lines of a few seconds grouped in one message. The bot's status shows the server's state once a minute, e.g. `DM-LostCity [1/16] +5 bots`
 (map, players/places, bots), or "server not responding".
 
 The relay also keeps every event (bot-against-bot kills included) in `Server/logs/<instance>-events.jsonl`: one JSON
-line each, in-game names only (no address, no CD key), a new file every day or past 10 MB, 14 days kept.
+line each, in-game names only (no address, no CD key), public chat lines included (`"ev": "chat"`), a new file
+every day or past 10 MB, 14 days kept.
 `python3 sgr-server.py stats all --since 24h` (or an instance) summarises them: matches, kills and K/D per character
 and weapon (bots and players apart), team wins, players seen, server restarts and crash markers, and what looks odd
 (a weapon that dominates, a character that never wins).
@@ -351,18 +359,24 @@ journal du serveur (lignes `SGBAL`).
 
 ### Packs d'armes
 
-Chaque joueur choisit un pack d'armes avec son personnage (Tau'ri : Assault = P90 + grenades à fragmentation, Close
-Quarters = fusil à pompe + C4, Marksman = fusil de précision + grenades paralysantes ; Goa'uld : Warrior = lance
-Goa'uld + grenades à fragmentation, Zat = zat + grenades paralysantes, Lord = arme de poing Goa'uld (ribbon device) +
-grenades à fragmentation) et commence avec ce pack et le pistolet. Les bots prennent un pack de leur camp au hasard.
-Pour garder le départ de 2005 (le pistolet seul), ajoutez `ExtraURL=?SGPacks=0` dans la section d'une instance, ou
+Chaque joueur choisit un pack d'armes avec son personnage et commence avec. Tau'ri, avec le pistolet : Assault = P90
++ grenades à fragmentation, Close Quarters = fusil à pompe + C4, Marksman = fusil de précision + grenades à
+fragmentation, Zat = zat + grenades à fragmentation, Staff = lance Goa'uld + grenades à fragmentation. Goa'uld, sans
+le pistolet : Warrior = lance Goa'uld + grenades paralysantes, Zat = zat + grenades paralysantes, Lord = arme de poing
+Goa'uld (ribbon device) + bouclier personnel + zat. Les bots prennent un pack de leur camp au hasard. En cours de
+partie, un joueur peut changer de personnage et de pack (Échap → Change Character) : il réapparaît aussitôt sans mort
+ni score comptés, ou à sa prochaine réapparition s'il a été touché dans les 5 dernières secondes, porte un drapeau ou
+est dans un véhicule. Pour garder le départ de 2005 pour tous (le pistolet seul, sans packs), ajoutez
+`ExtraURL=?SGPacks=0` dans la section d'une instance, ou
 `bPacks=False` dans une section `[SGBase.SGPacks]` (`[dm:SGBase.SGPacks]` pour une seule instance). Activé par défaut.
 
 ### Fil d'activité Discord (facultatif)
 
 Le serveur peut publier son activité dans un salon de votre serveur Discord : arrivées des joueurs (avec leur
 personnage) et départs, frags où un joueur tue ou meurt (regroupés en un message toutes les 45 s), début et
-résultat des parties (vainqueur, scores), changements de carte, et un bilan quand le dernier joueur s'en va. Avec
+résultat des parties (vainqueur, scores), changements de carte, un bilan quand le dernier joueur s'en va, et la
+**discussion publique** des joueurs (`💬 Nom: texte`). La discussion d'équipe n'est jamais publiée : elle est
+privée à une équipe. Les lignes des bots ne le sont jamais non plus. Avec
 votre propre bot : dans le Discord Developer Portal, créez une application, ajoutez-lui un bot, copiez son jeton,
 invitez-le sur votre serveur avec les permissions *Voir le salon* et *Envoyer des messages* dans ce salon, et copiez
 l'identifiant du salon (paramètres Discord : Mode développeur, puis clic droit sur le salon → Copier l'identifiant).
@@ -380,12 +394,16 @@ l'identifiant du salon (paramètres Discord : Mode développeur, puis clic droit
    du serveur.
 
 Le relais publie au plus un message toutes les 1,2 s et 120 par heure, n'affiche jamais d'adresse, et montre les
-noms des joueurs comme du code (pas de mentions). Le statut du bot montre l'état du serveur, mis à jour chaque
+noms des joueurs comme du code (pas de mentions). Les lignes de discussion sont nettoyées : caractères de contrôle
+retirés, 300 caractères au plus, mise en forme Discord neutralisée, mentions `@everyone`, `@here` et
+`<@…>`/`<#…>`/`<@&…>` désamorcées (et chaque message part sans mention autorisée ni aperçu de lien) ; une ligne par
+joueur toutes les 2 s au plus (le surplus est ignoré et compté dans le journal du relais), les lignes de quelques
+secondes regroupées en un message. Le statut du bot montre l'état du serveur, mis à jour chaque
 minute, par exemple `DM-LostCity [1/16] +5 bots` (carte, joueurs/places, bots), ou « server not responding ».
 
 Le relais garde aussi chaque événement (frags entre bots compris) dans `Server/logs/<instance>-events.jsonl` : une
-ligne JSON chacun, avec seulement les noms en jeu (ni adresse, ni clé CD), un nouveau fichier chaque jour ou au-delà
-de 10 Mo, 14 jours gardés. `python3 sgr-server.py stats all --since 24h` (ou une instance) les résume : parties,
+ligne JSON chacun, avec seulement les noms en jeu (ni adresse, ni clé CD), la discussion publique comprise
+(`"ev": "chat"`), un nouveau fichier chaque jour ou au-delà de 10 Mo, 14 jours gardés. `python3 sgr-server.py stats all --since 24h` (ou une instance) les résume : parties,
 frags et K/D par personnage et par arme (bots et joueurs à part), victoires d'équipe, joueurs vus, redémarrages du
 serveur et traces de plantage, et ce qui semble anormal (une arme qui domine, un personnage qui ne gagne jamais).
 

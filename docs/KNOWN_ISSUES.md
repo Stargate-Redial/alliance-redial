@@ -16,7 +16,7 @@ change in a later version if the project decides so.
 - Missions 1, 3, 5, 6, 8, 9 and 11 are not in the build: the story jumps between missions.
 - Many recorded voice lines (mission interludes, briefings, an ending that was never built) are in the files,
   but no level plays them.
-- Not in the build, or never finished: co-op, split-screen, the *Edit Game Modes* button (it does nothing), the
+- Not in the build, or never finished: co-op, split-screen and the *Edit Game Modes* page (both buttons are hidden), the
   *System Lord*, *Jaffa! Kree!* and *Enslave* multiplayer modes (their code is missing; *System Lord*, listed in
   2005, is hidden), Thor and the Kull as multiplayer characters (no animations),
   the vehicles and creatures that no level uses, Jackson's astral sight (no level uses it), the credits.
@@ -41,7 +41,6 @@ change in a later version if the project decides so.
 - M15A: skipping the opening cutscene takes two presses.
 - Vehicles have no health bar on the HUD.
 - Subtitles cannot be switched off.
-- The loading screen shows the Xbox controller picture.
 - M19A says "You've found a secret place." without a secrets counter.
 - In M21D the music stops before the end of the level (its last bars are not in the build).
 - First person: the shock grenade and the Jaffa staff are shown without hands, the shotgun looks pale, and the zat
@@ -62,11 +61,15 @@ change in a later version if the project decides so.
 ## Limits of the port
 
 - **Effects of the Xbox's pixel shaders** are approximated. The bloom and the blur behind the pause menu are
-  drawn only with the Direct3D 9 renderer (on by default; Options → Video → Bloom turns them off). The heat haze
+  drawn with the Direct3D 9 (default) and Direct3D 11 renderers, not with OpenGL (on by default; Options → Video
+  → Bloom turns them off). The heat haze
   and distortion of fires, explosions and force fields is not reproduced, and the Reetou's invisibility shows as
   a see-through sheen.
-- **The sniper scope's lens** shows the view only with Direct3D 9; with OpenGL or Direct3D 11 it is black.
-- **Brightness** applies only in full screen with Direct3D 9 (OldUnreal behaviour).
+- **The sniper scope's lens** shows the view with Direct3D 9 and Direct3D 11; with OpenGL it is black.
+- **Brightness** applies only in full screen with Direct3D 9 (OldUnreal behaviour); Direct3D 11 applies it in a
+  window too.
+- **Direct3D 11 is experimental** (Options → Video → Renderer): with anti-aliasing, character shadows can show
+  square blocks, and text is softer than with Direct3D 9.
 - **Controller**: read through DirectInput. LT and RT pressed together cancel out, there is no rumble, the
   controller must be connected before the game starts, only the first game controller is read, and the layout
   assumes an Xbox-style controller.
@@ -97,9 +100,7 @@ screen. These have not yet been checked by a person playing V0.1:
   generator room), M20D (the throne room and the Kull), M21C (the pod-room door);
 - the Stinger's lock-on and multiple targets, the mind-control crystals (M21), the force-field puzzle (M19B),
   painting targets with the binoculars (M19D, M19E), the C4 objective (M17D), using the transport rings (M20),
-  the staff cannon and M60 emplacements, the disguises (M21);
-- whether the "PLACE-HOLDER" text across the M07A opening cutscene was also on screen in 2005 (it comes from the
-  2005 data).
+  the staff cannon and M60 emplacements, the disguises (M21).
 
 If something goes wrong, see [Troubleshooting](GUIDE.md#troubleshooting) and report it on the
 [GitHub repository](https://github.com/Stargate-Redial/alliance-redial/issues) with `<UT2004>\System\UT2004.log`.
@@ -121,7 +122,8 @@ des bugs du portage. Certains pourront changer dans une version future si le pro
 - Les missions 1, 3, 5, 6, 8, 9 et 11 ne sont pas dans la version : l'histoire saute d'une mission à l'autre.
 - Beaucoup de répliques enregistrées (interludes, briefings, une fin jamais construite) sont dans les fichiers,
   mais aucun niveau ne les joue.
-- Absents ou jamais terminés : la coopération, l'écran partagé, le bouton *Edit Game Modes* (il ne fait rien),
+- Absents ou jamais terminés : la coopération, l'écran partagé et la page *Edit Game Modes* (les deux boutons sont
+  masqués),
   les modes multijoueur *System Lord*, *Jaffa! Kree!* et *Enslave* (leur code manque ; *System Lord*, listé en
   2005, est masqué), Thor et les Kull comme personnages multijoueur (pas
   d'animations), les véhicules et créatures qu'aucun niveau n'utilise, la vision astrale de Jackson (aucun niveau
@@ -149,7 +151,6 @@ des bugs du portage. Certains pourront changer dans une version future si le pro
 - M15A : passer la cinématique d'ouverture demande deux appuis.
 - Les véhicules n'ont pas de barre de santé à l'écran.
 - Les sous-titres ne peuvent pas être désactivés.
-- L'écran de chargement montre l'image de la manette Xbox.
 - M19A affiche « You've found a secret place. » sans compteur de secrets.
 - Dans M21D, la musique s'arrête avant la fin du niveau (ses dernières mesures ne sont pas dans la version).
 - En vue subjective : la grenade paralysante et le bâton Jaffa apparaissent sans mains, le fusil à pompe paraît
@@ -172,13 +173,17 @@ des bugs du portage. Certains pourront changer dans une version future si le pro
 
 ### Limites du portage
 
-- **Les effets des pixel shaders de la Xbox** sont approchés. Le bloom et le flou derrière le menu pause ne sont
-  dessinés qu'avec le moteur de rendu Direct3D 9 (activés par défaut ; Options → Video → Bloom les désactive). La
+- **Les effets des pixel shaders de la Xbox** sont approchés. Le bloom et le flou derrière le menu pause sont
+  dessinés avec les moteurs de rendu Direct3D 9 (par défaut) et Direct3D 11, pas avec OpenGL (activés par
+  défaut ; Options → Video → Bloom les désactive). La
   distorsion de chaleur des feux, explosions et champs de force n'est pas reproduite, et l'invisibilité
   des Reetou apparaît comme un reflet transparent.
-- **La lentille de la lunette du fusil de précision** ne montre l'image qu'avec Direct3D 9 ; avec OpenGL ou
-  Direct3D 11, elle est noire.
-- **La luminosité** ne s'applique qu'en plein écran avec Direct3D 9 (comportement d'OldUnreal).
+- **La lentille de la lunette du fusil de précision** montre l'image avec Direct3D 9 et Direct3D 11 ; avec
+  OpenGL, elle est noire.
+- **La luminosité** ne s'applique qu'en plein écran avec Direct3D 9 (comportement d'OldUnreal) ; Direct3D 11
+  l'applique aussi en fenêtre.
+- **Direct3D 11 est expérimental** (Options → Video → Renderer) : avec l'anticrénelage, les ombres des
+  personnages peuvent montrer des blocs carrés, et le texte est moins net qu'avec Direct3D 9.
 - **Manette** : lue par DirectInput. LT et RT pressées ensemble s'annulent, il n'y a pas de vibrations, la manette
   doit être branchée avant le lancement du jeu, seule la première manette est lue, et la disposition suppose une
   manette de type Xbox.
@@ -210,9 +215,7 @@ principales fonctions ont été vérifiés à l'écran. Personne n'a encore vér
   la salle du générateur), M20D (la salle du trône et les Kull), M21C (la porte de la salle des capsules) ;
 - le verrouillage et les cibles multiples du Stinger, les cristaux de contrôle mental (M21), l'énigme du champ de
   force (M19B), le marquage de cibles aux jumelles (M19D, M19E), l'objectif C4 (M17D), l'utilisation des anneaux
-  de transport (M20), les canons à bâton et M60 en position fixe, les déguisements (M21) ;
-- si le texte « PLACE-HOLDER » qui traverse la cinématique d'ouverture de M07A était aussi à l'écran en 2005 (il
-  vient des données de 2005).
+  de transport (M20), les canons à bâton et M60 en position fixe, les déguisements (M21).
 
 En cas de problème, voir le [Dépannage](GUIDE.md#dépannage) et signalez-le sur le
 [dépôt GitHub](https://github.com/Stargate-Redial/alliance-redial/issues) avec `<UT2004>\System\UT2004.log`.

@@ -37,12 +37,13 @@ Contents: [Install](#install) · [Installer details](#installer-details) · [Fir
    - **UT2004 folder**: it finds UT2004 through the registry and Steam. Otherwise click *Browse…* and choose the
      folder that holds `System\UT2004.exe`. If the OldUnreal patch is missing or too old, the window says so
      and links to the patch page.
-   - **Install**: tick *Put a shortcut on the desktop* if you want one, keep *Check for updates when the game
-     starts* ticked (see [Updating](#updating-and-uninstalling)), then click *Install*.
+   - **Install**: *Put a shortcut on the desktop* is ticked (untick it if you do not want one; the Start menu
+     always gets one), keep *Check for updates when the game starts* ticked (see
+     [Updating](#updating-and-uninstalling)), then click *Install*.
 3. Wait. The window shows each step with a tick, the overall progress and the time left: about 3 minutes on an
    8-core PC, 5 to 6 minutes on a 4-core one, plus the extraction of the archive. *Cancel* stops safely.
-4. Click **Play**. Later, start **Play Stargate SG-1 The Alliance** in `<UT2004>\SGAlliance` (or the desktop
-   shortcut).
+4. Click **Play**. Later, start **Stargate Redial - The Alliance** from the Start menu or the desktop (or in
+   `<UT2004>\SGAlliance`). While it runs, its taskbar button has the Redial name and icon.
 
 The game is installed as a UT2004 mod: your UT2004 itself is not changed. Your keyboard layout (QWERTY or
 AZERTY) is detected, and an Xbox-style controller connected during the installation is switched on.
@@ -111,7 +112,8 @@ app\tools\sgredial.exe --help
 | `--dry-run` | checks the prerequisites and the archive, prints the plan, changes nothing |
 | `--jobs N`, `--sequential` | fewer processes at a time, to keep the PC responsive |
 | `--lightmaps runtime` | UT2004 relights the maps instead of using the game's baked lighting |
-| `--desktop-shortcut` | also puts the launcher on your desktop |
+| `--skies keep` | keeps the 2005 sky textures (by default the installer smooths their compression blocks and stores them uncompressed) |
+| `--desktop-shortcut` | also puts the launcher on your desktop (the Start menu always gets it) |
 | `--no-update-check` | the Play shortcut starts the game directly, without checking for a new version |
 | `--keyboard qwerty\|azerty` | key preset (default: from your Windows keyboard layout; the game's Options > Controls page can switch it later) |
 | `--gamepad on\|off` | an Xbox-compatible pad connected during the install is switched on with the 2005 layout; this forces it |
@@ -127,8 +129,9 @@ app\tools\sgredial.exe --help
 The mod goes to `<UT2004>\SGAlliance` and has its own `SGAlliance.ini`; your UT2004 settings are not touched.
 **One exception:** UT2004 reads per-class configuration files only from its own `System` folder, even for a
 mod, so the installer copies these there: `Tweak_*.ini` (the game's tuning values, about 137 files),
-`SGAMusic.ini`, `SGSpeechData.ini`, `SGLipSyncData.ini` and `SGMeshMaterials.ini`. The game itself later writes
-`SGSpeech.ini` (settings) and `SGASaves.ini`, `PlayerProfile.ini`, `Stats.ini` (saves, profile, statistics)
+`SGAMusic.ini`, `SGSpeechData.ini`, `SGLipSyncData.ini`, `SGMeshMaterials.ini` and `SGChapterBriefings.ini`. The
+game itself later writes
+`SGSpeech.ini` (settings) and `SGASaves.ini`, `PlayerProfile.ini`, `Stats.ini` (saves, settings, statistics)
 there. No UT2004 file is replaced. Every file the installer wrote, in the mod folder and in
 `<UT2004>\System`, is listed with its SHA-256 in `SGAlliance\.redial\manifest.json` (the ones in
 `<UT2004>\System` also in `SGAlliance\installed-outside-mod.txt`). With the update check (the default),
@@ -142,7 +145,7 @@ rebuilds everything, which takes a few minutes longer).
 
 ### Updating in detail
 
-**When the game starts.** Online games need the same version on both sides, so the **Play Stargate SG-1 The
+**When the game starts.** Online games need the same version on both sides, so the **Stargate Redial - The
 Alliance** shortcut first asks GitHub whether a newer release exists (this project's public Releases page). It
 sends nothing about you or your PC: no account, no identifier, no cookie, only a plain request for the latest
 release. It waits 2 seconds at most; offline, or with no newer version, the game starts at once. When there is
@@ -156,7 +159,7 @@ and offers *Play* at the end. The update needs the game files again: the work fo
 deleted it; otherwise the window asks for the `.7z` (found in your Downloads folder like the first time).
 
 To turn the check off, untick *Check for updates when the game starts* in the installer window (or install with
-`--no-update-check`): the shortcut then starts the game directly. `Play Stargate SG-1 The Alliance.cmd` in
+`--no-update-check`): the shortcut then starts the game directly. `Stargate Redial - The Alliance.cmd` in
 `<UT2004>\SGAlliance` never checks.
 
 **By hand.** When a new version is released, download its zip, extract it (into a new folder, or over the old one)
@@ -168,7 +171,7 @@ version's zip and folder can be deleted.
   `updating 0.1 -> 0.2`). Installing an older version over a newer one asks for confirmation (`--force` on the
   command line).
 - **Your data is never replaced**: key bindings, video, audio and controller settings, your other changes to the
-  mod's settings files, profiles, saved games and checkpoints, screenshots and logs. Settings files are merged: a
+  mod's settings files, saved games and checkpoints, screenshots and logs. Settings files are merged: a
   setting you changed keeps your value unless the new version changes that very default (the installer then
   lists it); settings a new version introduces are added. Before an update changes anything, your settings and
   saves are copied to `SGAlliance\.redial\backups` (the last 5 updates are kept).
@@ -185,7 +188,7 @@ version's zip and folder can be deleted.
 ### Uninstall in detail
 
 Run **Stargate Redial Setup.exe**, go to the last step and click *Uninstall…*; tick *Also delete my saves,
-profile and statistics* only if you want that. From a command prompt: `app\tools\sgredial.exe --uninstall`
+settings and statistics* only if you want that. From a command prompt: `app\tools\sgredial.exe --uninstall`
 (add `--dry-run` to see every file first, `--purge-saves` to delete the saves too).
 
 - It deletes exactly the files listed in the manifest (`SGAlliance\.redial\manifest.json`), wherever they are,
@@ -199,39 +202,45 @@ profile and statistics* only if you want that. From a command prompt: `app\tools
 
 ## First launch
 
-1. Start **Play Stargate SG-1 The Alliance**. The game opens in full screen at your desktop resolution, shows
+1. Start **Stargate Redial - The Alliance**. The game opens in full screen at your desktop resolution, shows
    the original logo screen, then the main menu over a Stargate scene. The main menu shows "Stargate Redial
    V0.1" in its bottom-right corner.
-2. **Create a profile.** At the first launch the game opens *Create Profile*: type a name with the keyboard
-   (Backspace deletes) or the on-screen keys, choose *Done* (Enter), then *Save* (Ins, or click the prompt, or Y on a
-   controller). This profile is now the active one: the game remembers it at the next launch, and Continue, Single
-   Player, Multi-Player and Options use it. The main menu's **Profile** button selects another profile (Enter or a
-   click), creates one (Ins) or deletes one (Delete). A profile keeps its difficulty, volumes, keys, mouse settings,
-   multiplayer name and outfit, and saves.
+2. **Nothing to set up.** The game keeps your saves, progress, difficulty, volumes, keys, mouse settings and
+   multiplayer name, outfit and packs by itself; there is no profile to create or choose. (An install that already
+   had profiles keeps using the one played last; the others stay on disk.)
 3. Menus work with the mouse, the keyboard (arrows, Enter = select, Escape or Backspace = back, Delete and Insert
-   for the other prompts) and a controller (d-pad or left stick, A select, B back). One item is highlighted at a
+   for the other buttons) and a controller (d-pad or left stick, A select, B back). One item is highlighted at a
    time: the one under the mouse when you move it, else the one the keys or the pad moved to; Enter acts on it. The
-   prompt bar at the bottom names the keys of the device you use last.
+   buttons at the bottom of a page are clickable and name their key: **Back (Esc)** on the left, the page's action
+   on the right (**Select (Enter)**, **Load (Enter)**, **Start (Enter)**...). While you use a controller they show
+   its buttons instead.
 
 ## Menus
 
 ### Main menu
 
-- **Continue** loads the most recent checkpoint or quick save of the profile used last, as its 2005 hint text
-  says. It is greyed until the profile has a save. (In the 2005 build it opened a temporary list of every map.)
+- **Continue** loads the most recent checkpoint or quick save, as its 2005 hint text
+  says. It is greyed until there is a save. (In the 2005 build it opened a temporary list of every map.)
   To start any mission part, use Single Player → Chapter Selection. The build has no missions 1, 3, 5, 6, 8, 9
   and 11.
 - **Exit Game** quits the game after a confirmation, like Escape.
 - **Single Player**:
+  - **Continue** does what the main menu's Continue does (greyed while there is no save).
   - **New Game** asks whether you want to play the tutorial: *Yes* starts the tutorial (M00), *No* starts
     Mission 2.
   - **Chapter Selection** lists the 61 parts of the story; it shows no chapter pictures (the 2005 data has none).
-  - **Load Game** lists the profile's checkpoints and its quick save ([Saves](#saves)): load or delete them.
+    On the left it shows the selected chapter's 2005 mission briefing (location, local time and the briefing text,
+    as on the in-game BRIEFING tab) above its name; M02A-D, M14A-C and M15A have none in the 2005 data and show
+    only their name.
+    Done chapters have a check mark and a green name, the current one (the furthest you reached) a gold arrow and a
+    gold name, chapters not reached yet a grey name. The list opens on the current chapter; you
+    can still start any of them. A click only selects a chapter (its briefing shows on the left); a double click, Enter or
+    the **Start** button starts it. The Single Player menu shows your progress, for example
+    "Progress: 21 % - chapter 14/61".
+  - **Load Game** lists your checkpoints and the quick save ([Saves](#saves)) to load them.
   - **Tutorial** starts M00.
 - **Multi-Player**: see [Multiplayer](#multiplayer).
-- **Options** → **Edit Profile** of the active profile: Controls, Multiplayer (your multiplayer character), Video,
-  Audio, Name, Difficulty. See [Options](#options).
-- **Profile**: select the active profile, create one or delete one (see [First launch](#first-launch)).
+- **Options**: Controls, Multiplayer (your multiplayer character), Video, Audio, Difficulty. See [Options](#options).
 - The 2005 **Extras** button is hidden: its page was an empty placeholder.
 - **Escape** on the main menu asks whether to quit.
 
@@ -251,7 +260,7 @@ part, returns to the main menu.
 
 ## Controls
 
-Keys can be changed in **Options → Edit Profile → Controls**. The controller column is the original 2005 Xbox
+Keys can be changed in **Options → Controls**. The controller column is the original 2005 Xbox
 layout (the Xbox's white and black buttons are LB and RB, as on the Xbox 360).
 
 | Action | Keyboard QWERTY | AZERTY | Controller |
@@ -273,25 +282,51 @@ layout (the Xbox's white and black buttons are LB and RB, as on the Xbox 360).
 | Cloak (needs a shield belt) | F | F | B |
 | Concentrate fire (hold: choose a squad member) | X | X | RB |
 | Take cover | Z | W | LB |
+| Squad: hold position | H | H | — |
+| Squad: follow me | G | G | — |
 | Mission information | Tab | Tab | Back |
 | Scores (multiplayer) | F1 | F1 | — |
 | Quick save / quick load | F5 / F9 | F5 / F9 | — |
+| Chat / team chat (multiplayer) | T / Y | T / Y | — |
+| Torch on/off (P90 with torch; every P90 in the campaign) | L | L | — |
+| Quick voice menu (multiplayer) | V | V | — |
 | Pause menu | Escape | Escape | Start |
 | Console | `` ` `` (left of 1) | `²` or `ù` | — |
 | Screenshot | F12 | F12 | — |
 
 Good to know:
 
+- **Screenshot: F12** (row *Screenshot* of the Controls page, to change the key). The pictures are saved in the
+  `ScreenShots` folder of your UT2004 install (`<UT2004>\ScreenShots`).
 - Items, weapons and ammunition are picked up with **Use**, not by walking over them. Use also opens doors,
   works consoles and revives a downed teammate ("administer first aid").
 - **Sprint** drains the stamina bar; it refills when you stop. The double-tap of forward, the 2005 way, still
   works.
-- **Concentrate fire**: tap it to make the squad fire at what you aim at; hold it to pick one squad member to
-  command. **Take cover** sends the squad to cover.
+- **Squad orders** (single player). While an order is on, the member's plate on the left of the screen shows a
+  letter: **F** = fire order, **C** = cover order (a sign, not a key).
+  - **Concentrate fire, tap X** with an enemy under the crosshair: the whole squad fires at it. Each member shows
+    **F** and a marker sits on the target until it is dead. A tap with no enemy in your sights cancels the fire
+    order.
+  - **Concentrate fire, hold X**: the squad menu opens (CLEAR ORDER and the members' names). The mouse wheel
+    (controller: d-pad up / down) picks a member. Release X on an enemy: only that member attacks it, with his or
+    her special attack or a grenade. Release X with no enemy in your sights: that member waits up to 45 seconds
+    for your next X tap on an enemy. Release X on **CLEAR ORDER**: every fire order is cancelled.
+    Another way to pick one member (the tutorial's): aim at him or her and tap X, then tap X on the enemy.
+  - **Take cover** (Z, AZERTY W): the whole squad looks for cover and shows **C**; press it again to leave cover.
+    With the crosshair on one member, only that member takes cover.
+  - **Hold position** (H): each member stays where he or she stands (a yellow arrow marks each spot) and fights
+    from there while you move on. **Follow me** (G) cancels it and the squad comes back to you.
+    A hold order is kept by saves and quick saves; the next mission starts with the squad following you. These two
+    orders had no key in 2005 (they were only console commands); the controller has no button for them, one can
+    be given on the Controls page (d-pad right is free).
+  - **First aid**: a knocked-out teammate calls for help; walk up to him or her and press **E** (Use) while
+    "administer first aid" shows (about 2 seconds).
 - The **cloak** needs a shield belt; it does not work while sprinting, and the squad cloaks with you.
 - **Grenades** have no key of their own (as in 2005): select them with 4 (or the wheel), then fire to throw.
 - The **Zat gun** and the **ribbon device** fire about two shots on a full charge, then recharge (full in 6 seconds);
   the charge shows at the top right as a bar and a percentage. The **staff weapon** charges while you hold fire.
+- Weapons with a magazine show **clip / reserve** under the weapon name at the top right (for example `50 / 250`:
+  50 rounds in the clip, 250 spare); the bar is the clip too. Grenades and C4 show how many you have.
 
 ### Changing keys
 
@@ -316,7 +351,7 @@ An Xbox-style controller (Xbox 360, One or Series) uses the 2005 layout above.
 
 ## Options
 
-**Options → (profile) → Edit Profile**, also reachable from the pause menu. Video and Audio changes are applied
+**Options** (main menu), also reachable from the pause menu. Video and Audio changes are applied
 with *Save* (Enter).
 
 ### Video
@@ -331,21 +366,22 @@ with *Save* (Enter).
 | Field of View | 80 to 120 | 90 is the game's own value |
 | Widescreen FOV | Hor+, Off | Hor+: wide screens see more at the sides |
 | Texture Detail | UltraLow to UltraHigh | |
-| Brightness | 10 to 100 | with Direct3D 9, only in full screen |
-| Renderer | Direct3D 9, OpenGL, Direct3D 11 | Direct3D 9 is the original look; applies at the next start |
-| Anti-Aliasing | Off, 2x, 4x, 8x | OpenGL or Direct3D 11 only; applies at the next start |
+| Brightness | 10 to 100 | 50 (default) = the picture as made; with Direct3D 9, only in full screen |
+| Renderer | Direct3D 9, OpenGL, Direct3D 11 | Direct3D 9 (default) is the original renderer; Direct3D 11 is experimental: anti-aliasing with the bloom, but known glitches ([known issues](KNOWN_ISSUES.md)); applies at the next start (saving offers *Restart now* or *Later*) |
+| Anti-Aliasing | Off, 2x, 4x, 8x | Direct3D 11 or OpenGL only; with Direct3D 11 the bloom stays on; applies at the next start (saving offers *Restart now* or *Later*) |
 | Texture Filtering | Bilinear, Trilinear, Anisotropic 2x to 16x | |
-| Shadows | On, Off | character shadows only (bullet and scorch marks and the torch light stay); applies at once, or from the next level load if the level started with Off |
+| Shadows | On, Off | character, tree and scenery shadows (bullet and scorch marks and the torch light stay); applies at once, or from the next level load if the level started with Off |
 | World Detail | High, Low | dynamic lights, light coronas, decals, foliage, detail textures; from the next level load |
-| Bloom | On, Off | the 2005 build's glow around bright lights and the blur behind the pause menu; applies at once. Direct3D 9 only: with OpenGL or Direct3D 11 the row shows Off |
+| Bloom | On, Off | the 2005 build's glow around bright lights and the blur behind the pause menu, plus the soft glow of lights and consoles in the late missions (Perception's PC emissive effect); applies at once. Direct3D 9 and Direct3D 11: with OpenGL the row shows Off |
+| Scope Depth of Field | Off, On | in the sniper scope and the binoculars, what the crosshair points at stays sharp and nearer and farther things are softly blurred (Perception's PC effect); off by default; applies at once. Direct3D 9 and Direct3D 11 |
 
 ### Audio
 
 | Row | Values | Notes |
 |---|---|---|
-| Music Volume, Voice Volume, FX Volume | 0 to 1 | stored in the profile |
-| 3D Audio (HRTF) | Auto, Off, On | headphone 3D sound; applies at the next start |
-| Sound Channels | 32, 64, 128 | applies at the next start |
+| Music Volume, Voice Volume, FX Volume | 0 to 1 | kept across launches |
+| 3D Audio (HRTF) | Auto, Off, On | headphone 3D sound; applies at the next start (saving offers *Restart now* or *Later*) |
+| Sound Channels | 32, 64, 128 | applies at the next start (saving offers *Restart now* or *Later*) |
 
 ### Controls
 
@@ -354,9 +390,9 @@ Smoothing (Off = raw mouse movement), and the controller rows ([Controller](#con
 
 ## Difficulty
 
-**Options → Edit Profile → Difficulty**: Easy, Medium, Hard or Insane. The default is **Hard**, the 2005
+**Options → Difficulty**: Easy, Medium, Hard or Insane. The default is **Hard**, the 2005
 default. The 2005 menus had no way to change it; the four levels are complete in the game's data. The choice is
-stored in the profile and applies from the next level start, restart or load. As in the original game, it also
+kept and applies from the next level start, restart or load. As in the original game, it also
 changes the strength of your allies.
 
 ## Saves
@@ -365,7 +401,7 @@ As in 2005, the game saves **at checkpoints**. On PC you can also **quick save**
 save menu).
 
 - "Checkpoint reached" appears when the game saves. A save is also made when a new part starts.
-- **Quick save: F5**, **quick load: F9** (Options → Edit Profile → Controls changes the keys). "Quick Saving"
+- **Quick save: F5**, **quick load: F9** (Options → Controls changes the keys). "Quick Saving"
   appears when the game saves. A quick load puts you back where you saved, with your health, weapons and
   ammunition, the enemies you had killed still dead, the doors as you left them and the level's scripted events
   carrying on from where they were. The previous quick save is kept as a backup.
@@ -375,29 +411,37 @@ save menu).
 - To go back to a checkpoint: *Retry* on the MISSION FAILED page, or **Single Player → Load Game**, which also
   lists the quick save ("Quicksave: Current") and its backup ("Quicksave: Backup").
 - *Restart* (pause menu) and *Restart Chapter* start the current part from its beginning.
-- Saves belong to the profile. They are kept by updates and by the uninstaller (see [Uninstall in detail](#uninstall-in-detail)).
+- Saves are kept by updates and by the uninstaller (see [Uninstall in detail](#uninstall-in-detail)).
 - The checkpoint files of the Xbox build (`.sgs`) cannot be loaded.
 
 ## Multiplayer
 
 **Multi-Player** offers **LAN** and **Internet** (the 2005 System Link and Xbox Live
-pages). *Edit Game Modes* and *Split-Screen* are greyed out: neither has a page in the 2005 build.
+pages). The 2005 *Split-Screen* and *Edit Game Modes* buttons are hidden: neither has a page in the 2005 build.
 
 - **LAN → Host Game**: game mode, team (team modes), character, map, bots. The game stays on your local network.
 - **LAN → Join Game**: the list of games on your network (it updates itself while it is open), then team and
   character.
 - **Internet**: *Create Match* hosts a game listed on OldUnreal's master servers; *Find Match* looks for games there.
   Both server lists (LAN and Internet) show each game's server name, map, game type and players.
-- **Options → Edit Profile → Multiplayer**: your character, your **Name** in multiplayer games (the profile name
-  unless you type another; [Ins] or pad Y opens the on-screen keyboard) and an **Outfit**: standard, desert or
+- **Options → Multiplayer**: your character, your **Name** in multiplayer games (*Player*
+  unless you type another; *Player Name (Ins)* or pad Y opens the on-screen keyboard) and an **Outfit**: standard, desert or
   black uniform for O'Neill, Carter, Jackson, Teal'c and Graham Coulder (bots wear a random one). The same *Outfit*
-  and *Name* rows are on the character page when you host or join a game; changes there are kept in the profile.
-- **Pack** (same pages, under *Outfit*): the weapons you start with, besides the pistol. Its contents show at the top
-  left (icons and names). Tau'ri characters (SG-1, Walter, Coulder, Tok'ra): *Assault* = P90 + frag grenades, *Close
-  Quarters* = Shotgun + C4, *Marksman* = Sniper rifle + shock grenades. Goa'uld characters (Jaffa, Goa'uld;
-  in team games your team decides): *Warrior* = Staff weapon + frag grenades, *Zat* = Zat gun + shock grenades,
-  *Lord* = Ribbon device + frag grenades. The Stinger and the shield are only found on the maps. Bots take a random
-  pack; a server can keep the 2005 start, the pistol only.
+  and *Name* rows are on the character page when you host or join a game; changes there are kept.
+  On that page a click selects a character; **Start** at the bottom right (**Next** when hosting), Enter or a
+  double-click confirms.
+- **Pack** (same pages, under *Outfit*): the weapons you start with. Its contents show in the box under the rows
+  (icons and names); each side remembers its own pack. Tau'ri characters (SG-1, Walter, Coulder, Tok'ra) keep the
+  2005 pistol and add: *Assault* = P90 + frag grenades, *Close Quarters* = Shotgun + C4, *Marksman* = Sniper rifle +
+  frag grenades, *Zat* = Zat gun + frag grenades, *Staff* = Staff weapon + frag grenades. Goa'uld characters (Jaffa,
+  Goa'uld; in team games your team decides) have no pistol: *Warrior* = Staff weapon + shock grenades, *Zat* = Zat
+  gun + shock grenades, *Lord* = Ribbon device + personal shield + Zat gun (no grenades). The Stinger and the shield
+  are also found on the maps. Bots take a random pack of their side; a server can keep the 2005 start, the pistol
+  only, for everyone.
+- **Change Character** (Escape during a multiplayer game): the same page, to change character, outfit, name and pack
+  (in team games, among your team's characters). **Apply** puts you back at a spawn point at once with the new
+  choice; no death, score or life is counted. If you were hit in the last 5 seconds, carry a flag, drive a vehicle
+  or are dead, the change applies at your next respawn (a message says so).
 
 Modes and maps (ten maps: seven deathmatch, three capture the flag):
 
@@ -417,8 +461,21 @@ How a match runs (2005 rules):
   host alone without bots waits.
 - Weapons, health and shields are picked up with **Use**.
 - After a team match, one more round is played, then the next map loads.
-- Hold **Tab** (Back on the controller) to see the players and scores; F1 also shows them. To chat, open the
-  console and type `say` followed by your message (`teamsay` for your team).
+- Hold **Tab** (Back on the controller) to see the players and scores; F1 also shows them.
+- **Chat**: press **T** to talk to everyone, **Y** to talk to your team (Options → Controls changes
+  the keys). A typing line opens at the bottom left: **Enter** sends, **Escape** cancels. Messages show under your
+  portrait for 10 seconds, the sender's name in their team's colour, team messages marked *(Team)*; while you type,
+  the last messages show again. Dead players and spectators can chat too. Without teams (Deathmatch, Last Man
+  Standing) team chat goes to everyone, as in UT2004. The console's `say` / `teamsay` still work.
+- On a server with a Discord feed (our public servers have one), messages to everyone are also posted in that
+  server's Discord channel with your player name; team chat never is.
+- **Quick voice menu: V** (Controls row *Voice Menu*). Your character says the line in their own 2005 voice, heard
+  by the players nearby, and its text shows in the chat (to your team in team games, except taunts). Pick with
+  the number keys or a click (move the mouse to show the cursor); Escape or V closes; you can keep moving. The
+  menu offers only the lines your character has in the 2005 game: Taunt, Affirmative, Negative, Take cover,
+  Concentrate fire, Ready for SG-1 (Jackson has no Affirmative / Negative, Teal'c no Ready), Taunt, Attack! and Enemy spotted for
+  the Jaffa (their own combat shouts); Coulder, Walter, the Tok'ra and the Goa'uld have no voice lines. One line every 3 s, a taunt every
+  6 s; not while dead.
 
 To play together, everyone needs **the same Redial version and the same OldUnreal build**; otherwise joining
 fails (the server lists dim a server of another version). To host on the Internet behind a router, forward UT2004's usual ports (UDP 7777 and 7778) to your PC and
@@ -446,7 +503,7 @@ attack the enemy flag, defend their base, bring their flag back and escort their
 
 ## Updating and uninstalling
 
-- **Update when the game starts**: the **Play Stargate SG-1 The Alliance** shortcut first asks GitHub whether a
+- **Update when the game starts**: the **Stargate Redial - The Alliance** shortcut first asks GitHub whether a
   newer version exists (2 seconds at most; nothing about you is sent). Online games need the same version on
   both sides, so when there is one a window offers *Update*, *Later* or *Skip this version*. *Update* downloads
   it, checks its signature (a file that does not verify is deleted and nothing is installed) and opens the new
@@ -454,7 +511,7 @@ attack the enemy flag, defend their base, bring their flag back and escort their
   window asks for the `.7z` again. To turn the check off, untick *Check for updates when the game starts* in the
   installer (or install with `--no-update-check`).
 - **Update by hand**: download the new installer zip, extract it and run **Stargate Redial Setup.exe** again: it
-  shows *Update v0.1 → v0.2*. Do not uninstall first. Your keys, settings, profiles and saves are kept, and only
+  shows *Update v0.1 → v0.2*. Do not uninstall first. Your keys, settings and saves are kept, and only
   what changed is rebuilt. Details: [Updating in detail](#updating-in-detail).
 - **Uninstall**: run **Stargate Redial Setup.exe** and click *Uninstall…* on its last step. It removes exactly
   the files the installer wrote; saves, screenshots, logs and your own files stay (tick *Also delete my saves…*
@@ -487,8 +544,12 @@ opens it; `installer-window.log` there is everything the window showed). The gam
 ### Game
 
 - **The screen is black, the picture is wrong, or the game does not start after a video change**: run the
-  installer again with `--reset-video` (back to the default video settings). If you switched the renderer, the
-  default is Direct3D 9.
+  installer again with `--reset-video` (back to the default video settings: Direct3D 9).
+- **Black screen or an error at start after choosing Direct3D 11**: on a PC without Direct3D 11 the installer and
+  the game's shortcut go back to Direct3D 9 by themselves, and after a start that failed on Direct3D 11 the
+  shortcut starts the next one on Direct3D 9. If the screen still stays black, close the game (Alt+F4), open
+  `<UT2004>\SGAlliance\System\SGAlliance.ini` with Notepad and, under `[Engine.Engine]`, replace
+  `RenderDevice=D3D11Drv.D3D11RenderDevice` with `RenderDevice=D3D9Drv.D3D9RenderDevice`.
 - **Window or full screen**: Video → Display. To start in a window, close the game and set
   `StartupFullscreen=False` under `[WinDrv.WindowsClient]` in `<UT2004>\SGAlliance\System\SGAlliance.ini`.
 - **The movement keys are in the wrong place**: Options → Controls → Keyboard Layout, or run the installer with
@@ -512,9 +573,11 @@ opens it; `installer-window.log` there is everything the window showed). The gam
 
 - **Frame Rate Limit**: 144 or 240 rather than *Unlimited*. Vehicle physics lose a little speed at very high
   frame rates. *Vertical Sync* removes tearing.
-- **Renderer**: Direct3D 9 is the tested one and the only one that draws the bloom, the pause blur and the
-  sniper scope's lens; they cost a little (about half a millisecond per frame at 1080p on a recent PC). OpenGL
-  and Direct3D 11 add anti-aliasing, which costs more.
+- **Renderer**: Direct3D 9 (the default) and Direct3D 11 draw the bloom, the pause blur and the sniper scope's
+  lens; they cost a little (about half a millisecond per frame at 1080p on a recent PC). Direct3D 11
+  (experimental) adds anti-aliasing at about the same frame rate on a recent PC. OpenGL also has anti-aliasing,
+  but no bloom.
+- **Scope Depth of Field** costs about 1.5 ms per frame, only while you look through the scope or binoculars.
 - On a slow PC: *World Detail* Low, *Shadows* Off, a lower resolution or *Texture Detail*.
 - On a laptop, make sure Windows runs UT2004 on the dedicated graphics card.
 
@@ -564,13 +627,14 @@ Sommaire : [Installation](#installation) · [Détails de l'installeur](#détails
    - **Dossier UT2004** : elle trouve UT2004 par le registre et Steam. Sinon, cliquez sur *Parcourir…* et
      choisissez le dossier qui contient `System\UT2004.exe`. Si le patch OldUnreal manque ou est trop ancien, la
      fenêtre l'indique avec un lien vers la page du patch.
-   - **Installation** : cochez *Mettre un raccourci sur le bureau* si vous le souhaitez, laissez cochée
-     *Vérifier les mises à jour au lancement du jeu* (voir *Mise à jour et désinstallation*), puis cliquez sur
-     *Installer*.
+   - **Installation** : *Mettre un raccourci sur le bureau* est cochée (décochez-la si vous n'en voulez pas ; le
+     menu Démarrer en reçoit toujours un), laissez cochée *Vérifier les mises à jour au lancement du jeu* (voir
+     *Mise à jour et désinstallation*), puis cliquez sur *Installer*.
 3. Patientez. La fenêtre coche chaque étape et montre l'avancement et le temps restant : environ 3 minutes sur
    un PC à 8 cœurs, 5 à 6 minutes avec 4 cœurs, plus l'extraction de l'archive. *Annuler* arrête proprement.
-4. Cliquez sur **Jouer**. Plus tard, lancez **Play Stargate SG-1 The Alliance** dans `<UT2004>\SGAlliance` (ou
-   le raccourci du bureau).
+4. Cliquez sur **Jouer**. Plus tard, lancez **Stargate Redial - The Alliance** depuis le menu Démarrer ou le
+   bureau (ou dans `<UT2004>\SGAlliance`). Pendant la partie, son bouton dans la barre des tâches porte le nom et
+   l'icône de Redial.
 
 Le jeu est installé comme un mod d'UT2004 : votre UT2004 lui-même n'est pas modifié. La disposition de votre
 clavier (QWERTY ou AZERTY) est détectée, et une manette de type Xbox branchée pendant l'installation est activée.
@@ -644,7 +708,8 @@ app\tools\sgredial.exe --help
 | `--dry-run` | vérifie les prérequis et l'archive, affiche le plan, ne change rien |
 | `--jobs N`, `--sequential` | moins de processus à la fois, pour garder le PC réactif |
 | `--lightmaps runtime` | UT2004 recalcule l'éclairage des niveaux au lieu d'utiliser l'éclairage précalculé du jeu |
-| `--desktop-shortcut` | place aussi le lanceur sur votre bureau |
+| `--skies keep` | garde les textures de ciel de 2005 (par défaut l'installeur lisse leurs blocs de compression et les stocke sans compression) |
+| `--desktop-shortcut` | place aussi le lanceur sur votre bureau (le menu Démarrer le reçoit toujours) |
 | `--no-update-check` | le raccourci Jouer lance directement le jeu, sans chercher de nouvelle version |
 | `--keyboard qwerty\|azerty` | disposition des touches (par défaut d'après le clavier Windows ; la page Options > Controls du jeu peut la changer ensuite) |
 | `--gamepad on\|off` | une manette compatible Xbox branchée pendant l'installation est activée avec la disposition de 2005 ; ceci le force |
@@ -660,9 +725,10 @@ app\tools\sgredial.exe --help
 Le mod va dans `<UT2004>\SGAlliance` et a son propre `SGAlliance.ini` ; vos réglages UT2004 ne sont pas touchés.
 **Une exception :** UT2004 ne lit les fichiers de configuration par classe que dans son propre dossier `System`,
 même pour un mod ; l'installeur y copie donc `Tweak_*.ini` (les valeurs de réglage du jeu, environ 137
-fichiers), `SGAMusic.ini`, `SGSpeechData.ini`, `SGLipSyncData.ini` et `SGMeshMaterials.ini`. Le jeu y écrit
+fichiers), `SGAMusic.ini`, `SGSpeechData.ini`, `SGLipSyncData.ini`, `SGMeshMaterials.ini` et
+`SGChapterBriefings.ini`. Le jeu y écrit
 ensuite lui-même `SGSpeech.ini` (réglages) et `SGASaves.ini`, `PlayerProfile.ini`, `Stats.ini` (sauvegardes,
-profil, statistiques). Aucun fichier d'UT2004 n'est remplacé. Chaque fichier écrit par l'installeur, dans le
+réglages, statistiques). Aucun fichier d'UT2004 n'est remplacé. Chaque fichier écrit par l'installeur, dans le
 dossier du mod et dans `<UT2004>\System`, est listé avec son SHA-256 dans `SGAlliance\.redial\manifest.json` (ceux
 de `<UT2004>\System` aussi dans `SGAlliance\installed-outside-mod.txt`). Avec la vérification des mises à jour
 (par défaut), `SGAlliance\Launcher` contient une copie du programme de l'installeur (environ 40 Mo), que le
@@ -694,7 +760,7 @@ comme la première fois).
 
 Pour couper cette vérification, décochez *Vérifier les mises à jour au lancement du jeu* dans la fenêtre de
 l'installeur (ou installez avec `--no-update-check`) : le raccourci lance alors directement le jeu.
-`Play Stargate SG-1 The Alliance.cmd` dans `<UT2004>\SGAlliance` ne vérifie jamais.
+`Stargate Redial - The Alliance.cmd` dans `<UT2004>\SGAlliance` ne vérifie jamais.
 
 **À la main.** À la sortie d'une nouvelle version, téléchargez son zip, décompressez-le (dans un nouveau dossier
 ou par-dessus l'ancien) et relancez **Stargate Redial Setup.exe** : la fenêtre affiche *Mettre à jour v0.1 →
@@ -705,7 +771,7 @@ désinstallez pas avant. Le zip et le dossier de la version précédente peuvent
   `updating 0.1 -> 0.2`). Installer une version plus ancienne par-dessus une plus récente demande confirmation
   (`--force` en ligne de commande).
 - **Vos données ne sont jamais remplacées** : touches, réglages vidéo, audio et manette, vos autres modifications
-  des fichiers de réglages du mod, profils, sauvegardes et points de contrôle, captures, journaux. Les fichiers de
+  des fichiers de réglages du mod, sauvegardes et points de contrôle, captures, journaux. Les fichiers de
   réglages sont fusionnés : un réglage que vous avez modifié garde votre valeur, sauf si la nouvelle version
   change ce réglage par défaut précis (l'installeur le signale) ; les nouveaux réglages sont ajoutés. Avant toute
   modification, vos réglages et sauvegardes sont copiés dans `SGAlliance\.redial\backups` (les 5 dernières mises
@@ -725,7 +791,7 @@ désinstallez pas avant. Le zip et le dossier de la version précédente peuvent
 #### Désinstallation en détail
 
 Lancez **Stargate Redial Setup.exe**, allez à la dernière étape et cliquez sur *Désinstaller…* ; cochez *Supprimer
-aussi mes sauvegardes, mon profil et mes statistiques* seulement si vous le souhaitez. Depuis une invite de
+aussi mes sauvegardes, mes réglages et mes statistiques* seulement si vous le souhaitez. Depuis une invite de
 commandes : `app\tools\sgredial.exe --uninstall` (ajoutez `--dry-run` pour voir d'abord chaque fichier,
 `--purge-saves` pour supprimer aussi les sauvegardes).
 
@@ -742,41 +808,45 @@ commandes : `app\tools\sgredial.exe --uninstall` (ajoutez `--dry-run` pour voir 
 
 ### Premier lancement
 
-1. Lancez **Play Stargate SG-1 The Alliance**. Le jeu s'ouvre en plein écran à la résolution du bureau, affiche
+1. Lancez **Stargate Redial - The Alliance**. Le jeu s'ouvre en plein écran à la résolution du bureau, affiche
    l'écran des logos d'origine, puis le menu principal devant une scène de la Porte des étoiles. Le menu
    principal affiche « Stargate Redial V0.1 » dans son coin en bas à droite.
-2. **Créez un profil.** Au premier lancement, le jeu ouvre *Create Profile* : tapez un nom au clavier (Retour
-   arrière efface) ou avec les touches à l'écran, choisissez *Done* (Entrée), puis *Save* (Inser, ou un clic sur
-   l'invite, ou Y à la manette). Ce profil devient le profil actif : le jeu s'en souvient au lancement suivant, et
-   Continue, Single Player, Multi-Player et Options l'utilisent. Le bouton **Profile** du menu principal choisit un
-   autre profil (Entrée ou un clic), en crée un (Inser) ou en supprime un (Suppr). Un profil garde sa difficulté, ses
-   volumes, ses touches, ses réglages de souris, son nom et sa tenue en multijoueur, et ses sauvegardes.
+2. **Rien à configurer.** Le jeu garde lui-même vos sauvegardes, votre progression, la difficulté, les volumes, les
+   touches, les réglages de souris et vos nom, tenue et paquetages en multijoueur ; il n'y a aucun profil à créer ni
+   à choisir. (Une installation qui avait déjà des profils continue avec le dernier utilisé ; les autres restent sur
+   le disque.)
 3. Les menus se pilotent à la souris, au clavier (flèches, Entrée = valider, Échap ou Retour arrière = retour,
-   Suppr et Inser pour les autres invites) et à la manette (croix ou stick gauche, A valider, B retour). Un seul
+   Suppr et Inser pour les autres boutons) et à la manette (croix ou stick gauche, A valider, B retour). Un seul
    élément est en surbrillance : celui sous la souris quand vous la bougez, sinon celui où les touches ou la manette
-   l'ont amené ; Entrée agit sur lui. La barre d'invites en bas indique les touches du dernier périphérique utilisé.
+   l'ont amené ; Entrée agit sur lui. Les boutons en bas d'une page se cliquent et indiquent leur touche :
+   **Back (Esc)** à gauche, l'action de la page à droite (**Select (Enter)**, **Load (Enter)**, **Start (Enter)**...).
+   Quand vous utilisez une manette, ils montrent ses boutons à la place.
 
 ### Les menus
 
 #### Menu principal
 
-- **Continue** charge le checkpoint ou la sauvegarde rapide la plus récente du dernier profil utilisé, comme le
-  dit son texte d'aide de 2005. Il reste grisé tant que le profil n'a pas de sauvegarde. (Dans la version de 2005,
+- **Continue** charge le checkpoint ou la sauvegarde rapide la plus récente, comme le
+  dit son texte d'aide de 2005. Il reste grisé tant qu'il n'y a pas de sauvegarde. (Dans la version de 2005,
   il ouvrait une liste provisoire de toutes les cartes.) Pour lancer n'importe quelle partie de mission, passez par
   Single Player → Chapter Selection. La version n'a pas les missions 1, 3, 5, 6, 8, 9 et 11.
 - **Exit Game** quitte le jeu après confirmation, comme Échap.
 - **Single Player** :
+  - **Continue** fait comme le Continue du menu principal (grisé tant qu'il n'y a pas de sauvegarde).
   - **New Game** demande si vous voulez jouer le didacticiel : *Yes* lance le didacticiel (M00), *No* lance la
     mission 2.
   - **Chapter Selection** liste les 61 parties de l'histoire, sans image de chapitre (les données de 2005 n'en
-    ont pas).
-  - **Load Game** liste les points de contrôle et la sauvegarde rapide du profil ([Sauvegardes](#sauvegardes)) :
-    chargez-les ou supprimez-les.
+    ont pas). À gauche, il affiche le briefing de mission de 2005 du chapitre choisi (lieu, heure locale et texte,
+    comme l'onglet BRIEFING en jeu) au-dessus de son nom ; M02A-D, M14A-C et M15A n'en ont pas dans les données de
+    2005 et n'affichent que leur nom. Les chapitres terminés ont une coche et un nom vert, le chapitre en cours (le plus
+    avancé que vous ayez atteint) une flèche dorée et un nom doré, ceux pas encore atteints un nom gris. La liste s'ouvre sur le chapitre en cours ; vous pouvez toujours lancer n'importe lequel. Un clic ne fait que sélectionner un chapitre (son briefing s'affiche à gauche) ; un double-clic, Entrée ou le bouton **Start** le lance. Le menu Single Player
+    affiche votre progression, par exemple « Progress: 21 % - chapter 14/61 ».
+  - **Load Game** liste vos points de contrôle et la sauvegarde rapide ([Sauvegardes](#sauvegardes)) pour les
+    charger.
   - **Tutorial** lance M00.
 - **Multi-Player** : voir [Multijoueur](#multijoueur).
-- **Options** → **Edit Profile** du profil actif : Controls, Multiplayer (votre personnage en multijoueur), Video,
-  Audio, Name, Difficulty. Voir [Les options](#les-options).
-- **Profile** : choisir le profil actif, en créer un ou en supprimer un (voir [Premier lancement](#premier-lancement)).
+- **Options** : Controls, Multiplayer (votre personnage en multijoueur), Video, Audio, Difficulty. Voir
+  [Les options](#les-options).
 - Le bouton **Extras** de 2005 est masqué : sa page était vide, laissée en attente.
 - **Échap** sur le menu principal propose de quitter.
 
@@ -796,7 +866,7 @@ suivante. M21D, la dernière, ramène au menu principal.
 
 ### Commandes
 
-Les touches se changent dans **Options → Edit Profile → Controls**. La colonne manette est la disposition Xbox
+Les touches se changent dans **Options → Controls**. La colonne manette est la disposition Xbox
 d'origine de 2005 (les boutons blanc et noir de la Xbox sont LB et RB, comme sur la Xbox 360).
 
 | Action | Clavier AZERTY | QWERTY | Manette |
@@ -818,21 +888,46 @@ d'origine de 2005 (les boutons blanc et noir de la Xbox sont LB et RB, comme sur
 | Camouflage (il faut une ceinture de bouclier) | F | F | B |
 | Tir concentré (maintenu : choisir un équipier) | X | X | RB |
 | Se mettre à couvert | W | Z | LB |
+| Équipe : tenir la position | H | H | — |
+| Équipe : me suivre | G | G | — |
 | Informations de mission | Tab | Tab | Back |
 | Scores (multijoueur) | F1 | F1 | — |
 | Sauvegarde rapide / chargement rapide | F5 / F9 | F5 / F9 | — |
+| Discussion / discussion d'équipe (multijoueur) | T / Y | T / Y | — |
+| Lampe torche on/off (P90 avec lampe ; tous les P90 de la campagne) | L | L | — |
+| Menu vocal rapide (multijoueur) | V | V | — |
 | Menu pause | Échap | Échap | Start |
 | Console | `²` ou `ù` | `` ` `` (à gauche de 1) | — |
 | Capture d'écran | F12 | F12 | — |
 
 Bon à savoir :
 
+- **Capture d'écran : F12** (ligne *Screenshot* de la page Controls, pour changer la touche). Les images sont
+  enregistrées dans le dossier `ScreenShots` de votre installation d'UT2004 (`<UT2004>\ScreenShots`).
 - Objets, armes et munitions se ramassent avec **Utiliser**, pas en passant dessus. Utiliser ouvre aussi les
   portes, actionne les consoles et ranime un équipier à terre (« administer first aid »).
 - **Sprinter** vide la barre d'endurance, qui se recharge à l'arrêt. Le double appui sur avancer, la méthode de
   2005, fonctionne toujours.
-- **Tir concentré** : un appui fait tirer l'équipe sur ce que vous visez ; maintenu, il permet de choisir un
-  équipier à commander. **Se mettre à couvert** envoie l'équipe à couvert.
+- **Ordres à l'équipe** (solo). Tant qu'un ordre est en cours, la plaque de l'équipier, à gauche de l'écran,
+  affiche une lettre : **F** = ordre de tir, **C** = ordre de mise à couvert (un repère, pas une touche).
+  - **Tir concentré, appui bref sur X** avec un ennemi sous le réticule : toute l'équipe tire dessus. Chaque
+    équipier affiche **F** et un repère reste sur la cible jusqu'à sa mort. Un appui sans ennemi visé annule
+    l'ordre de tir.
+  - **Tir concentré, X maintenu** : le menu de l'équipe s'ouvre (CLEAR ORDER et les noms des équipiers). La
+    molette (manette : croix haut / bas) choisit un équipier. Relâchez X sur un ennemi : seul cet équipier
+    l'attaque, avec son attaque spéciale ou une grenade. Relâchez X sans ennemi visé : l'équipier attend jusqu'à
+    45 secondes votre prochain appui sur X visant un ennemi. Relâchez X sur **CLEAR ORDER** : tous les
+    ordres de tir sont annulés. Autre façon de choisir un équipier (celle du tutoriel) : visez-le et appuyez sur X,
+    puis appuyez sur X en visant l'ennemi.
+  - **Se mettre à couvert** (W, QWERTY Z) : toute l'équipe cherche un abri et affiche **C** ; un nouvel appui
+    la fait sortir de couverture. Avec le réticule sur un équipier, lui seul se met à couvert.
+  - **Tenir la position** (H) : chaque équipier reste où il est (une flèche jaune marque chaque place) et combat
+    de là pendant que vous avancez. **Me suivre** (G) l'annule et l'équipe revient vers vous. L'ordre de tenir la
+    position est gardé par les sauvegardes et sauvegardes rapides ; la mission suivante commence avec l'équipe qui
+    vous suit. Ces deux ordres n'avaient pas de touche en 2005 (seulement des commandes de console) ; la manette n'a
+    pas de bouton pour eux, on peut en donner un sur la page Controls (la croix droite est libre).
+  - **Premiers soins** : un équipier à terre appelle à l'aide ; approchez-vous et appuyez sur **E** (Utiliser)
+    quand « administer first aid » s'affiche (environ 2 secondes).
 - Le **camouflage** demande une ceinture de bouclier ; il ne marche pas en sprintant, et l'équipe se camoufle
   avec vous.
 - Les **grenades** n'ont pas de touche à elles (comme en 2005) : choisissez-les avec 4 (ou la molette), puis tirez
@@ -840,6 +935,9 @@ Bon à savoir :
 - Le **zat** et le **ribbon device** tirent environ deux coups avec une charge pleine, puis se rechargent (pleine en
   6 secondes) ; la charge s'affiche en haut à droite, en barre et en pourcentage. La **lance Goa'uld** se charge tant
   que vous maintenez le tir.
+- Les armes à chargeur affichent **chargeur / réserve** sous le nom de l'arme, en haut à droite (par exemple
+  `50 / 250` : 50 cartouches dans le chargeur, 250 en réserve) ; la barre est aussi le chargeur. Les grenades et le
+  C4 affichent leur nombre.
 
 #### Changer les touches
 
@@ -866,7 +964,7 @@ Une manette de type Xbox (Xbox 360, One ou Series) utilise la disposition de 200
 
 ### Les options
 
-**Options → (profil) → Edit Profile**, aussi accessible depuis le menu pause. Les changements Video et Audio
+**Options** (menu principal), aussi accessible depuis le menu pause. Les changements Video et Audio
 s'appliquent avec *Save* (Entrée).
 
 #### Vidéo
@@ -881,21 +979,22 @@ s'appliquent avec *Save* (Entrée).
 | Field of View | 80 à 120 | 90 est la valeur du jeu |
 | Widescreen FOV | Hor+, Off | Hor+ : un écran large voit davantage sur les côtés |
 | Texture Detail | UltraLow à UltraHigh | |
-| Brightness | 10 à 100 | avec Direct3D 9, seulement en plein écran |
-| Renderer | Direct3D 9, OpenGL, Direct3D 11 | Direct3D 9 donne l'aspect d'origine ; au prochain démarrage |
-| Anti-Aliasing | Off, 2x, 4x, 8x | OpenGL ou Direct3D 11 seulement ; au prochain démarrage |
+| Brightness | 10 à 100 | 50 (défaut) = l'image telle quelle ; avec Direct3D 9, seulement en plein écran |
+| Renderer | Direct3D 9, OpenGL, Direct3D 11 | Direct3D 9 (défaut) est le moteur d'origine ; Direct3D 11 est expérimental : anticrénelage avec le bloom, mais défauts connus ([problèmes connus](KNOWN_ISSUES.md)) ; au prochain démarrage (l'enregistrement propose *Restart now* ou *Later*) |
+| Anti-Aliasing | Off, 2x, 4x, 8x | Direct3D 11 ou OpenGL seulement ; avec Direct3D 11, le bloom reste actif ; au prochain démarrage (l'enregistrement propose *Restart now* ou *Later*) |
 | Texture Filtering | Bilinear, Trilinear, Anisotropic 2x à 16x | |
-| Shadows | On, Off | ombres des personnages uniquement (impacts, traces de brûlure et lampe torche restent) ; s'applique tout de suite, ou au prochain chargement de niveau si le niveau a démarré avec Off |
+| Shadows | On, Off | ombres des personnages, des arbres et du décor (impacts, traces de brûlure et lampe torche restent) ; s'applique tout de suite, ou au prochain chargement de niveau si le niveau a démarré avec Off |
 | World Detail | High, Low | lumières dynamiques, halos, impacts, végétation, textures de détail ; au prochain chargement de niveau |
-| Bloom | On, Off | le halo lumineux de la version de 2005 et le flou derrière le menu pause ; immédiat. Direct3D 9 seulement : avec OpenGL ou Direct3D 11, la ligne affiche Off |
+| Bloom | On, Off | le halo lumineux de la version de 2005 et le flou derrière le menu pause, plus la lueur douce des lampes et consoles des dernières missions (effet émissif de la version PC de Perception) ; immédiat. Direct3D 9 et Direct3D 11 : avec OpenGL, la ligne affiche Off |
+| Scope Depth of Field | Off, On | dans la lunette du fusil de précision et les jumelles, ce que vise le réticule reste net, l'avant-plan et l'arrière-plan sont légèrement flous (effet de la version PC de Perception) ; désactivé par défaut ; immédiat. Direct3D 9 et Direct3D 11 |
 
 #### Audio
 
 | Ligne | Valeurs | Remarques |
 |---|---|---|
-| Music Volume, Voice Volume, FX Volume | 0 à 1 | enregistrés dans le profil |
-| 3D Audio (HRTF) | Auto, Off, On | son 3D au casque ; au prochain démarrage |
-| Sound Channels | 32, 64, 128 | au prochain démarrage |
+| Music Volume, Voice Volume, FX Volume | 0 à 1 | conservés d'un lancement à l'autre |
+| 3D Audio (HRTF) | Auto, Off, On | son 3D au casque ; au prochain démarrage (l'enregistrement propose *Restart now* ou *Later*) |
+| Sound Channels | 32, 64, 128 | au prochain démarrage (l'enregistrement propose *Restart now* ou *Later*) |
 
 #### Contrôles
 
@@ -904,9 +1003,9 @@ Mouse, Mouse Smoothing (Off = mouvement brut de la souris), et les lignes de la 
 
 ### Difficulté
 
-**Options → Edit Profile → Difficulty** : Easy, Medium, Hard ou Insane. Par défaut **Hard**, la valeur par défaut
+**Options → Difficulty** : Easy, Medium, Hard ou Insane. Par défaut **Hard**, la valeur par défaut
 de 2005. Les menus de 2005 ne permettaient pas de la changer ; les quatre niveaux sont complets dans les données
-du jeu. Le choix est enregistré dans le profil et s'applique au prochain début de niveau, redémarrage ou
+du jeu. Le choix est conservé et s'applique au prochain début de niveau, redémarrage ou
 chargement. Comme dans le jeu d'origine, il change aussi la résistance de vos alliés.
 
 ### Sauvegardes
@@ -916,7 +1015,7 @@ rapide** à tout moment (il n'y a toujours pas de menu de sauvegarde).
 
 - « Checkpoint reached » s'affiche quand le jeu sauvegarde. Une sauvegarde est aussi faite au début de chaque
   partie.
-- **Sauvegarde rapide : F5**, **chargement rapide : F9** (Options → Edit Profile → Controls pour changer les
+- **Sauvegarde rapide : F5**, **chargement rapide : F9** (Options → Controls pour changer les
   touches). « Quick Saving » s'affiche quand le jeu sauvegarde. Le chargement rapide vous remet où vous aviez
   sauvegardé, avec votre santé, vos armes et vos munitions, les ennemis abattus toujours morts, les portes comme
   vous les aviez laissées et les événements scriptés du niveau repris là où ils en étaient. La sauvegarde rapide
@@ -927,14 +1026,15 @@ rapide** à tout moment (il n'y a toujours pas de menu de sauvegarde).
 - Pour revenir à un point de contrôle : *Retry* sur la page MISSION FAILED, ou **Single Player → Load Game**, qui
   liste aussi la sauvegarde rapide (« Quicksave: Current ») et sa copie de secours (« Quicksave: Backup »).
 - *Restart* (menu pause) et *Restart Chapter* recommencent la partie en cours depuis son début.
-- Les sauvegardes appartiennent au profil. Les mises à jour et la désinstallation les conservent (voir
+- Les mises à jour et la désinstallation conservent les sauvegardes (voir
   [Désinstallation en détail](#désinstallation-en-détail)).
 - Les fichiers de points de contrôle de la version Xbox (`.sgs`) ne peuvent pas être chargés.
 
 ### Multijoueur
 
 **Multi-Player** propose **LAN** et **Internet** (les pages System Link et Xbox Live
-de 2005). *Edit Game Modes* et *Split-Screen* sont grisés : aucun des deux n'a de page dans la version de 2005.
+de 2005). Les boutons *Split-Screen* et *Edit Game Modes* de 2005 sont masqués : aucun des deux n'a de page dans la
+version de 2005.
 
 - **LAN → Host Game** : mode de jeu, équipe (modes en équipe), personnage, carte, bots. La partie reste sur votre
   réseau local.
@@ -943,18 +1043,27 @@ de 2005). *Edit Game Modes* et *Split-Screen* sont grisés : aucun des deux n'a 
 - **Internet** : *Create Match* héberge une partie listée sur les serveurs maîtres d'OldUnreal ; *Find Match* y
   cherche des parties. Les deux listes de serveurs (LAN et Internet) affichent pour chaque partie le nom du serveur,
   la carte, le mode de jeu et les joueurs.
-- **Options → Edit Profile → Multiplayer** : votre personnage, votre nom en multijoueur (**Name** : le nom du
-  profil sauf si vous en tapez un autre ; [Ins] ou Y à la manette ouvre le clavier à l'écran) et une tenue
+- **Options → Multiplayer** : votre personnage, votre nom en multijoueur (**Name** : *Player*
+  sauf si vous en tapez un autre ; *Player Name (Ins)* ou Y à la manette ouvre le clavier à l'écran) et une tenue
   (**Outfit**) : uniforme standard, désert ou noir pour O'Neill, Carter, Jackson, Teal'c et Graham Coulder (les
   bots en portent une au hasard). Les mêmes lignes *Outfit* et *Name* figurent sur la page du personnage quand vous
-  créez ou rejoignez une partie ; ce que vous y changez est gardé dans le profil.
-- **Pack** (mêmes pages, sous *Outfit*) : les armes avec lesquelles vous commencez, en plus du pistolet. Son contenu
-  s'affiche en haut à gauche (icônes et noms). Personnages Tau'ri (SG-1, Walter, Coulder, Tok'ra) : *Assault* = P90 + grenades
-  à fragmentation, *Close Quarters* = fusil à pompe + C4, *Marksman* = fusil de précision + grenades paralysantes.
-  Personnages Goa'uld (Jaffa, Goa'uld ; en équipe, c'est votre équipe qui décide) : *Warrior* = lance Goa'uld +
-  grenades à fragmentation, *Zat* = zat + grenades paralysantes, *Lord* = ribbon device + grenades à fragmentation. Le
-  Stinger et le bouclier ne se trouvent que sur les cartes. Les bots prennent un pack au hasard ; un serveur peut
-  garder le départ de 2005, le pistolet seul.
+  créez ou rejoignez une partie ; ce que vous y changez est gardé. Sur cette page, un clic
+  sélectionne un personnage ; **Start** en bas à droite (**Next** quand vous hébergez), Entrée ou un double-clic
+  valide.
+- **Pack** (mêmes pages, sous *Outfit*) : les armes avec lesquelles vous commencez. Son contenu s'affiche dans le
+  cadre sous les lignes (icônes et noms) ; chaque camp garde son propre pack. Les personnages Tau'ri (SG-1, Walter,
+  Coulder, Tok'ra) gardent le pistolet de 2005 et ajoutent : *Assault* = P90 + grenades à fragmentation, *Close
+  Quarters* = fusil à pompe + C4, *Marksman* = fusil de précision + grenades à fragmentation, *Zat* = zat + grenades
+  à fragmentation, *Staff* = lance Goa'uld + grenades à fragmentation. Les personnages Goa'uld (Jaffa, Goa'uld ; en
+  équipe, c'est votre équipe qui décide) n'ont pas de pistolet : *Warrior* = lance Goa'uld + grenades paralysantes,
+  *Zat* = zat + grenades paralysantes, *Lord* = ribbon device + bouclier personnel + zat (sans grenades). Le Stinger
+  et le bouclier se trouvent aussi sur les cartes. Les bots prennent un pack au hasard de leur camp ; un serveur peut
+  garder le départ de 2005, le pistolet seul pour tous.
+- **Change Character** (Échap pendant une partie multijoueur) : la même page, pour changer de personnage, de tenue,
+  de nom et de pack (en équipe, parmi les personnages de votre équipe). **Apply** vous remet aussitôt sur un point
+  d'apparition avec le nouveau choix, sans mort, score ni vie comptés. Si vous avez été touché dans les 5 dernières
+  secondes, portez un drapeau, conduisez un véhicule ou êtes mort, le changement s'applique à votre prochaine
+  réapparition (un message le dit).
 
 Modes et cartes (dix cartes : sept de match à mort, trois de capture du drapeau) :
 
@@ -974,8 +1083,24 @@ Déroulement d'un match (règles de 2005) :
   être prêt. Un hôte seul sans bots attend.
 - Armes, santé et boucliers se ramassent avec **Utiliser**.
 - Après un match en équipe, une manche de plus est jouée, puis la carte suivante se charge.
-- Maintenez **Tab** (Back à la manette) pour voir les joueurs et les scores ; F1 les affiche aussi. Pour
-  discuter, ouvrez la console et tapez `say` suivi du message (`teamsay` pour votre équipe).
+- Maintenez **Tab** (Back à la manette) pour voir les joueurs et les scores ; F1 les affiche aussi.
+- **Discussion** : appuyez sur **T** pour parler à tout le monde, **Y** pour parler à votre équipe (Options →
+  Controls change les touches). Une ligne de saisie s'ouvre en bas à gauche : **Entrée** envoie,
+  **Échap** annule. Les messages s'affichent sous votre portrait pendant 10 secondes, le nom de l'auteur dans la
+  couleur de son équipe, les messages d'équipe marqués *(Team)* ; pendant la saisie, les derniers messages
+  réapparaissent. Les joueurs morts et les spectateurs peuvent aussi discuter. Sans équipes (Deathmatch, Last Man
+  Standing), la discussion d'équipe va à tout le monde, comme dans UT2004. `say` / `teamsay` dans la console
+  marchent toujours.
+- Sur un serveur qui a un fil Discord (c'est le cas de nos serveurs publics), les messages à tout le monde sont
+  aussi publiés dans le salon Discord de ce serveur avec votre nom de joueur ; la discussion d'équipe, jamais.
+- **Menu vocal rapide : V** (ligne *Voice Menu* de la page Controls). Votre personnage dit la réplique avec sa
+  propre voix de 2005, entendue par les joueurs proches, et son texte s'affiche dans la discussion (à votre équipe
+  dans les modes en équipe, sauf les provocations). Choisissez avec les touches numériques ou un clic (bougez la
+  souris pour faire apparaître le curseur) ; Échap ou V ferme ; vous pouvez continuer à bouger. Le menu ne propose
+  que les répliques que votre personnage a dans le jeu de 2005 : Taunt, Affirmative, Negative, Take cover,
+  Concentrate fire, Ready pour SG-1 (Jackson n'a ni Affirmative ni Negative, Teal'c pas de Ready), Taunt, Attack! et Enemy spotted
+  pour les Jaffa (leurs propres cris de combat) ; Coulder, Walter, le Tok'ra et le Goa'uld n'ont pas de répliques. Une réplique toutes les 3 s,
+  une provocation toutes les 6 s ; pas une fois mort.
 
 Pour jouer ensemble, tout le monde doit avoir **la même version de Redial et le même build OldUnreal** ; sinon,
 la connexion échoue (les listes de serveurs grisent un serveur d'une autre version). Pour héberger sur Internet derrière une box, redirigez les ports habituels d'UT2004 (UDP
@@ -1006,7 +1131,7 @@ escortent leur porteur.
 
 ### Mise à jour et désinstallation
 
-- **Mise à jour au lancement du jeu** : le raccourci **Play Stargate SG-1 The Alliance** demande d'abord à
+- **Mise à jour au lancement du jeu** : le raccourci **Stargate Redial - The Alliance** demande d'abord à
   GitHub s'il existe une version plus récente (2 secondes au plus ; rien sur vous n'est envoyé). Pour jouer en
   ligne, il faut la même version des deux côtés : s'il y en a une, une fenêtre propose *Mettre à jour*, *Plus
   tard* ou *Ignorer cette version*. *Mettre à jour* la télécharge, vérifie sa signature (un fichier qui ne la
@@ -1016,7 +1141,7 @@ escortent leur porteur.
   installez avec `--no-update-check`).
 - **Mise à jour à la main** : téléchargez le nouveau zip de l'installeur, décompressez-le et relancez
   **Stargate Redial Setup.exe** : il affiche *Mettre à jour v0.1 → v0.2*. Ne désinstallez pas avant. Vos
-  touches, réglages, profils et sauvegardes sont conservés, et seul ce qui a changé est reconstruit. Détails :
+  touches, réglages et sauvegardes sont conservés, et seul ce qui a changé est reconstruit. Détails :
   [Mise à jour en détail](#mise-à-jour-en-détail).
 - **Désinstallation** : lancez **Stargate Redial Setup.exe** et cliquez sur *Désinstaller…* à sa dernière
   étape. Il supprime exactement les fichiers écrits par l'installeur ; sauvegardes, captures, journaux et vos
@@ -1050,8 +1175,12 @@ du jeu est
 #### Jeu
 
 - **Écran noir, image incorrecte, ou le jeu ne démarre plus après un changement vidéo** : relancez l'installeur
-  avec `--reset-video` (réglages vidéo par défaut). Si vous avez changé de moteur de rendu, le défaut est
-  Direct3D 9.
+  avec `--reset-video` (réglages vidéo par défaut : Direct3D 9).
+- **Écran noir ou erreur au démarrage après avoir choisi Direct3D 11** : sur un PC sans Direct3D 11,
+  l'installeur et le raccourci du jeu reviennent à Direct3D 9 d'eux-mêmes, et après un démarrage raté en
+  Direct3D 11 le raccourci lance le suivant en Direct3D 9. Si l'écran reste noir malgré tout, fermez le jeu
+  (Alt+F4), ouvrez `<UT2004>\SGAlliance\System\SGAlliance.ini` avec le Bloc-notes et, sous `[Engine.Engine]`,
+  remplacez `RenderDevice=D3D11Drv.D3D11RenderDevice` par `RenderDevice=D3D9Drv.D3D9RenderDevice`.
 - **Fenêtre ou plein écran** : Video → Display. Pour démarrer en fenêtre, fermez le jeu et mettez
   `StartupFullscreen=False` sous `[WinDrv.WindowsClient]` dans `<UT2004>\SGAlliance\System\SGAlliance.ini`.
 - **Les touches de déplacement ne sont pas au bon endroit** : Options → Controls → Keyboard Layout, ou relancez
@@ -1077,9 +1206,11 @@ du jeu est
 
 - **Frame Rate Limit** : 144 ou 240 plutôt qu'*Unlimited*. La physique des véhicules perd un peu de vitesse à
   très haute fréquence d'images. *Vertical Sync* supprime les déchirures d'image.
-- **Renderer** : Direct3D 9 est le moteur testé et le seul qui dessine le bloom, le flou du menu pause et la
-  lentille de la lunette du fusil de précision ; ils coûtent un peu (environ une demi-milliseconde par image en
-  1080p sur un PC récent). OpenGL et Direct3D 11 ajoutent l'anticrénelage, qui coûte davantage.
+- **Renderer** : Direct3D 9 (par défaut) et Direct3D 11 dessinent le bloom, le flou du menu pause et la lentille
+  de la lunette du fusil de précision ; ils coûtent un peu (environ une demi-milliseconde par image en 1080p sur
+  un PC récent). Direct3D 11 (expérimental) ajoute l'anticrénelage, à peu près à la même fréquence d'images sur
+  un PC récent. OpenGL a aussi l'anticrénelage, mais pas de bloom.
+- **Scope Depth of Field** coûte environ 1,5 ms par image, seulement quand vous regardez dans la lunette ou les jumelles.
 - Sur un PC lent : *World Detail* Low, *Shadows* Off, une résolution ou un *Texture Detail* plus bas.
 - Sur un portable, vérifiez que Windows lance UT2004 sur la carte graphique dédiée.
 
