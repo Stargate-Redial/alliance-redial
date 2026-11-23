@@ -11,8 +11,8 @@
 
 :gb: **English** · :fr: [Français](#français)
 
-The unreleased *Stargate SG-1: The Alliance* (an Xbox prototype from December 2005), playable on your PC as a
-mod for **Unreal Tournament 2004** with the OldUnreal patch. A [Stargate Redial](https://github.com/Stargate-Redial)
+The unreleased *Stargate SG-1: The Alliance* (an Xbox prototype from December 2005), as a native PC port. It runs
+on the **Unreal Tournament 2004** engine with the OldUnreal patch, so you need UT2004 to play. A [Stargate Redial](https://github.com/Stargate-Redial)
 fan project by the [Stargate Database](https://stargatedatabase.link/en/) team. Current release: **V0.1**. Join the community on [Discord](https://discord.gg/SgHPP4mZyB).
 
 > Apart from its title picture, no game data is included: the installer rebuilds the game on your PC from your
@@ -207,7 +207,7 @@ Open an [issue](https://github.com/Stargate-Redial/alliance-redial/issues) or as
   hovercraft, a hover tank, the Warhawk, a gravity crane and a Goa'uld turret console. Their code and settings
   are in the build; we will see which ones could drive on multiplayer maps that suit them.
 - **Community maps**: a "Stargate Redial map editor" shortcut that opens UnrealEd, the editor that comes with
-  UT2004, with the mod loaded, plus a short guide for mappers (what to place in a multiplayer map, how to share it).
+  UT2004, with Redial loaded, plus a short guide for mappers (what to place in a multiplayer map, how to share it).
   The game's textures, models and sounds are already on every player's PC, so a community map is shared as a
   single file, with no game asset inside.
 - **Cut story archive**: a menu to listen to the story pieces that the 2005 build holds but never plays: the
@@ -235,7 +235,7 @@ character and logo belongs to its owner.
 - **What we publish:** our own work (installer, tools, documents) and one title picture credited in
   [NOTICE.md](NOTICE.md). The installer holds no file from the game, and nothing built from one. This page also
   shows a frame of the 2005 trailer and screenshots of the game running with Redial, for illustration only.
-- **What stays with you:** the installer turns *your* copy of the 2019 release into a mod on *your* PC. The files
+- **What stays with you:** the installer turns *your* copy of the 2019 release into a PC game on *your* PC. The files
   it generates come from the game: do not upload, share, bundle or sell them, and do not let a server hand them
   out (see [docs/SERVER.md](docs/SERVER.md)).
 - **Rights holders:** to have something changed or removed, open an issue or contact us on Discord. We will act
@@ -258,8 +258,8 @@ Made by the **Stargate Database team** · [stargatedatabase.link](https://starga
 
 :gb: [English](#stargate-sg-1-the-alliance-redial) · :fr: **Français**
 
-Le prototype inédit *Stargate SG-1: The Alliance* (version Xbox de décembre 2005), jouable sur PC comme mod
-d'**Unreal Tournament 2004** avec le patch OldUnreal. Un projet de fans
+Le prototype inédit *Stargate SG-1: The Alliance* (version Xbox de décembre 2005), en portage PC natif. Il tourne
+sur le moteur d'**Unreal Tournament 2004** avec le patch OldUnreal : il vous faut donc UT2004 pour jouer. Un projet de fans
 [Stargate Redial](https://github.com/Stargate-Redial) par l'équipe [Stargate Database](https://stargatedatabase.link/fr/). Version actuelle : **V0.1**. Retrouvez la communauté sur
 [Discord](https://discord.gg/SgHPP4mZyB).
 
@@ -475,7 +475,7 @@ joignez `<UT2004>\System\UT2004.log` (voir [Signaler un problème](docs/GUIDE.md
   une console de tourelle Goa'uld. Leur code et leurs réglages sont là ; nous verrons lesquels pourraient rouler
   sur des maps multijoueur qui s'y prêtent.
 - **Maps de la communauté** : un raccourci « éditeur de maps Stargate Redial » qui ouvre UnrealEd, l'éditeur
-  fourni avec UT2004, avec le mod chargé, et un petit guide pour les mappeurs (quoi placer dans une map
+  fourni avec UT2004, avec Redial chargé, et un petit guide pour les mappeurs (quoi placer dans une map
   multijoueur, comment la partager). Les textures, modèles et sons du jeu sont déjà sur le PC de chaque joueur :
   une map de la communauté se partage donc en un seul fichier, sans aucun élément du jeu dedans.
 - **Archives de l'histoire coupée** : un menu pour écouter les morceaux d'histoire que la version de 2005 contient
@@ -505,7 +505,7 @@ personnages et logos appartiennent à leurs propriétaires.
   dans [NOTICE.md](NOTICE.md). L'installeur ne contient aucun fichier du jeu, rien qui en soit tiré. Cette page
   montre aussi une image de la bande-annonce de 2005 et des captures du jeu lancé avec Redial, à titre
   d'illustration uniquement.
-- **Ce qui reste chez vous :** l'installeur transforme *votre* copie de la publication de 2019 en un mod sur
+- **Ce qui reste chez vous :** l'installeur transforme *votre* copie de la publication de 2019 en un jeu PC sur
   *votre* PC. Les fichiers qu'il génère viennent du jeu : ne les mettez pas en ligne, ne les partagez pas, ne les
   incluez dans aucun paquet, ne les vendez pas, et ne laissez pas un serveur les distribuer (voir
   [docs/SERVER.md](docs/SERVER.md#français)).
