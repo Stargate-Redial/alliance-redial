@@ -30,6 +30,13 @@ change in a later version if the project decides so.
 
 ### Single player
 
+- **Three places where the 2005 scripts can leave you stuck** (if it happens, load your last checkpoint):
+  - M17D: plant the C4 on the artifact only after Carter says "Only thing to do now is to trigger it"; planted
+    earlier, the level never ends.
+  - M13C, the end: stay with Jacob and kill the last Jaffa captain only once Jacob has joined you; if you run
+    ahead and kill him first, Jacob keeps waiting and the final scene never starts.
+  - M15E: kill the enemies around the rings before you step into them; if O'Neill is knocked down during the
+    ring scene, the level may not end.
 - Saves are checkpoints and quick saves (no save menu). A save does not record everything: corpses, dropped
   weapons and projectiles are not kept, and some characters restart what they were doing.
 - When the story switches to another SG-1 member (end of M07E to M10A, and one of the two exits of M16G), the
@@ -139,6 +146,14 @@ des bugs du portage. Certains pourront changer dans une version future si le pro
 
 #### Solo
 
+- **Trois endroits où les scripts de 2005 peuvent vous bloquer** (si ça arrive, rechargez le dernier point de
+  contrôle) :
+  - M17D : posez le C4 sur l'artefact seulement après que Carter a dit « Only thing to do now is to trigger it » ;
+    posé avant, le niveau ne se termine jamais.
+  - M13C, la fin : restez avec Jacob et ne tuez le dernier capitaine jaffa qu'une fois Jacob à vos côtés ; si
+    vous partez devant et le tuez avant, Jacob attend sans fin et la scène finale ne démarre pas.
+  - M15E : éliminez les ennemis autour des anneaux avant d'y entrer ; si O'Neill est mis à terre pendant la
+    scène des anneaux, le niveau peut ne pas se terminer.
 - On sauvegarde aux points de contrôle et par sauvegarde rapide (pas de menu de sauvegarde). Une sauvegarde
   n'enregistre pas tout : cadavres, armes lâchées et projectiles ne sont pas gardés, et certains personnages
   reprennent ce qu'ils faisaient depuis le début.
