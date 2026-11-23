@@ -2,9 +2,9 @@
 # Stargate SG-1 The Alliance: Redial
 
 <p align="center">
-  <a href="docs/img/shot1.jpg"><img src="docs/img/shot1.jpg" width="32%" alt="O'Neill and Teal'c at the Stargate (campaign cutscene)"></a>
-  <a href="docs/img/shot2.jpg"><img src="docs/img/shot2.jpg" width="32%" alt="Teal'c in the jungle"></a>
-  <a href="docs/img/shot3.jpg"><img src="docs/img/shot3.jpg" width="32%" alt="Carter with a P90 (multiplayer, DM-Tomb)"></a>
+  <a href="docs/img/shot1.jpg"><img src="docs/img/shot1.jpg" width="32%" alt="Carter, O'Neill and Teal'c in the SGC control room (campaign)"></a>
+  <a href="docs/img/shot2.jpg"><img src="docs/img/shot2.jpg" width="32%" alt="Teal'c and Carter at the Stargate in the jungle at night (campaign)"></a>
+  <a href="docs/img/shot3.jpg"><img src="docs/img/shot3.jpg" width="32%" alt="Daniel Jackson with a Zat'nik'tel in the crystal caves (campaign)"></a>
 </p>
 
 *A [Stargate Database](https://stargatedatabase.link/en/) project* · *Un projet [Stargate Database](https://stargatedatabase.link/fr/)*
