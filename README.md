@@ -249,7 +249,7 @@ Free to use, non-commercial. Third-party licences: [NOTICE.md](NOTICE.md).
 
 ---
 
-Made by the **Stargate Database team** · [stargatedatabase.link](https://stargatedatabase.link/en/) · [Redial on Stargate Database](https://stargatedatabase.link/en/games/) ·
+Made by the **Stargate Database team** · [stargatedatabase.link](https://stargatedatabase.link/en/) · [Alliance on Stargate Database](https://stargatedatabase.link/en/games/alliance/) ·
 [Discord](https://discord.gg/SgHPP4mZyB)
 
 ---
@@ -520,5 +520,5 @@ Utilisation libre, non commerciale. Licences tierces : [NOTICE.md](NOTICE.md).
 
 ---
 
-Réalisé par l'**équipe Stargate Database** · [stargatedatabase.link](https://stargatedatabase.link/fr/) · [Redial sur Stargate Database](https://stargatedatabase.link/fr/jeux/) ·
+Réalisé par l'**équipe Stargate Database** · [stargatedatabase.link](https://stargatedatabase.link/fr/) · [Alliance sur Stargate Database](https://stargatedatabase.link/fr/jeux/alliance/) ·
 [Discord](https://discord.gg/SgHPP4mZyB)
