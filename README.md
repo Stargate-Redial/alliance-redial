@@ -13,7 +13,7 @@
 
 The unreleased *Stargate SG-1: The Alliance* (an Xbox prototype from December 2005), as a native PC port. It runs
 on the **Unreal Tournament 2004** engine with the OldUnreal patch, so you need UT2004 to play. A [Stargate Redial](https://github.com/Stargate-Redial)
-fan project by the [Stargate Database](https://stargatedatabase.link/en/) team. Current release: **V0.1.1**. Join the community on [Discord](https://discord.gg/SgHPP4mZyB).
+fan project by the [Stargate Database](https://stargatedatabase.link/en/) team. Current release: **V0.1.2**. Join the community on [Discord](https://discord.gg/SgHPP4mZyB).
 
 > Apart from its title picture, no game data is included: the installer rebuilds the game on your PC from your
 > own copy of the 2019 release. Fan project, not affiliated with or endorsed by MGM, Perception, JoWooD,
@@ -107,6 +107,8 @@ A few highlights (the [CHANGELOG](CHANGELOG.md) has the full list):
   the crystal wall open after Carter's "Incoming", as in 2005.
 - Mission 10 (the mines) can be finished: the SuperSoldier follows Teal'c onto the bait ledge instead of standing
   still after the dialogue.
+- Three more story soft-locks fixed: two cutscenes at once in M12D no longer leave a black screen, and the C4
+  planted early in M17D or the last Jaffa captain killed before Jacob arrives in M13C no longer block the level.
 - The squad's Hold Position (H) and Follow Me (G) orders, finished in 2005 but never given a key, have keys now.
 
 **🖥️ Made for PC**
@@ -273,7 +275,7 @@ Made by the **Stargate Database team** · [stargatedatabase.link](https://starga
 
 Le prototype inédit *Stargate SG-1: The Alliance* (version Xbox de décembre 2005), en portage PC natif. Il tourne
 sur le moteur d'**Unreal Tournament 2004** avec le patch OldUnreal : il vous faut donc UT2004 pour jouer. Un projet de fans
-[Stargate Redial](https://github.com/Stargate-Redial) par l'équipe [Stargate Database](https://stargatedatabase.link/fr/). Version actuelle : **V0.1.1**. Retrouvez la communauté sur
+[Stargate Redial](https://github.com/Stargate-Redial) par l'équipe [Stargate Database](https://stargatedatabase.link/fr/). Version actuelle : **V0.1.2**. Retrouvez la communauté sur
 [Discord](https://discord.gg/SgHPP4mZyB).
 
 > Hormis son image de titre, aucune donnée du jeu n'est incluse : l'installeur reconstruit le jeu sur votre PC à
@@ -375,6 +377,9 @@ Quelques points forts (le [CHANGELOG](CHANGELOG.md), en anglais, donne la liste 
   font sauter le mur de cristal après le « Incoming » de Carter, comme en 2005.
 - La mission 10 (les mines) peut être terminée : le Super Soldat suit Teal'c sur la corniche servant d'appât au lieu
   de rester immobile après le dialogue.
+- Trois autres blocages de la campagne corrigés : deux cinématiques à la fois en M12D ne laissent plus un écran noir,
+  et le C4 posé trop tôt en M17D ou le dernier capitaine jaffa tué avant l'arrivée de Jacob en M13C ne bloquent plus
+  le niveau.
 - Les ordres Tenir la position (H) et Suivre (G), terminés en 2005 mais jamais reliés à une touche, ont maintenant
   leurs touches.
 

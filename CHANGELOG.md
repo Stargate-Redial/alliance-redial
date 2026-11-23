@@ -61,6 +61,19 @@ Each entry says why it exists. No game data is in this repository; all fixes are
 - **Mission 10 (mines, M10D)**: the SuperSoldier now follows Teal'c onto the bait ledge; it stood still after the
   dialogue and the level could not be finished (an enemy-tracking flag left set by a scripted state, apparently
   already in the 2005 build).
+- **Two cutscenes at once no longer leave you without control.** The 2005 cutscene code kept one saved character
+  per player for all cutscenes: when a second cutscene started while one was playing, both ended without giving the
+  player their character back (black screen, the level could not go on). This happened in M12D when the Jaffa
+  captain's cutscene was still playing as the outpost blew up. The player now gets control back when the last
+  cutscene ends.
+- **M17D: planting the C4 on the fake artifact early no longer blocks the level.** The C4 can be planted as soon as
+  you reach the artifact, but the level only listened for it after Carter and Teal'c's lines: a C4 planted earlier
+  went unheard and the level never ended. The level now remembers that the C4 was planted (and went off), with the
+  2005 designers' own setting for such waits.
+- **M13C: killing the last Jaffa captain before Jacob gets there no longer blocks the end.** Jacob is meant to
+  remember that the captain is already dead, but the game only kept the last 64 events and the level's constant
+  tremors used them up within minutes: Jacob then waited for good and the final scene never started. The game now
+  keeps the last 1,024.
 - **M07D**: the third Jaffa wave of the priests' puzzle comes when the team returns to the alcove after deciphering (its
   trigger was never switched on; it now arms together with the alcove trigger next to it).
 - **M02A**: after the intro, Major Gray finishes his animation and walks off instead of standing frozen (he waited for
