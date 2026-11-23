@@ -19,6 +19,25 @@ fan project by the [Stargate Database](https://stargatedatabase.link/en/) team. 
 > own copy of the 2019 release. Fan project, not affiliated with or endorsed by MGM, Perception, JoWooD,
 > Microsoft or Epic Games. See [NOTICE.md](NOTICE.md).
 
+## 🚀 Quick start
+
+1. **UT2004 with the OldUnreal patch.**
+   - **No UT2004 yet?** Install it with OldUnreal's
+     [full-game installer](https://www.oldunreal.com/downloads/ut2004/full-game-installers/): it also installs
+     the latest OldUnreal patch, nothing else to do.
+   - **Already have it** (Steam, GOG, CD)? Add the latest
+     [OldUnreal patch](https://github.com/OldUnreal/UT2004Patches/releases) (3374, 2026-10-20 or later).
+   - Our installer checks the patch version and tells you if it is too old.
+2. **The 2005 game files.** Download [`Stargate_SG-1_-_The_Alliance-2005-12-15.7z`](https://archive.org/download/StargateSG1TheAlliance20051215/Stargate_SG-1_-_The_Alliance-2005-12-15.7z)
+   (about 1 GB, direct download from archive.org; the [archive.org page](https://archive.org/details/StargateSG1TheAlliance20051215) has the details)
+   and leave it in your Downloads folder.
+3. **The installer.** Download `Stargate-Redial-Alliance-v<version>-win64.zip` from the
+   [Releases page](https://github.com/Stargate-Redial/alliance-redial/releases), extract it and run
+   **Stargate Redial Setup.exe** (if SmartScreen appears: *More info*, then *Run anyway*).
+4. **Install, then play.** The window finds the `.7z` and UT2004 by itself: click *Install* (a few minutes), then
+   *Play*. Next time, start the game from its Start menu or desktop shortcut: it checks for updates automatically and installs them in one
+   click.
+
 ## 🎬 The 2005 trailer
 
 <p align="center">
@@ -84,6 +103,8 @@ A few highlights (the [CHANGELOG](CHANGELOG.md) has the full list):
   picture.
 - Characters move as in 2005 again: each weapon's own torso pose, idle gestures, crouching on bent legs, jumps and
   landings, also for other players online. Characters no longer slide upright before they start walking.
+- Characters standing still no longer make footstep noises that kept enemies suspicious: in M13C the Jaffa blow
+  the crystal wall open after Carter's "Incoming", as in 2005.
 - The squad's Hold Position (H) and Follow Me (G) orders, finished in 2005 but never given a key, have keys now.
 
 **🖥️ Made for PC**
@@ -97,6 +118,7 @@ A few highlights (the [CHANGELOG](CHANGELOG.md) has the full list):
   shape on the ground, and every character has a shadow. The emissive glow the Xbox switched off is back on the
   lights and consoles, windows shatter again, and an optional depth of field blurs the scenery around your scope's
   target.
+- A sharper loading picture in full screen: the installer makes a 4x larger copy of the 2005 picture on your PC.
 - The weapon panel shows the clip and the reserve (e.g. 30 / 250), and characters no longer sink into some floors.
 - Fixes for 2005 placeholders: no stray arms around the C4 in first person, a grey ribbon device icon instead of the
   violet one, real models for the ribbon device, frag grenade and C4 instead of a P90, every campaign P90 now has
@@ -113,15 +135,17 @@ A few highlights (the [CHANGELOG](CHANGELOG.md) has the full list):
 - Bots in every multiplayer mode, and fair ones: they fire at a player's rate, and Zat, shock grenade and ribbon
   device hits count on them too.
 - A weapon pack per side, and a *Change Character* option in game.
-- The Zat'nik'tel and the shock grenade need two hits to kill in multiplayer: the first one knocks you back (in 2005
-  one hit killed a player). The shock grenade no longer hits your own team or through walls. Knock-backs no longer
-  make you jump on your own screen online, and the cloak works online for every player, not only for the host.
+- The Zat'nik'tel and the shock grenade need two hits to kill in multiplayer: the first one slows you to half speed
+  for 5 seconds, but you can still fire, and a second hit within that time kills (in 2005 one hit killed a player).
+  The shock grenade no longer hits your own team or through walls. Knock-backs no longer make you jump on your own
+  screen online, and the cloak works online for every player, not only for the host.
 - A quick voice menu (V) with each character's own 2005 voice, and text chat that servers can relay to Discord.
 - You respawn with your pack's main weapon in hand and every pack weapon listed at once. Other players' bullet
   tracers reach your screen, the shock grenade's flash no longer floods rooms through walls, every character holds
   its weapon (the Tok'ra included), and Team Deathmatch names show their team colour.
-- Online you now see other players flinch when hit and fly back, land and get up after a Zat knock-back, as the
-  2005 game showed only on the server.
+- The Assault pack's P90 now shows in your hands online, with its tracers.
+- Online you now see other players flinch when hit and fly back, land and get up after a knock-back, as the 2005
+  game showed only on the server.
 - Last Man Standing: bots come looking for you (but never all at once), a player joining a bots-only round restarts
   it, and a round ends as soon as one player is left. Bots wait for Langara's trains, and the missile launcher riding
   the train now rides it for everyone.
@@ -137,24 +161,6 @@ A few highlights (the [CHANGELOG](CHANGELOG.md) has the full list):
 - *Continue* in the Single Player menu too, and no profile to manage: the game makes one for you.
 
 ---
-
-## 🚀 Quick start
-
-1. **UT2004 with the OldUnreal patch.**
-   - **No UT2004 yet?** Install it with OldUnreal's
-     [full-game installer](https://www.oldunreal.com/downloads/ut2004/full-game-installers/): it also installs
-     the latest OldUnreal patch, nothing else to do.
-   - **Already have it** (Steam, GOG, CD)? Add the latest
-     [OldUnreal patch](https://github.com/OldUnreal/UT2004Patches/releases) (3374, 2026-10-20 or later).
-   - Our installer checks the patch version and tells you if it is too old.
-2. **The 2005 game files.** Download `Stargate_SG-1_-_The_Alliance-2005-12-15.7z` (about 1 GB) from
-   [archive.org](https://archive.org/details/StargateSG1TheAlliance20051215) and leave it in your Downloads folder.
-3. **The installer.** Download `Stargate-Redial-Alliance-v<version>-win64.zip` from the
-   [Releases page](https://github.com/Stargate-Redial/alliance-redial/releases), extract it and run
-   **Stargate Redial Setup.exe** (if SmartScreen appears: *More info*, then *Run anyway*).
-4. **Install, then play.** The window finds the `.7z` and UT2004 by itself: click *Install* (a few minutes), then
-   *Play*. Next time, start the game from its Start menu or desktop shortcut: it checks for updates automatically and installs them in one
-   click.
 
 ## 🔄 Automatic updates
 
@@ -267,6 +273,26 @@ sur le moteur d'**Unreal Tournament 2004** avec le patch OldUnreal : il vous fau
 > partir de votre propre copie de la publication de 2019. Projet de fans, sans lien avec MGM, Perception, JoWooD,
 > Microsoft ou Epic Games, ni autorisé par eux. Voir [NOTICE.md](NOTICE.md).
 
+### 🚀 Démarrage rapide
+
+1. **UT2004 avec le patch OldUnreal.**
+   - **Pas encore UT2004 ?** Installez-le avec
+     l'[installeur complet](https://www.oldunreal.com/downloads/ut2004/full-game-installers/) d'OldUnreal : il
+     installe aussi le dernier patch OldUnreal, rien d'autre à faire.
+   - **Vous l'avez déjà** (Steam, GOG, CD) ? Ajoutez le dernier
+     [patch OldUnreal](https://github.com/OldUnreal/UT2004Patches/releases) (3374 du 20/10/2026 ou plus récent).
+   - Notre installeur vérifie la version du patch et vous prévient si elle est trop ancienne.
+2. **Les fichiers du jeu de 2005.** Téléchargez [`Stargate_SG-1_-_The_Alliance-2005-12-15.7z`](https://archive.org/download/StargateSG1TheAlliance20051215/Stargate_SG-1_-_The_Alliance-2005-12-15.7z)
+   (environ 1 Go, téléchargement direct depuis archive.org ; la [page archive.org](https://archive.org/details/StargateSG1TheAlliance20051215) donne les
+   détails) et laissez-le dans votre dossier Téléchargements.
+3. **L'installeur.** Téléchargez `Stargate-Redial-Alliance-v<version>-win64.zip` sur la
+   [page Releases](https://github.com/Stargate-Redial/alliance-redial/releases), décompressez-le et lancez
+   **Stargate Redial Setup.exe** (si SmartScreen s'affiche : *Informations complémentaires*, puis *Exécuter quand
+   même*).
+4. **Installez, puis jouez.** La fenêtre trouve seule le `.7z` et UT2004 : cliquez sur *Installer* (quelques
+   minutes), puis sur *Jouer*. Les fois suivantes, lancez le jeu par son raccourci du menu Démarrer ou du bureau : il cherche seul les
+   mises à jour et les installe en un clic.
+
 ### 🎬 La bande-annonce de 2005
 
 <p align="center">
@@ -338,6 +364,8 @@ Quelques points forts (le [CHANGELOG](CHANGELOG.md), en anglais, donne la liste 
 - Les personnages bougent de nouveau comme en 2005 : la pose du torse propre à chaque arme, les gestes d'attente,
   l'accroupi sur les jambes, les sauts et les réceptions, aussi pour les autres joueurs en ligne. Les personnages ne
   glissent plus debout avant de se mettre à marcher.
+- Les personnages immobiles ne font plus de bruits de pas qui tenaient les ennemis en alerte : dans M13C, les Jaffas
+  font sauter le mur de cristal après le « Incoming » de Carter, comme en 2005.
 - Les ordres Tenir la position (H) et Suivre (G), terminés en 2005 mais jamais reliés à une touche, ont maintenant
   leurs touches.
 
@@ -352,6 +380,8 @@ Quelques points forts (le [CHANGELOG](CHANGELOG.md), en anglais, donne la liste 
   du décor extérieur projettent leur forme au sol, et chaque personnage a son ombre. La lueur émissive coupée sur Xbox
   revient sur les lumières et les consoles, les vitres éclatent de nouveau, et une profondeur de champ en option floute
   le décor autour de la cible de votre lunette.
+- Une image de chargement plus nette en plein écran : l'installeur fabrique sur votre PC une copie 4 fois plus grande
+  de l'image de 2005.
 - Le panneau d'arme affiche le chargeur et la réserve (par exemple 30 / 250), et les personnages ne s'enfoncent plus
   dans certains sols.
 - Des éléments provisoires de 2005 corrigés : plus de bras en trop autour du C4 en vue subjective, une icône grise
@@ -370,8 +400,9 @@ Quelques points forts (le [CHANGELOG](CHANGELOG.md), en anglais, donne la liste 
 - Des bots dans tous les modes multijoueur, et des bots loyaux : ils tirent à la cadence d'un joueur, et les coups de
   Zat, de grenade à choc et de ruban les touchent aussi.
 - Un pack d'armes par camp, et un choix de *Change Character* en cours de partie.
-- Le Zat'nik'tel et la grenade à choc doivent toucher deux fois pour tuer en multijoueur : le premier coup vous repousse
-  (en 2005, un seul coup tuait un joueur). La grenade à choc ne touche plus votre équipe ni à travers les murs. En
+- Le Zat'nik'tel et la grenade à choc doivent toucher deux fois pour tuer en multijoueur : le premier coup vous
+  ralentit de moitié pendant 5 secondes, mais vous pouvez toujours tirer, et un second coup dans ce délai tue (en 2005,
+  un seul coup tuait un joueur). La grenade à choc ne touche plus votre équipe ni à travers les murs. En
   ligne, les projections ne vous font plus sauter à l'écran, et l'invisibilité marche pour tous les joueurs, pas
   seulement pour l'hôte.
 - Un menu vocal rapide (V) avec la voix d'origine de 2005 de chaque personnage, et un chat texte que les serveurs peuvent relayer vers Discord.
@@ -379,8 +410,9 @@ Quelques points forts (le [CHANGELOG](CHANGELOG.md), en anglais, donne la liste 
   des autres joueurs arrivent sur votre écran, le flash de la grenade à choc n'inonde plus les pièces à travers les
   murs, chaque personnage tient son arme (Tok'ra compris), et les noms du Team Deathmatch ont la couleur de leur
   équipe.
+- Le P90 du pack Assault s'affiche maintenant dans vos mains en ligne, avec ses traçantes.
 - En ligne, vous voyez maintenant les autres joueurs réagir quand ils sont touchés, et être projetés, retomber et
-  se relever après un coup de Zat, ce que le jeu de 2005 ne montrait que sur le serveur.
+  se relever après une projection, ce que le jeu de 2005 ne montrait que sur le serveur.
 - Last Man Standing : les bots viennent vous chercher (mais jamais tous à la fois), un joueur qui rejoint une manche
   de bots la relance, et une manche s'arrête dès qu'il ne reste qu'un joueur. Les bots attendent le passage des
   trains de Langara, et le lance-missiles posé sur le train roule maintenant avec lui pour tout le monde.
@@ -396,25 +428,6 @@ Quelques points forts (le [CHANGELOG](CHANGELOG.md), en anglais, donne la liste 
 - *Continue* aussi dans le menu Solo, et aucun profil à gérer : le jeu en crée un pour vous.
 
 ---
-
-### 🚀 Démarrage rapide
-
-1. **UT2004 avec le patch OldUnreal.**
-   - **Pas encore UT2004 ?** Installez-le avec
-     l'[installeur complet](https://www.oldunreal.com/downloads/ut2004/full-game-installers/) d'OldUnreal : il
-     installe aussi le dernier patch OldUnreal, rien d'autre à faire.
-   - **Vous l'avez déjà** (Steam, GOG, CD) ? Ajoutez le dernier
-     [patch OldUnreal](https://github.com/OldUnreal/UT2004Patches/releases) (3374 du 20/10/2026 ou plus récent).
-   - Notre installeur vérifie la version du patch et vous prévient si elle est trop ancienne.
-2. **Les fichiers du jeu de 2005.** Téléchargez `Stargate_SG-1_-_The_Alliance-2005-12-15.7z` (environ 1 Go) sur
-   [archive.org](https://archive.org/details/StargateSG1TheAlliance20051215) et laissez-le dans vos Téléchargements.
-3. **L'installeur.** Téléchargez `Stargate-Redial-Alliance-v<version>-win64.zip` sur la
-   [page Releases](https://github.com/Stargate-Redial/alliance-redial/releases), décompressez-le et lancez
-   **Stargate Redial Setup.exe** (si SmartScreen s'affiche : *Informations complémentaires*, puis *Exécuter quand
-   même*).
-4. **Installez, puis jouez.** La fenêtre trouve seule le `.7z` et UT2004 : cliquez sur *Installer* (quelques
-   minutes), puis sur *Jouer*. Les fois suivantes, lancez le jeu par son raccourci du menu Démarrer ou du bureau : il cherche seul les
-   mises à jour et les installe en un clic.
 
 ### 🔄 Mises à jour automatiques
 

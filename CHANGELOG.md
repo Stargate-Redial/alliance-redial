@@ -16,6 +16,21 @@ Each entry says why it exists. No game data is in this repository; all fixes are
   none of it showed: everyone held every weapon in the P90 pose (Teal'c's staff stuck out sideways; online, staffs
   were carried upright like walking sticks). The layer works again as in 2005, for every character, on every PC
   of an online game; as in 2005 it steps aside in scripted scenes, vehicles and seats, and for the dead.
+- **Characters standing still no longer make footstep sounds.** The upper-body layer above kept playing the run
+  animation, unseen, on characters standing still, and its footstep marks went on sounding: every standing
+  character made a step noise about every half second (earlier Redial releases only). Enemies heard those steps
+  through walls and stayed suspicious instead of carrying on with their script: in M13C (*Attack on the Tok'ra Base
+  III*) the Jaffa never blew the crystal wall open after Carter's "Incoming", so the passage stayed shut. Standing
+  characters are silent again and the explosion comes; walking and running characters keep their 2005 footsteps.
+- **First-aid prompt**: it names the teammate as the squad menu does ("Press [E] to administer first aid to
+  CARTER") instead of the object name the 2005 code printed ("... first aid to Carter0"). Characters without a squad
+  name show their class name without the number (JONAS).
+- **2005 tuning values inherited again.** Perception's engine gave a class the values of its parent class's section
+  of the game's tuning files (`Tweak_*.ini`) for every key its own section left out. The port's engine did that only
+  when the parent class happened to be loaded first, so some values depended on the order the game loaded things
+  in. Each class's tuning section now carries the keys it inherited in 2005, so it gets the 2005 values every time.
+  The most visible case: the Assault pack's P90 (the P90 with torch) online was drawn below the screen, so you saw no
+  gun in your hands, and it fired no tracers; it is now in your hands with its tracers, like the standard P90.
 - **Characters leaving a vehicle walk off normally**: they no longer keep the seated pose until something else
   changes their stance (Perception's engine reset the animations when a character left a seat).
 - **Characters jump and land with their 2005 animations again.** Perception's engine played a character's take-off
@@ -262,8 +277,8 @@ Each entry says why it exists. No game data is in this repository; all fixes are
 
 ## Additions for PC playability and modern standards
 
-- **Online, other players now visibly react to hits and fly back from a Zat** (purely visual): in 2005 the hit
-  reactions (the flinch when shot) and the Zat knock-back animation (thrown back, lands, gets up) played on the
+- **Online, other players now visibly react to hits and fly back when knocked back** (purely visual): in 2005 the
+  hit reactions (the flinch when shot) and the knock-back animation (thrown back, lands, gets up) played on the
   server only, so a network client saw the other characters stay upright. The server now tells the other
   machines about each hit and they play the same 2005 animations (at most one flinch every 0.3 s, so a burst of
   P90 fire does not make a character shiver). No change to damage, timing or the single-player campaign.
@@ -367,11 +382,11 @@ Each entry says why it exists. No game data is in this repository; all fixes are
   dropped flag back, escort their flag carrier and hunt the enemy's.
   Bots playing O'Neill, Carter, Jackson or Teal'c sometimes say one of their character's own game lines (a taunt or
   an "enemy down" line) after a frag, at most once every 25 seconds; the Jaffa and the other characters stay silent.
-  Bots are hurt by the Zat gun, the shock grenade and the ribbon device as players are (a Zat hit or a shock
-  grenade kills, the ribbon device hurts and throws back; before, these three weapons did nothing to a bot, whoever
-  fired them), and they use the Zat's and the ribbon device's 2005 charge as players do (about two shots, then
-  another weapon, or a grenade, while it refills). Bots fire the pistol, the P90, the shotgun and the sniper rifle
-  at a player's rate (they fired two shots per firing animation).
+  Bots are hurt by the Zat gun, the shock grenade and the ribbon device as players are (the Zat and the shock grenade
+  slow, then kill, by the rule below; the ribbon device hurts and throws back; before, these three weapons did nothing
+  to a bot, whoever fired them), and they use the Zat's and the ribbon device's 2005 charge as players do (about two
+  shots, then another weapon, or a grenade, while it refills). Bots fire the pistol, the P90, the shotgun and the
+  sniper rifle at a player's rate (they fired two shots per firing animation).
   Bots play with UT2004's bot AI on a navigation network the
   game builds when the map loads (the 2005 multiplayer maps have none), and they use the Stargates, rings and
   ladders. Servers: `?MinPlayers=N` / `?BotSkill=0-7`, and the console commands AddBots, KillBots and SetBotSkill.
@@ -429,6 +444,11 @@ Each entry says why it exists. No game data is in this repository; all fixes are
 - **Sharper HUD text at high resolutions**: subtitles and HUD labels use a larger size of the same 2005 font (the game
   font up to its Huge size, Tahoma up to 36 px) instead of magnifying the small one; same size and layout.
   `[SGBase.SGHudScale] bSharpFonts=False` restores plain magnification.
+- **Sharper loading picture**: the 2005 loading picture is a small 512x512 compressed texture stretched across the
+  whole screen (5 screen pixels for each of its pixels at 2560x1440), so it looked blocky in full screen. The
+  installer now makes a 2048x2048 copy of the same picture on your PC (the compression blocks smoothed, then
+  enlarged 4 times; no new art) and the loading screen draws it, framed exactly as before. An empty
+  `HDBackgrounds=` under `[StargateGame.SGServerLoading]` in SGAllianceUser.ini brings back the 2005 texture.
 - **Menus work with the mouse**: one click chooses a map, chapter, team, game mode or server (as Enter); on the
   multiplayer character pages a click only selects the character (picture, Outfit and Pack rows follow), and the
   *Start* button at the bottom right (*Next* when hosting, Enter or a double-click) confirms;
@@ -464,19 +484,18 @@ Each entry says why it exists. No game data is in this repository; all fixes are
   every bot; if other players are in it, you watch with the spectator camera and play the next round.
 - **A Last Man Standing round ends when one player is left**, also when the second-to-last player dies without a
   killer (his own grenade, a fall, a train); before, the round went on with a single player until the time limit.
-- **Zat'nik'tel: two hits to kill in multiplayer** (project lead's decision, a deliberate change of the 2005
-  balance): in every multiplayer game the first Zat hit knocks the player down (the 2005 knock-back) instead of
-  killing; a second hit within 10 seconds kills, as in 2005. The protection comes back 10 seconds after the last
-  Zat hit and with every respawn. A charged personal shield still absorbs the hit first, and a teammate's Zat does
-  nothing while friendly fire is off (in 2005 it killed). Bots are knocked down and killed the same way. The
-  single player game keeps the 2005 rule.
-- **Shock grenade: two hits to kill in multiplayer** (project lead's decision, a deliberate change of the 2005
-  balance): the shock grenade follows the Zat rule above and shares its protection: the first hit (Zat or shock
-  grenade) knocks the player down, a second one within 10 seconds kills. A teammate's shock grenade does nothing while
-  friendly fire is off (in 2005 it killed everyone in its radius, teammates and the thrower included); your own
-  grenade follows the two-hit rule. A charged personal shield still protects you (a white flash). The blast reaches
-  only the players in its line of sight (in 2005 it went through walls and floors). The single player game keeps
-  the 2005 rule.
+- **Zat'nik'tel and shock grenade in multiplayer: the first hit slows, the second kills** (project lead's decision,
+  a deliberate change of the 2005 balance, where one hit killed a player at once): in every multiplayer game the
+  first Zat hit or shock grenade blast that reaches a player slows them to half speed for 5 seconds. They can still
+  fire, aim, jump and change weapons, and Zat arcs crawl over them so everyone sees who is slowed. A second hit, Zat
+  or shock grenade, from anyone, within those 5 seconds kills, credited to whoever fired it; once the 5 seconds are
+  over, the next hit slows again. Nobody is knocked down any more (earlier Redial releases knocked the player down
+  at the first hit). A charged personal shield still absorbs the hit first; a teammate's Zat or shock grenade does
+  nothing while friendly fire is off (in 2005 both killed teammates, and the shock grenade its thrower too); your
+  own grenade follows the same rule; the shock blast reaches only the players in its line of sight (in 2005 it went
+  through walls and floors). Bots are slowed and killed the same way and follow a slow up with a second Zat shot.
+  Servers can tune the slow under `[StargateGame.StargateDeathMatch]`: `ZatSlowPct=0.5` (speed factor) and
+  `ZatSlowTime=5.0` (seconds). The single player game keeps the 2005 rule.
 - **Change Character in game** (PC convenience): Escape → *Change Character* opens the character page (character,
   outfit, name, pack; in team games your team's characters only); *Apply* respawns you at once at a spawn point with
   the new character and pack, with no death, score or life counted. If you were hit in the last 5 seconds, carry a
