@@ -38,6 +38,15 @@ Each entry says why it exists. No game data is in this repository; all fixes are
   down standing still. The port's engine did none of it: squad members, enemies and, online, other players walked
   or ran in the air and ran on the spot for a moment after landing. They now take off, hang in the jump pose and
   land as in 2005.
+- **Characters walk with their walking animation again.** Squad members, the M00 doctor, Jacob and other characters
+  moving at walking speed played the run cycle (and sprinters the run cycle too), so they seemed to slide or
+  "moonwalk", and tiny hops over a step played the jump take-off. They now pick the walk, run or sprint cycle from
+  their speed as Perception's engine did, a hop over a small step no longer looks like a jump, and characters
+  standing still turn on the spot with their idle pose instead of a missing turn animation.
+- **Teal'c's charged staff strike no longer leaves you stuck.** After the melee dash (alt fire held, then released)
+  the strike's landing animation restarted every few frames, so the dash never ended: the view stayed in third
+  person, Teal'c hung in a landing pose and there was no control. The dash now ends after its strike, for the player
+  and for an AI Teal'c (the port's engine replayed the landing animation where Perception's did not).
 - **Crouching characters crouch on their legs too.** A character crouching in place (the player seen by others
   online or in third person, squad members, enemies) stood on straight legs, crouch-walked in the standing run and
   kept the crouch set after standing up: the port's engine played the standing idle and walk there. Crouching
@@ -74,6 +83,14 @@ Each entry says why it exists. No game data is in this repository; all fixes are
   remember that the captain is already dead, but the game only kept the last 64 events and the level's constant
   tremors used them up within minutes: Jacob then waited for good and the final scene never started. The game now
   keeps the last 1,024.
+- **M17A: fixed a game crash in the SGC fight after the super soldier goes down.** The SGC soldiers ordered to
+  charge toward the super soldier kept a link to it; once its body was removed, the game crashed. AI orders now drop
+  a target that no longer exists, as the 2005 build did. The same fix covers every level where an AI order targets a
+  character who can die (M17B, M17D, M18B and others), and a related crash risk in looping level scripts.
+- **M00 firing range: a fire order given while the doctor is still explaining it now counts, and the hints say how
+  to give it.** Ordering SG-1 to fire during her line made them shoot, but the tutorial only listened once she had
+  finished. The hint and objective now name the target (the moving one in the P90 lane) and explain that a quick tap
+  orders the team while holding the key opens the squad menu; Teal'c's hint explains the squad menu.
 - **M07D**: the third Jaffa wave of the priests' puzzle comes when the team returns to the alcove after deciphering (its
   trigger was never switched on; it now arms together with the alcove trigger next to it).
 - **M02A**: after the intro, Major Gray finishes his animation and walks off instead of standing frozen (he waited for
