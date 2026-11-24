@@ -47,6 +47,35 @@ Each entry says why it exists. No game data is in this repository; all fixes are
   the strike's landing animation restarted every few frames, so the dash never ended: the view stayed in third
   person, Teal'c hung in a landing pose and there was no control. The dash now ends after its strike, for the player
   and for an AI Teal'c (the port's engine replayed the landing animation where Perception's did not).
+- **Melee swings show in third person again.** A quick melee (a short tap of alt fire, for every weapon: staff,
+  P90, Zat, pistol...) played the weapon's fire animation on the character instead of its melee swing, for the
+  player in third person, for squad members and enemies, and for other players online (the port's weapon attachment
+  passed UT2004's plain "fired" flag instead of Perception's firing mode name, so the melee branch was never reached).
+  The firing mode name is passed and sent to the other PCs again, so the swing plays on every PC of an online game.
+  The SG-1 and SGC soldier meshes have no staff melee animations (a gap in the 2005 data); a character who swings a
+  staff on such a mesh uses that mesh's own two-handed forward thrust (the sniper rifle's / SPAS-12's melee).
+- **The Stinger missile stops where it hits.** After the explosion the spent missile carried on flying with its
+  trail for the 5 seconds the trail fades out (the port's engine kept moving it); it now stops at the impact point,
+  as in 2005. The missile's trail effect is also checked before use, which removes a flood of "Accessed None" log
+  lines on dedicated servers.
+- **The Zat no longer locks after a right click.** A quick right click (or the right button held through a shot)
+  started a melee that never ended, because the Zat's first-person model has no melee animation (a gap in the 2005
+  data) and only the end of that animation ended the melee: fire, a new melee and a weapon switch were then ignored
+  for good. A melee that plays no animation now ends after half a second.
+- **Walking bob is back at its 2005 level.** The weapon and camera sway of walking was three times stronger than in
+  2005 (UT2004's own value, 0.006, instead of the game's 0.002), which made the Zat, whose model sits close to the
+  eye, jump all over the screen. Fresh installs use 0.002, and an update sets it once on existing installs; a value
+  you change afterwards in the game's options file is kept.
+- Staff weapon, first person: Teal'c's and the SG-1 characters' right hand holds the staff again (the hand mesh had no matching right-arm bones).
+- M02D: the Semektet is drivable again: it no longer spins in circles, its crew is hidden, an empty craft parks instead of drifting or running you over, and leaving it brings the squad back.
+- Vehicle debug text (physics numbers drawn over vehicles) only shows with the debug command, not in normal play.
+- Cannon and turret gunners can be shot again (M04A and the drop turret of M16F), so their objectives complete; Teal'c's staff no longer pokes through the Hummvee roof.
+- M07C: skipping the intro cutscene early no longer opens the puzzle wall by itself.
+- Editor icons (music, objective and vehicle-sound markers) are hidden in the game world.
+- The 2005 Mission Info page opens by itself the first time you arrive in a mission.
+- Shell casings fly out of the Tau'ri guns (P90, pistol, shotgun), as in 2005.
+- Hummvee wheels turn and sit on the ground on scripted rides.
+- Killed characters always end up lying down; none stays frozen standing on a ledge.
 - **Crouching characters crouch on their legs too.** A character crouching in place (the player seen by others
   online or in third person, squad members, enemies) stood on straight legs, crouch-walked in the standing run and
   kept the crouch set after standing up: the port's engine played the standing idle and walk there. Crouching

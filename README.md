@@ -13,7 +13,7 @@
 
 The unreleased *Stargate SG-1: The Alliance* (an Xbox prototype from December 2005), as a native PC port. It runs
 on the **Unreal Tournament 2004** engine with the OldUnreal patch, so you need UT2004 to play. A [Stargate Redial](https://github.com/Stargate-Redial)
-fan project by the [Stargate Database](https://stargatedatabase.link/en/) team. Current release: **V0.1.3**. Join the community on [Discord](https://discord.gg/SgHPP4mZyB).
+fan project by the [Stargate Database](https://stargatedatabase.link/en/) team. Current release: **V0.1.4**. Join the community on [Discord](https://discord.gg/SgHPP4mZyB).
 
 > Apart from its title picture, no game data is included: the installer rebuilds the game on your PC from your
 > own copy of the 2019 release. Fan project, not affiliated with or endorsed by MGM, Perception, JoWooD,
@@ -115,6 +115,19 @@ A few highlights (the [CHANGELOG](CHANGELOG.md) has the full list):
 - Characters walk with their walking animation again instead of sliding in the run cycle, and small hops no longer
   look like jumps.
 - The squad's Hold Position (H) and Follow Me (G) orders, finished in 2005 but never given a key, have keys now.
+- Melee swings show in third person again, for every character and weapon (also for other players online), and the
+  Stinger missile stops where it hits instead of flying on.
+- The Zat no longer locks after a right click, and walking sway is back at its 2005 strength.
+- Staff weapon, first person: Teal'c's and the SG-1 characters' right hand holds the staff again (the hand mesh had no matching right-arm bones).
+- M02D: the Semektet is drivable again: it no longer spins in circles, its crew is hidden, an empty craft parks instead of drifting or running you over, and leaving it brings the squad back.
+- Vehicle debug text (physics numbers drawn over vehicles) only shows with the debug command, not in normal play.
+- Cannon and turret gunners can be shot again (M04A and the drop turret of M16F), so their objectives complete; Teal'c's staff no longer pokes through the Hummvee roof.
+- M07C: skipping the intro cutscene early no longer opens the puzzle wall by itself.
+- Editor icons (music, objective and vehicle-sound markers) are hidden in the game world.
+- The 2005 Mission Info page opens by itself the first time you arrive in a mission.
+- Shell casings fly out of the Tau'ri guns (P90, pistol, shotgun), as in 2005.
+- Hummvee wheels turn and sit on the ground on scripted rides.
+- Killed characters always end up lying down; none stays frozen standing on a ledge.
 
 **🖥️ Made for PC**
 - Mouse and keyboard, or an Xbox controller with the original 2005 layout.
@@ -280,7 +293,7 @@ Made by the **Stargate Database team** · [stargatedatabase.link](https://starga
 
 Le prototype inédit *Stargate SG-1: The Alliance* (version Xbox de décembre 2005), en portage PC natif. Il tourne
 sur le moteur d'**Unreal Tournament 2004** avec le patch OldUnreal : il vous faut donc UT2004 pour jouer. Un projet de fans
-[Stargate Redial](https://github.com/Stargate-Redial) par l'équipe [Stargate Database](https://stargatedatabase.link/fr/). Version actuelle : **V0.1.3**. Retrouvez la communauté sur
+[Stargate Redial](https://github.com/Stargate-Redial) par l'équipe [Stargate Database](https://stargatedatabase.link/fr/). Version actuelle : **V0.1.4**. Retrouvez la communauté sur
 [Discord](https://discord.gg/SgHPP4mZyB).
 
 > Hormis son image de titre, aucune donnée du jeu n'est incluse : l'installeur reconstruit le jeu sur votre PC à
@@ -392,6 +405,19 @@ Quelques points forts (le [CHANGELOG](CHANGELOG.md), en anglais, donne la liste 
   sauts sur une marche ne ressemblent plus à des sauts.
 - Les ordres Tenir la position (H) et Suivre (G), terminés en 2005 mais jamais reliés à une touche, ont maintenant
   leurs touches.
+- Les coups de mêlée s'affichent de nouveau à la troisième personne, pour chaque personnage et chaque arme (aussi
+  pour les autres joueurs en ligne), et le missile du Stinger s'arrête là où il touche au lieu de continuer sa route.
+- Le Zat ne se bloque plus après un clic droit, et le balancement de la marche retrouve sa force de 2005.
+- Lance en vue à la première personne : la main droite de Teal'c et des membres du SG-1 tient de nouveau la lance.
+- M02D : le Semektet est de nouveau pilotable : il ne tourne plus en rond, son équipage est caché, un engin vide se gare au lieu de dériver ou de vous écraser, et en sortir ramène l'équipe.
+- Le texte de débogage des véhicules (chiffres de physique affichés sur les véhicules) n'apparaît plus qu'avec la commande de débogage.
+- Les servants de canon et de tourelle peuvent de nouveau être touchés (M04A et la tourelle de M16F), et leurs objectifs se terminent ; la lance de Teal'c ne traverse plus le toit du Hummvee.
+- M07C : passer la cinématique d'introduction trop tôt n'ouvre plus tout seul le mur de l'énigme.
+- Les icônes d'éditeur (marqueurs de musique, d'objectif et de son de véhicule) sont cachées dans le jeu.
+- La page Mission Info de 2005 s'ouvre toute seule à la première arrivée dans une mission.
+- Des douilles sortent des armes Tau'ri (P90, pistolet, fusil à pompe), comme en 2005.
+- Les roues du Hummvee tournent et touchent le sol pendant les trajets scriptés.
+- Les personnages tués finissent toujours allongés ; aucun ne reste figé debout sur un rebord.
 
 **🖥️ Pensé pour le PC**
 - Souris et clavier, ou manette Xbox avec la disposition d'origine de 2005.
