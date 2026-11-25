@@ -337,6 +337,10 @@ Each entry says why it exists. No game data is in this repository; all fixes are
   the other characters' weapon bone sits.
 - **C4 in the hand**: a player holding C4 showed a P90 to the other players (2005 gave the C4 the P90's third-person
   model). The game's own C4 pickup model is now held instead, and it is gone from the hand once the last charge is placed.
+- Level changes no longer crash the game at random (reported on GitHub): after a dialogue the game could free a script object that the map-change cleanup still read, which crashed the game when you left a level or loaded a checkpoint (seen going from M02D to M04A). 56 of the 73 maps have such dialogues.
+- Mission 10: Anubis's mothership is no longer cut off in the sky (UT2004's far view limit sliced it; the maps now carry a distant copy of it), the staff cannon no longer shows Teal'c's head in first person, and the cannon's aim no longer rolls over a full turn.
+- The 2005 Mission Info page: long objectives wrap instead of running off the page, the page that opens by itself at the start of a mission shows a Continue prompt (Enter, Use, Esc, a click or A on the controller), it opens once you have control, and the Briefing tab is hidden when it is empty.
+- The Stargate's chevrons light up one at a time as the gate is dialled, in series order (first lock upper right, the top one last), with a glow on the chevron and its lamp, on every gate (also the one behind the main menu). The glow texture is built on your PC at install time from your own copy of the game; nothing from the game is shipped.
 
 ## Additions for PC playability and modern standards
 
@@ -432,7 +436,7 @@ Each entry says why it exists. No game data is in this repository; all fixes are
 - **Game controller** (Xbox 360/One/Series, XInput) with the original 2005 Xbox layout: A jump, B cloak, X use / skip /
   reload, Y last weapon, RB concentrate fire, LB take cover, RT fire, LT secondary fire, d-pad weapon selection /
   binoculars, Start pause, Back mission information, stick clicks crouch / zoom; the 2005 stick response is reproduced.
-  Options → Controls: Controller On/Off (turned on at install if one is connected), Pad Look Speed, Invert Pad Look.
+  Options → Controls: Controller Off / On / Detect (restart) (turned on by the game at start when a controller is found), Pad Look Speed, Invert Pad Look.
   All menus work with the pad; prompts and hints name pad buttons while the pad is in use.
 - **Multiplayer pages use PC terms**: "System Link" is now "LAN" and "Xbox Live" is now "Internet" in titles, buttons,
   hints and status lines.
@@ -633,6 +637,17 @@ Each entry says why it exists. No game data is in this repository; all fixes are
   Deviation: the Jaffa (Horus, Serpent, Jackal) have no Taunt or Attack line in 2005, so their Taunt and Attack!
   entries play their own 2005 combat shouts (their attack recordings). Walter and Coulder, and the Goa'uld and Tok'ra,
   stay without lines (the SGC soldiers' voice pack is empty in the 2005 build).
+- The event horizon is round (user-requested change, not in 2005). In the 2005 data the horizon is an upright oval that spills over the inner ring at the top and bottom of the gate; it is now a circle that fits the opening.
+- The gate's symbol ring is brought forward (user-requested change, not in 2005). In the 2005 data the ring sits 33-38 units deep, behind the horizon; it is moved 33 units forward so the symbols show.
+- Blood (user-requested; option OFF by default). Options, Video, Blood: pools of blood under bodies and splats on walls and floors where a character is hit. The spray of the flesh-hit blood effect, which looked like a fountain, is also toned down (user-requested change, not in 2005).
+- A hand on the Zat in first person (user-requested change, not in 2005, where the Zat has no hand). The hand holds the grip and sits on the model without clipping. The Goa'uld use the Jaffa hand set for their hand on the weapon (user-requested change).
+- Shell casings also fly out of the M60 emplacements (M16A, M16B, M16G) and the Hummvee's gatling gun (user-requested change, not in 2005).
+- Xbox-style controllers work out of the box: the controller is turned on when the game starts, RT fires and LT uses the alternate fire (both ways Windows reports the triggers), and the pad buttons no longer repeat on their own when a menu opens.
+- Controller and keyboard/mouse work side by side: the on-screen button prompts follow the last device you used.
+- Menus are fully playable with the controller: left stick and d-pad move, A selects, B goes back, Start pauses, and YES/NO pages move left and right.
+- Squad orders with the controller as on the 2005 Xbox: hold RB, pick a squad member with the d-pad or the left stick, release on the target. A hint line shows how (keyboard: hold X and use the mouse wheel), and CLEAR ORDER is no longer cut at the screen edge.
+- Options, Controls, Controller: Off / On / Detect (restart). A controller switched on after the game started is not seen until the game restarts; Detect restarts the game to find it.
+- The installer option --gamepad on|off now also records your choice, so the game's own start-up detection does not turn the controller back on after --gamepad off.
 
 ## Perception's own PC code used instead of the Xbox variant
 
@@ -718,7 +733,7 @@ decision), except where a PC line is broken. Visible differences from the 2005 X
 - The developers' debug menu and pad rumble are not included. Perception's cheat codes work from the console in single
   player ([docs/CHEATS.md](docs/CHEATS.md)); the few that needed engine code UT2004 lacks are unavailable (astral
   sight's see-through-walls view, log filters, movie tests).
-- OldUnreal reads controllers through DirectInput: LT and RT pressed together cancel out, there is no rumble, and the
-  controller must be connected before the game starts. The Xbox white/black buttons are LB/RB, as on the Xbox 360.
+- OldUnreal reads controllers through DirectInput: LT and RT pressed together cancel out, there is no rumble, and a
+  controller switched on after the game started is only seen after a restart (Options, Controls, Controller, Detect). The Xbox white/black buttons are LB/RB, as on the Xbox 360.
 
 _Maintained by the port team: every new deviation from the 2005 build must be added here._

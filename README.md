@@ -13,7 +13,7 @@
 
 The unreleased *Stargate SG-1: The Alliance* (an Xbox prototype from December 2005), as a native PC port. It runs
 on the **Unreal Tournament 2004** engine with the OldUnreal patch, so you need UT2004 to play. A [Stargate Redial](https://github.com/Stargate-Redial)
-fan project by the [Stargate Database](https://stargatedatabase.link/en/) team. Current release: **V0.1.4**. Join the community on [Discord](https://discord.gg/SgHPP4mZyB).
+fan project by the [Stargate Database](https://stargatedatabase.link/en/) team. Current release: **V0.1.5**. Join the community on [Discord](https://discord.gg/SgHPP4mZyB).
 
 > Apart from its title picture, no game data is included: the installer rebuilds the game on your PC from your
 > own copy of the 2019 release. Fan project, not affiliated with or endorsed by MGM, Perception, JoWooD,
@@ -128,6 +128,23 @@ A few highlights (the [CHANGELOG](CHANGELOG.md) has the full list):
 - Shell casings fly out of the Tau'ri guns (P90, pistol, shotgun), as in 2005.
 - Hummvee wheels turn and sit on the ground on scripted rides.
 - Killed characters always end up lying down; none stays frozen standing on a ledge.
+- Level changes no longer crash the game at random (reported on GitHub): after a dialogue the game could free a script object that the map-change cleanup still read, which crashed the game when you left a level or loaded a checkpoint (seen going from M02D to M04A). 56 of the 73 maps have such dialogues.
+- Mission 10: Anubis's mothership is no longer cut off in the sky (UT2004's far view limit sliced it; the maps now carry a distant copy of it), the staff cannon no longer shows Teal'c's head in first person, and the cannon's aim no longer rolls over a full turn.
+- The 2005 Mission Info page: long objectives wrap instead of running off the page, the page that opens by itself at the start of a mission shows a Continue prompt (Enter, Use, Esc, a click or A on the controller), it opens once you have control, and the Briefing tab is hidden when it is empty.
+- The Stargate's chevrons light up one at a time as the gate is dialled, in series order (first lock upper right, the top one last), with a glow on the chevron and its lamp, on every gate (also the one behind the main menu). The glow texture is built on your PC at install time from your own copy of the game; nothing from the game is shipped.
+- Xbox-style controllers work out of the box: the controller is turned on when the game starts, RT fires and LT uses the alternate fire (both ways Windows reports the triggers), and the pad buttons no longer repeat on their own when a menu opens.
+- Controller and keyboard/mouse work side by side: the on-screen button prompts follow the last device you used.
+- Menus are fully playable with the controller: left stick and d-pad move, A selects, B goes back, Start pauses, and YES/NO pages move left and right.
+- Squad orders with the controller as on the 2005 Xbox: hold RB, pick a squad member with the d-pad or the left stick, release on the target. A hint line shows how (keyboard: hold X and use the mouse wheel), and CLEAR ORDER is no longer cut at the screen edge.
+- Options, Controls, Controller: Off / On / Detect (restart). A controller switched on after the game started is not seen until the game restarts; Detect restarts the game to find it.
+- The installer option --gamepad on|off now also records your choice, so the game's own start-up detection does not turn the controller back on after --gamepad off.
+
+**🛠️ Changes made at players' request (not in 2005)**
+- The event horizon is round (user-requested change, not in 2005). In the 2005 data the horizon is an upright oval that spills over the inner ring at the top and bottom of the gate; it is now a circle that fits the opening.
+- The gate's symbol ring is brought forward (user-requested change, not in 2005). In the 2005 data the ring sits 33-38 units deep, behind the horizon; it is moved 33 units forward so the symbols show.
+- Blood (user-requested; option OFF by default). Options, Video, Blood: pools of blood under bodies and splats on walls and floors where a character is hit. The spray of the flesh-hit blood effect, which looked like a fountain, is also toned down (user-requested change, not in 2005).
+- A hand on the Zat in first person (user-requested change, not in 2005, where the Zat has no hand). The hand holds the grip and sits on the model without clipping. The Goa'uld use the Jaffa hand set for their hand on the weapon (user-requested change).
+- Shell casings also fly out of the M60 emplacements (M16A, M16B, M16G) and the Hummvee's gatling gun (user-requested change, not in 2005).
 
 **🖥️ Made for PC**
 - Mouse and keyboard, or an Xbox controller with the original 2005 layout.
@@ -293,7 +310,7 @@ Made by the **Stargate Database team** · [stargatedatabase.link](https://starga
 
 Le prototype inédit *Stargate SG-1: The Alliance* (version Xbox de décembre 2005), en portage PC natif. Il tourne
 sur le moteur d'**Unreal Tournament 2004** avec le patch OldUnreal : il vous faut donc UT2004 pour jouer. Un projet de fans
-[Stargate Redial](https://github.com/Stargate-Redial) par l'équipe [Stargate Database](https://stargatedatabase.link/fr/). Version actuelle : **V0.1.4**. Retrouvez la communauté sur
+[Stargate Redial](https://github.com/Stargate-Redial) par l'équipe [Stargate Database](https://stargatedatabase.link/fr/). Version actuelle : **V0.1.5**. Retrouvez la communauté sur
 [Discord](https://discord.gg/SgHPP4mZyB).
 
 > Hormis son image de titre, aucune donnée du jeu n'est incluse : l'installeur reconstruit le jeu sur votre PC à
@@ -418,6 +435,23 @@ Quelques points forts (le [CHANGELOG](CHANGELOG.md), en anglais, donne la liste 
 - Des douilles sortent des armes Tau'ri (P90, pistolet, fusil à pompe), comme en 2005.
 - Les roues du Hummvee tournent et touchent le sol pendant les trajets scriptés.
 - Les personnages tués finissent toujours allongés ; aucun ne reste figé debout sur un rebord.
+- Les changements de niveau ne font plus planter le jeu au hasard (signalé sur GitHub) : après un dialogue, le jeu pouvait libérer un objet de script que le nettoyage du changement de carte lisait encore, ce qui faisait planter en quittant un niveau ou en chargeant un point de contrôle (vu entre M02D et M04A). 56 des 73 cartes ont de tels dialogues.
+- Mission 10 : le vaisseau-mère d'Anubis n'est plus coupé dans le ciel (la limite de vue lointaine d'UT2004 le tranchait ; les cartes portent maintenant une copie lointaine), le canon à lance n'affiche plus la tête de Teal'c à la première personne, et la visée du canon ne fait plus un tour complet.
+- La page Mission Info de 2005 : les longs objectifs passent à la ligne au lieu de déborder, la page qui s'ouvre toute seule au début d'une mission affiche une invite Continue (Entrée, Utiliser, Échap, un clic ou A à la manette), elle s'ouvre une fois que vous avez la main, et l'onglet Briefing est caché quand il est vide.
+- Les chevrons de la Porte des étoiles s'allument un par un pendant la composition, dans l'ordre de la série (premier verrou en haut à droite, celui du haut en dernier), avec une lueur sur le chevron et sa lampe, sur toutes les portes (aussi celle derrière le menu principal). La texture de lueur est fabriquée sur votre PC à l'installation à partir de votre propre copie du jeu ; rien du jeu n'est distribué.
+- Les manettes de type Xbox marchent d'office : la manette est activée au démarrage du jeu, RT tire et LT déclenche le tir secondaire (quelle que soit la façon dont Windows signale les gâchettes), et les boutons ne se répètent plus tout seuls à l'ouverture d'un menu.
+- Manette et clavier/souris marchent côte à côte : les invites de boutons à l'écran suivent le dernier périphérique utilisé.
+- Les menus se jouent entièrement à la manette : stick gauche et croix pour bouger, A valide, B retour, Start pause, et les pages OUI/NON se parcourent à gauche et à droite.
+- Les ordres d'équipe à la manette comme sur la Xbox de 2005 : maintenez RB, choisissez un équipier à la croix ou au stick gauche, relâchez sur la cible. Une ligne d'aide l'explique (clavier : maintenez X et utilisez la molette), et CLEAR ORDER n'est plus coupé au bord de l'écran.
+- Options, Controls, Controller : Off / On / Detect (restart). Une manette allumée après le lancement du jeu n'est pas vue avant un redémarrage ; Detect relance le jeu pour la trouver.
+- L'option d'installation --gamepad on|off enregistre maintenant aussi votre choix : la détection du jeu au démarrage ne rallume plus la manette après --gamepad off.
+
+**🛠️ Changements faits à la demande de joueurs (pas dans le jeu de 2005)**
+- L'horizon des événements est rond (changement demandé par un utilisateur, pas dans le jeu de 2005). Dans les données de 2005, l'horizon est un ovale debout qui déborde sur l'anneau intérieur en haut et en bas de la porte ; c'est maintenant un cercle qui épouse l'ouverture.
+- L'anneau de symboles de la porte est avancé (changement demandé par un utilisateur, pas dans le jeu de 2005). Dans les données de 2005, l'anneau est enfoncé de 33 à 38 unités, derrière l'horizon ; il est avancé de 33 unités pour que les symboles se voient.
+- Le sang (demandé par un utilisateur ; option DÉSACTIVÉE par défaut). Options, Video, Blood : flaques de sang sous les corps et éclaboussures sur les murs et le sol là où un personnage est touché. Le jet de sang d'un impact sur la chair, qui ressemblait à une fontaine, est aussi atténué (changement demandé par un utilisateur, pas dans le jeu de 2005).
+- Une main sur le Zat à la première personne (changement demandé par un utilisateur, pas dans le jeu de 2005, où le Zat n'a pas de main). La main tient la poignée et se pose sur le modèle sans le traverser. Les Goa'uld utilisent le jeu de mains des Jaffas pour leur main sur l'arme (changement demandé par un utilisateur).
+- Des douilles sortent aussi des emplacements de M60 (M16A, M16B, M16G) et de la mitrailleuse gatling du Hummvee (changement demandé par un utilisateur, pas dans le jeu de 2005).
 
 **🖥️ Pensé pour le PC**
 - Souris et clavier, ou manette Xbox avec la disposition d'origine de 2005.

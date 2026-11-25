@@ -74,7 +74,7 @@ change in a later version if the project decides so.
 - **Direct3D 11 is experimental** (Options → Video → Renderer): with anti-aliasing, character shadows can show
   square blocks, and text is softer than with Direct3D 9.
 - **Controller**: read through DirectInput. LT and RT pressed together cancel out, there is no rumble, the
-  controller must be connected before the game starts, only the first game controller is read, and the layout
+  controller switched on after the game started needs Options, Controls, Controller, Detect (restart), only the first game controller is read, and the layout
   assumes an Xbox-style controller.
 - **Astral sight**: the `astral` cheat shows its screen effect only; drawing living beings through walls needed
   engine code UT2004 does not have. The developers' debug menu and some debug commands are not available
@@ -93,7 +93,6 @@ change in a later version if the project decides so.
 Automated tests played every story part to its end, and the menus, HUD and main features were checked on
 screen. These have not yet been checked by a person playing V0.1:
 
-- a real game controller (the layout was tested without a physical controller);
 - Internet games through the master servers (LAN games were tested), several real players on one server, Team
   DeathMatch from a player's side, a dedicated server on a real Linux machine;
 - brightness in full screen with Direct3D 9, 3D audio (HRTF) by ear, the reverb of caves and halls, the bloom on
@@ -191,7 +190,7 @@ des bugs du portage. Certains pourront changer dans une version future si le pro
 - **Direct3D 11 est expérimental** (Options → Video → Renderer) : avec l'anticrénelage, les ombres des
   personnages peuvent montrer des blocs carrés, et le texte est moins net qu'avec Direct3D 9.
 - **Manette** : lue par DirectInput. LT et RT pressées ensemble s'annulent, il n'y a pas de vibrations, la manette
-  doit être branchée avant le lancement du jeu, seule la première manette est lue, et la disposition suppose une
+  allumée après le lancement du jeu demande Options, Controls, Controller, Detect (restart), seule la première manette est lue, et la disposition suppose une
   manette de type Xbox.
 - **Vision astrale** : le code `astral` n'affiche que son effet d'écran ; dessiner les êtres vivants à travers
   les murs demandait du code moteur qu'UT2004 n'a pas. Le menu de débogage des développeurs et certaines
@@ -211,7 +210,6 @@ des bugs du portage. Certains pourront changer dans une version future si le pro
 Des tests automatiques ont joué chaque partie de l'histoire jusqu'à sa fin, et les menus, l'interface et les
 principales fonctions ont été vérifiés à l'écran. Personne n'a encore vérifié, en jouant à la V0.1 :
 
-- une vraie manette (la disposition a été testée sans manette physique) ;
 - les parties Internet par les serveurs maîtres (les parties en LAN ont été testées), plusieurs vrais joueurs sur
   un serveur, le Team DeathMatch du côté d'un joueur, un serveur dédié sur une vraie machine Linux ;
 - la luminosité en plein écran avec Direct3D 9, le son 3D (HRTF) à l'oreille, la réverbération des grottes et des

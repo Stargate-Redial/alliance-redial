@@ -46,7 +46,7 @@ Contents: [Install](#install) · [Installer details](#installer-details) · [Fir
    `<UT2004>\SGAlliance`). While it runs, its taskbar button has the Redial name and icon.
 
 The game is installed as a UT2004 mod: your UT2004 itself is not changed. Your keyboard layout (QWERTY or
-AZERTY) is detected, and an Xbox-style controller connected during the installation is switched on.
+AZERTY) is detected, and an Xbox-style controller is switched on (the game also does it by itself when it starts).
 
 ### Windows warnings
 
@@ -116,7 +116,7 @@ app\tools\sgredial.exe --help
 | `--desktop-shortcut` | also puts the launcher on your desktop (the Start menu always gets it) |
 | `--no-update-check` | the Play shortcut starts the game directly, without checking for a new version |
 | `--keyboard qwerty\|azerty` | key preset (default: from your Windows keyboard layout; the game's Options > Controls page can switch it later) |
-| `--gamepad on\|off` | an Xbox-compatible pad connected during the install is switched on with the 2005 layout; this forces it |
+| `--gamepad on\|off` | forces the controller on or off and records your choice (the game otherwise turns on a controller it finds at start) |
 | `--reset-keys` (or `--reset-video`, `--reset-pad`) | restores the default keys, video settings or pad layout; installs and updates otherwise keep yours |
 | `--verify` | on an installed, up-to-date mod: checks every installed file by its SHA-256 |
 | `--force` | rebuilds everything; also allows installing an older version over a newer one |
@@ -344,9 +344,9 @@ so. Escape always opens the pause menu, so it cannot be lost. Changes apply at o
 
 An Xbox-style controller (Xbox 360, One or Series) uses the 2005 layout above.
 
-- **Connect it before starting the game**: the game reads the controller it finds at start-up. If you plug it in
-  later, restart the game.
-- Options → Controls, right-hand column: **Controller** On/Off, **Pad Look Speed** (1.0 = the original
+- The game turns the controller on by itself at start when it finds one. A controller switched on after the game
+  started is not seen: use Options → Controls → Controller → **Detect (restart)**, which restarts the game to find it.
+- Options → Controls, right-hand column: **Controller** Off / On / Detect (restart), **Pad Look Speed** (1.0 = the original
   game) and **Invert Pad Look**.
 - All menus work with the controller, and prompts and hints name the controller buttons while you use it.
 - Limits (the game reads controllers through DirectInput): pressing **LT and RT together cancels both**, there
@@ -559,7 +559,7 @@ opens it; `installer-window.log` there is everything the window showed). The gam
   `StartupFullscreen=False` under `[WinDrv.WindowsClient]` in `<UT2004>\SGAlliance\System\SGAlliance.ini`.
 - **The movement keys are in the wrong place**: Options → Controls → Keyboard Layout, or run the installer with
   `--keyboard azerty` (or `qwerty`) and `--reset-keys`.
-- **The controller does nothing**: Options → Controls → Controller On, and make sure it was connected before the
+- **The controller does nothing**: Options → Controls → Controller On, or Detect (restart) if it was switched on after the
   game started. Other controllers than Xbox-style ones may need Steam Input or a similar tool.
 - **Too dark**: Brightness on the Video page. With Direct3D 9 it only works in full screen; OpenGL and
   Direct3D 11 also apply it in a window.
@@ -642,7 +642,7 @@ Sommaire : [Installation](#installation) · [Détails de l'installeur](#détails
    l'icône de Redial.
 
 Le jeu est installé comme un mod d'UT2004 : votre UT2004 lui-même n'est pas modifié. La disposition de votre
-clavier (QWERTY ou AZERTY) est détectée, et une manette de type Xbox branchée pendant l'installation est activée.
+clavier (QWERTY ou AZERTY) est détectée, et une manette de type Xbox est activée (le jeu le fait aussi tout seul au démarrage).
 
 #### Avertissements de Windows
 
@@ -717,7 +717,7 @@ app\tools\sgredial.exe --help
 | `--desktop-shortcut` | place aussi le lanceur sur votre bureau (le menu Démarrer le reçoit toujours) |
 | `--no-update-check` | le raccourci Jouer lance directement le jeu, sans chercher de nouvelle version |
 | `--keyboard qwerty\|azerty` | disposition des touches (par défaut d'après le clavier Windows ; la page Options > Controls du jeu peut la changer ensuite) |
-| `--gamepad on\|off` | une manette compatible Xbox branchée pendant l'installation est activée avec la disposition de 2005 ; ceci le force |
+| `--gamepad on\|off` | force la manette activée ou désactivée et enregistre votre choix (sinon le jeu active une manette trouvée au démarrage) |
 | `--reset-keys` (ou `--reset-video`, `--reset-pad`) | rétablit les touches, les réglages vidéo ou la disposition de la manette par défaut ; sinon installations et mises à jour gardent les vôtres |
 | `--verify` | sur un mod installé et à jour : vérifie chaque fichier installé par son SHA-256 |
 | `--force` | reconstruit tout ; permet aussi d'installer une version plus ancienne par-dessus une plus récente |
@@ -961,9 +961,9 @@ on ne peut donc pas le perdre. Les changements s'appliquent aussitôt.
 
 Une manette de type Xbox (Xbox 360, One ou Series) utilise la disposition de 2005 ci-dessus.
 
-- **Branchez-la avant de lancer le jeu** : le jeu lit la manette trouvée au démarrage. Branchée plus tard, il
-  faut relancer le jeu.
-- Options → Controls, colonne de droite : **Controller** On/Off, **Pad Look Speed** (1.0 = le jeu d'origine) et
+- Le jeu active la manette tout seul au démarrage quand il en trouve une. Une manette allumée après le lancement
+  n'est pas vue : utilisez Options → Controls → Controller → **Detect (restart)**, qui relance le jeu pour la trouver.
+- Options → Controls, colonne de droite : **Controller** Off / On / Detect (restart), **Pad Look Speed** (1.0 = le jeu d'origine) et
   **Invert Pad Look**.
 - Tous les menus marchent à la manette, et les invites et conseils nomment les boutons de la manette pendant que
   vous l'utilisez.
@@ -1195,7 +1195,7 @@ du jeu est
   `StartupFullscreen=False` sous `[WinDrv.WindowsClient]` dans `<UT2004>\SGAlliance\System\SGAlliance.ini`.
 - **Les touches de déplacement ne sont pas au bon endroit** : Options → Controls → Keyboard Layout, ou relancez
   l'installeur avec `--keyboard azerty` (ou `qwerty`) et `--reset-keys`.
-- **La manette ne fait rien** : Options → Controls → Controller On, et vérifiez qu'elle était branchée avant le
+- **La manette ne fait rien** : Options → Controls → Controller On, ou Detect (restart) si elle a été allumée après le
   lancement du jeu. Les manettes qui ne sont pas de type Xbox peuvent demander Steam Input ou un outil semblable.
 - **Trop sombre** : Brightness sur la page Video. Avec Direct3D 9, seulement en plein écran ; OpenGL et
   Direct3D 11 l'appliquent aussi en fenêtre.
