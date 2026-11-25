@@ -13,7 +13,7 @@
 
 The unreleased *Stargate SG-1: The Alliance* (an Xbox prototype from December 2005), as a native PC port. It runs
 on the **Unreal Tournament 2004** engine with the OldUnreal patch, so you need UT2004 to play. A [Stargate Redial](https://github.com/Stargate-Redial)
-fan project by the [Stargate Database](https://stargatedatabase.link/en/) team. Current release: **V0.1.5**. Join the community on [Discord](https://discord.gg/SgHPP4mZyB).
+fan project by the [Stargate Database](https://stargatedatabase.link/en/) team. Current release: **V0.1.6**. Join the community on [Discord](https://discord.gg/SgHPP4mZyB).
 
 > Apart from its title picture, no game data is included: the installer rebuilds the game on your PC from your
 > own copy of the 2019 release. Fan project, not affiliated with or endorsed by MGM, Perception, JoWooD,
@@ -138,6 +138,7 @@ A few highlights (the [CHANGELOG](CHANGELOG.md) has the full list):
 - Squad orders with the controller as on the 2005 Xbox: hold RB, pick a squad member with the d-pad or the left stick, release on the target. A hint line shows how (keyboard: hold X and use the mouse wheel), and CLEAR ORDER is no longer cut at the screen edge.
 - Options, Controls, Controller: Off / On / Detect (restart). A controller switched on after the game started is not seen until the game restarts; Detect restarts the game to find it.
 - The installer option --gamepad on|off now also records your choice, so the game's own start-up detection does not turn the controller back on after --gamepad off.
+- Online: fixes "This server runs a different Stargate Redial version" when joining the official servers after updating to 0.1.5. The game's packages are now compiled with a fixed configuration, so every install matches the servers whatever your UT2004 settings. Update and you can play online again; the official servers move to v0.1.6.
 
 **🛠️ Changes made at players' request (not in 2005)**
 - The event horizon is round (user-requested change, not in 2005). In the 2005 data the horizon is an upright oval that spills over the inner ring at the top and bottom of the gate; it is now a circle that fits the opening.
@@ -310,7 +311,7 @@ Made by the **Stargate Database team** · [stargatedatabase.link](https://starga
 
 Le prototype inédit *Stargate SG-1: The Alliance* (version Xbox de décembre 2005), en portage PC natif. Il tourne
 sur le moteur d'**Unreal Tournament 2004** avec le patch OldUnreal : il vous faut donc UT2004 pour jouer. Un projet de fans
-[Stargate Redial](https://github.com/Stargate-Redial) par l'équipe [Stargate Database](https://stargatedatabase.link/fr/). Version actuelle : **V0.1.5**. Retrouvez la communauté sur
+[Stargate Redial](https://github.com/Stargate-Redial) par l'équipe [Stargate Database](https://stargatedatabase.link/fr/). Version actuelle : **V0.1.6**. Retrouvez la communauté sur
 [Discord](https://discord.gg/SgHPP4mZyB).
 
 > Hormis son image de titre, aucune donnée du jeu n'est incluse : l'installeur reconstruit le jeu sur votre PC à
@@ -445,6 +446,7 @@ Quelques points forts (le [CHANGELOG](CHANGELOG.md), en anglais, donne la liste 
 - Les ordres d'équipe à la manette comme sur la Xbox de 2005 : maintenez RB, choisissez un équipier à la croix ou au stick gauche, relâchez sur la cible. Une ligne d'aide l'explique (clavier : maintenez X et utilisez la molette), et CLEAR ORDER n'est plus coupé au bord de l'écran.
 - Options, Controls, Controller : Off / On / Detect (restart). Une manette allumée après le lancement du jeu n'est pas vue avant un redémarrage ; Detect relance le jeu pour la trouver.
 - L'option d'installation --gamepad on|off enregistre maintenant aussi votre choix : la détection du jeu au démarrage ne rallume plus la manette après --gamepad off.
+- En ligne : corrige le message « Ce serveur utilise une autre version de Stargate Redial » quand on rejoint les serveurs officiels après la mise à jour en 0.1.5. Les paquets du jeu sont maintenant compilés avec une configuration fixe : chaque installation correspond aux serveurs, quels que soient vos réglages d'UT2004. Mettez à jour et vous pouvez rejouer en ligne ; les serveurs officiels passent en v0.1.6.
 
 **🛠️ Changements faits à la demande de joueurs (pas dans le jeu de 2005)**
 - L'horizon des événements est rond (changement demandé par un utilisateur, pas dans le jeu de 2005). Dans les données de 2005, l'horizon est un ovale debout qui déborde sur l'anneau intérieur en haut et en bas de la porte ; c'est maintenant un cercle qui épouse l'ouverture.

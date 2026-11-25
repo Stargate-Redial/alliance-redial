@@ -341,6 +341,7 @@ Each entry says why it exists. No game data is in this repository; all fixes are
 - Mission 10: Anubis's mothership is no longer cut off in the sky (UT2004's far view limit sliced it; the maps now carry a distant copy of it), the staff cannon no longer shows Teal'c's head in first person, and the cannon's aim no longer rolls over a full turn.
 - The 2005 Mission Info page: long objectives wrap instead of running off the page, the page that opens by itself at the start of a mission shows a Continue prompt (Enter, Use, Esc, a click or A on the controller), it opens once you have control, and the Briefing tab is hidden when it is empty.
 - The Stargate's chevrons light up one at a time as the gate is dialled, in series order (first lock upper right, the top one last), with a glow on the chevron and its lamp, on every gate (also the one behind the main menu). The glow texture is built on your PC at install time from your own copy of the game; nothing from the game is shipped.
+- Online: fixes "This server runs a different Stargate Redial version" when joining the official servers after updating to 0.1.5. The game's packages are now compiled with a fixed configuration, so every install matches the servers whatever your UT2004 settings. Update and you can play online again; the official servers move to v0.1.6.
 
 ## Additions for PC playability and modern standards
 
