@@ -13,7 +13,7 @@
 
 The unreleased *Stargate SG-1: The Alliance* (an Xbox prototype from December 2005), as a native PC port. It runs
 on the **Unreal Tournament 2004** engine with the OldUnreal patch, so you need UT2004 to play. A [Stargate Redial](https://github.com/Stargate-Redial)
-fan project by the [Stargate Database](https://stargatedatabase.link/en/) team. Current release: **V0.1.6**. Join the community on [Discord](https://discord.gg/SgHPP4mZyB).
+fan project by the [Stargate Database](https://stargatedatabase.link/en/) team. Current release: **V0.1.7**. Join the community on [Discord](https://discord.gg/SgHPP4mZyB).
 
 > Apart from its title picture, no game data is included: the installer rebuilds the game on your PC from your
 > own copy of the 2019 release. Fan project, not affiliated with or endorsed by MGM, Perception, JoWooD,
@@ -92,6 +92,18 @@ See [KNOWN_ISSUES.md](docs/KNOWN_ISSUES.md) and the [CHANGELOG](CHANGELOG.md).
 
 A few highlights (the [CHANGELOG](CHANGELOG.md) has the full list):
 
+**🆕 New in V0.1.7**
+- **Crash fix**: the game no longer closes when a mission part ends after a fight (reported going from M02A to M02B). The 2005 scripts kept references to characters the game had destroyed; they are released at every map change.
+- **Gameplay fixes**: the M02A intro and M13A's execution scene no longer wait for events nothing sends; vehicles stop at closed doors in M02A instead of driving through them; the objective marker stays on its target while you drive; objectives without text are never shown; Mission Info opens on BRIEFING alone when there is no objective; in the M00 tutorial the final alarm is heard throughout the base and every firing-range target that is hit finishes falling and counts.
+- **Controller loading screen**: with a controller, the loading screen is the 2005 one with the controller layout; the first mission you load keeps it, paused, until you press A (or Enter, Space, Esc, a click).
+- **New option, Unlimited Sprint** (Options, Controls; Off by default): no stamina limit and no stop when you strafe or turn sharply. Single-player story mode only.
+- **Shorter muzzle effects**: the muzzle light goes out 0.08 s after a shot, the flame lasts 0.1 s and the smoke 0.3 s (P90, pistol, sniper rifle, shotgun, Kull disruptor).
+- **No more placeholder crosses**: UT2004's coloured "+" icon no longer shows where an effect has no picture (M10 hyperspace exit, M00 range lights, Haaken shield).
+- **Energy-effect haze**: the hyperspace exit and the Haaken shield show a faint heat haze made by the installer; fire and explosion heat stay invisible (the Xbox's refraction cannot be reproduced).
+- **Audio quality**: music and speech are encoded at a higher quality (about 80 MB more disk space), and ambient sounds (birds, drips, wind, machinery) play at the volume the level designers set.
+- **Restored**: the three rotating red alarm beacons of the M00 final alarm turn again, and the firing-range lamps have their grey arms again.
+- Online games need the same version on both sides: the official servers move to v0.1.7.
+
 **🧩 Restored from the 2005 data**
 - Last Man Standing is back in the multiplayer mode list.
 - About 150 recorded voice lines that the 2005 game never played are back in the squad's chatter.
@@ -140,12 +152,12 @@ A few highlights (the [CHANGELOG](CHANGELOG.md) has the full list):
 - The installer option --gamepad on|off now also records your choice, so the game's own start-up detection does not turn the controller back on after --gamepad off.
 - Online: fixes "This server runs a different Stargate Redial version" when joining the official servers after updating to 0.1.5. The game's packages are now compiled with a fixed configuration, so every install matches the servers whatever your UT2004 settings. Update and you can play online again; the official servers move to v0.1.6.
 
-**🛠️ Changes made at players' request (not in 2005)**
-- The event horizon is round (user-requested change, not in 2005). In the 2005 data the horizon is an upright oval that spills over the inner ring at the top and bottom of the gate; it is now a circle that fits the opening.
-- The gate's symbol ring is brought forward (user-requested change, not in 2005). In the 2005 data the ring sits 33-38 units deep, behind the horizon; it is moved 33 units forward so the symbols show.
-- Blood (user-requested; option OFF by default). Options, Video, Blood: pools of blood under bodies and splats on walls and floors where a character is hit. The spray of the flesh-hit blood effect, which looked like a fountain, is also toned down (user-requested change, not in 2005).
-- A hand on the Zat in first person (user-requested change, not in 2005, where the Zat has no hand). The hand holds the grip and sits on the model without clipping. The Goa'uld use the Jaffa hand set for their hand on the weapon (user-requested change).
-- Shell casings also fly out of the M60 emplacements (M16A, M16B, M16G) and the Hummvee's gatling gun (user-requested change, not in 2005).
+**🛠️ Changes (not in 2005)**
+- The event horizon is round (not in 2005). In the 2005 data the horizon is an upright oval that spills over the inner ring at the top and bottom of the gate; it is now a circle that fits the opening.
+- The gate's symbol ring is brought forward (not in 2005). In the 2005 data the ring sits 33-38 units deep, behind the horizon; it is moved 33 units forward so the symbols show.
+- Blood (option OFF by default). Options, Video, Blood: pools of blood under bodies and splats on walls and floors where a character is hit. The spray of the flesh-hit blood effect, which looked like a fountain, is also toned down (not in 2005).
+- A hand on the Zat in first person (not in 2005, where the Zat has no hand). The hand holds the grip and sits on the model without clipping. The Goa'uld use the Jaffa hand set for their hand on the weapon.
+- Shell casings also fly out of the M60 emplacements (M16A, M16B, M16G) and the Hummvee's gatling gun (not in 2005).
 
 **🖥️ Made for PC**
 - Mouse and keyboard, or an Xbox controller with the original 2005 layout.
@@ -311,7 +323,7 @@ Made by the **Stargate Database team** · [stargatedatabase.link](https://starga
 
 Le prototype inédit *Stargate SG-1: The Alliance* (version Xbox de décembre 2005), en portage PC natif. Il tourne
 sur le moteur d'**Unreal Tournament 2004** avec le patch OldUnreal : il vous faut donc UT2004 pour jouer. Un projet de fans
-[Stargate Redial](https://github.com/Stargate-Redial) par l'équipe [Stargate Database](https://stargatedatabase.link/fr/). Version actuelle : **V0.1.6**. Retrouvez la communauté sur
+[Stargate Redial](https://github.com/Stargate-Redial) par l'équipe [Stargate Database](https://stargatedatabase.link/fr/). Version actuelle : **V0.1.7**. Retrouvez la communauté sur
 [Discord](https://discord.gg/SgHPP4mZyB).
 
 > Hormis son image de titre, aucune donnée du jeu n'est incluse : l'installeur reconstruit le jeu sur votre PC à
@@ -396,6 +408,18 @@ Voir [KNOWN_ISSUES.md](docs/KNOWN_ISSUES.md#français) et le [CHANGELOG](CHANGEL
 
 Quelques points forts (le [CHANGELOG](CHANGELOG.md), en anglais, donne la liste complète) :
 
+**🆕 Nouveau dans la V0.1.7**
+- **Plantage corrigé** : le jeu ne se ferme plus quand une partie de mission se termine après un combat (signalé de M02A vers M02B). Les scripts de 2005 gardaient des références à des personnages déjà détruits ; elles sont libérées à chaque changement de carte.
+- **Corrections de jeu** : l'intro de M02A et la scène d'exécution de M13A n'attendent plus des événements que rien n'envoie ; les véhicules s'arrêtent devant les portes fermées de M02A au lieu de les traverser ; le marqueur d'objectif reste sur sa cible quand on conduit ; les objectifs sans texte ne s'affichent plus ; Mission Info s'ouvre sur BRIEFING seul quand il n'y a pas d'objectif ; dans le tutoriel M00, l'alarme finale s'entend dans toute la base et chaque cible du stand de tir touchée finit sa chute et compte.
+- **Écran de chargement à la manette** : avec une manette, l'écran de chargement est celui de 2005 avec le schéma de la manette ; la première mission chargée le garde, en pause, jusqu'à un appui sur A (ou Entrée, Espace, Échap, un clic).
+- **Nouvelle option, Sprint illimité** (Options, Controls ; désactivée par défaut) : plus de limite d'endurance et plus d'arrêt quand on se déplace sur le côté ou qu'on tourne brusquement. Mode histoire solo uniquement.
+- **Effets de bouche plus courts** : la lumière de bouche s'éteint 0,08 s après le tir, la flamme dure 0,1 s et la fumée 0,3 s (P90, pistolet, fusil de précision, fusil à pompe, disrupteur Kull).
+- **Plus de croix de remplacement** : l'icône « + » colorée d'UT2004 n'apparaît plus là où un effet n'a pas d'image (sortie d'hyperespace de M10, lampes du stand de M00, bouclier Haaken).
+- **Voile des effets d'énergie** : la sortie d'hyperespace et le bouclier Haaken montrent un léger voile de chaleur fabriqué par l'installeur ; la chaleur du feu et des explosions reste invisible (la réfraction de la Xbox ne peut pas être reproduite).
+- **Qualité audio** : la musique et les voix sont encodées en meilleure qualité (environ 80 Mo d'espace disque en plus), et les sons d'ambiance (oiseaux, gouttes, vent, machines) jouent au volume réglé par les level designers.
+- **Restauré** : les trois gyrophares rouges de l'alarme finale de M00 tournent de nouveau, et les lampes du stand de tir retrouvent leur bras gris.
+- Le jeu en ligne demande la même version des deux côtés : les serveurs officiels passent en v0.1.7.
+
 **🧩 Restauré à partir des données de 2005**
 - Last Man Standing est de retour dans la liste des modes multijoueur.
 - Environ 150 répliques enregistrées que le jeu de 2005 ne jouait jamais reviennent dans les échanges de l'équipe.
@@ -448,12 +472,12 @@ Quelques points forts (le [CHANGELOG](CHANGELOG.md), en anglais, donne la liste 
 - L'option d'installation --gamepad on|off enregistre maintenant aussi votre choix : la détection du jeu au démarrage ne rallume plus la manette après --gamepad off.
 - En ligne : corrige le message « Ce serveur utilise une autre version de Stargate Redial » quand on rejoint les serveurs officiels après la mise à jour en 0.1.5. Les paquets du jeu sont maintenant compilés avec une configuration fixe : chaque installation correspond aux serveurs, quels que soient vos réglages d'UT2004. Mettez à jour et vous pouvez rejouer en ligne ; les serveurs officiels passent en v0.1.6.
 
-**🛠️ Changements faits à la demande de joueurs (pas dans le jeu de 2005)**
-- L'horizon des événements est rond (changement demandé par un utilisateur, pas dans le jeu de 2005). Dans les données de 2005, l'horizon est un ovale debout qui déborde sur l'anneau intérieur en haut et en bas de la porte ; c'est maintenant un cercle qui épouse l'ouverture.
-- L'anneau de symboles de la porte est avancé (changement demandé par un utilisateur, pas dans le jeu de 2005). Dans les données de 2005, l'anneau est enfoncé de 33 à 38 unités, derrière l'horizon ; il est avancé de 33 unités pour que les symboles se voient.
-- Le sang (demandé par un utilisateur ; option DÉSACTIVÉE par défaut). Options, Video, Blood : flaques de sang sous les corps et éclaboussures sur les murs et le sol là où un personnage est touché. Le jet de sang d'un impact sur la chair, qui ressemblait à une fontaine, est aussi atténué (changement demandé par un utilisateur, pas dans le jeu de 2005).
-- Une main sur le Zat à la première personne (changement demandé par un utilisateur, pas dans le jeu de 2005, où le Zat n'a pas de main). La main tient la poignée et se pose sur le modèle sans le traverser. Les Goa'uld utilisent le jeu de mains des Jaffas pour leur main sur l'arme (changement demandé par un utilisateur).
-- Des douilles sortent aussi des emplacements de M60 (M16A, M16B, M16G) et de la mitrailleuse gatling du Hummvee (changement demandé par un utilisateur, pas dans le jeu de 2005).
+**🛠️ Changements (pas dans le jeu de 2005)**
+- L'horizon des événements est rond (pas dans le jeu de 2005). Dans les données de 2005, l'horizon est un ovale debout qui déborde sur l'anneau intérieur en haut et en bas de la porte ; c'est maintenant un cercle qui épouse l'ouverture.
+- L'anneau de symboles de la porte est avancé (pas dans le jeu de 2005). Dans les données de 2005, l'anneau est enfoncé de 33 à 38 unités, derrière l'horizon ; il est avancé de 33 unités pour que les symboles se voient.
+- Le sang (option DÉSACTIVÉE par défaut). Options, Video, Blood : flaques de sang sous les corps et éclaboussures sur les murs et le sol là où un personnage est touché. Le jet de sang d'un impact sur la chair, qui ressemblait à une fontaine, est aussi atténué (pas dans le jeu de 2005).
+- Une main sur le Zat à la première personne (pas dans le jeu de 2005, où le Zat n'a pas de main). La main tient la poignée et se pose sur le modèle sans le traverser. Les Goa'uld utilisent le jeu de mains des Jaffas pour leur main sur l'arme.
+- Des douilles sortent aussi des emplacements de M60 (M16A, M16B, M16G) et de la mitrailleuse gatling du Hummvee (pas dans le jeu de 2005).
 
 **🖥️ Pensé pour le PC**
 - Souris et clavier, ou manette Xbox avec la disposition d'origine de 2005.

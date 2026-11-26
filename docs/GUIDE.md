@@ -307,6 +307,8 @@ Good to know:
   works consoles and revives a downed teammate ("administer first aid").
 - **Sprint** drains the stamina bar; it refills when you stop. The double-tap of forward, the 2005 way, still
   works.
+  The **Unlimited Sprint** option (Options, Controls; Off by default) removes the stamina limit and keeps the sprint
+  going when you strafe or turn sharply; it applies to the single-player story mode only.
 - **Squad orders** (single player). While an order is on, the member's plate on the left of the screen shows a
   letter: **F** = fire order, **C** = cover order (a sign, not a key).
   - **Concentrate fire, tap X** with an enemy under the crosshair: the whole squad fires at it. Each member shows
@@ -391,7 +393,7 @@ with *Save* (Enter).
 ### Controls
 
 Keyboard Layout, the action list ([Changing keys](#changing-keys)), Mouse Sensitivity, Invert Mouse, Mouse
-Smoothing (Off = raw mouse movement), and the controller rows ([Controller](#controller)).
+Smoothing (Off = raw mouse movement), Unlimited Sprint (Off by default; single-player story mode only), and the controller rows ([Controller](#controller)).
 
 ## Difficulty
 
@@ -918,6 +920,8 @@ Bon à savoir :
   portes, actionne les consoles et ranime un équipier à terre (« administer first aid »).
 - **Sprinter** vide la barre d'endurance, qui se recharge à l'arrêt. Le double appui sur avancer, la méthode de
   2005, fonctionne toujours.
+  L'option **Sprint illimité** (Options, Controls ; désactivée par défaut) supprime la limite d'endurance et garde le
+  sprint quand on se déplace sur le côté ou qu'on tourne brusquement ; elle ne joue qu'en mode histoire solo.
 - **Ordres à l'équipe** (solo). Tant qu'un ordre est en cours, la plaque de l'équipier, à gauche de l'écran,
   affiche une lettre : **F** = ordre de tir, **C** = ordre de mise à couvert (un repère, pas une touche).
   - **Tir concentré, appui bref sur X** avec un ennemi sous le réticule : toute l'équipe tire dessus. Chaque
@@ -1009,7 +1013,7 @@ s'appliquent avec *Save* (Entrée).
 #### Contrôles
 
 Keyboard Layout, la liste des actions ([Changer les touches](#changer-les-touches)), Mouse Sensitivity, Invert
-Mouse, Mouse Smoothing (Off = mouvement brut de la souris), et les lignes de la manette ([Manette](#manette)).
+Mouse, Mouse Smoothing (Off = mouvement brut de la souris), Unlimited Sprint (désactivé par défaut ; mode histoire solo uniquement), et les lignes de la manette ([Manette](#manette)).
 
 ### Difficulté
 

@@ -342,6 +342,26 @@ Each entry says why it exists. No game data is in this repository; all fixes are
 - The 2005 Mission Info page: long objectives wrap instead of running off the page, the page that opens by itself at the start of a mission shows a Continue prompt (Enter, Use, Esc, a click or A on the controller), it opens once you have control, and the Briefing tab is hidden when it is empty.
 - The Stargate's chevrons light up one at a time as the gate is dialled, in series order (first lock upper right, the top one last), with a glow on the chevron and its lamp, on every gate (also the one behind the main menu). The glow texture is built on your PC at install time from your own copy of the game; nothing from the game is shipped.
 - Online: fixes "This server runs a different Stargate Redial version" when joining the official servers after updating to 0.1.5. The game's packages are now compiled with a fixed configuration, so every install matches the servers whatever your UT2004 settings. Update and you can play online again; the official servers move to v0.1.6.
+- **No more crash when a mission part ends after a fight (reported going from M02A to M02B).** The
+  squad's and enemies' spoken messages kept references to characters the game had already destroyed; when the next map
+  loaded, UT2004's memory clean-up followed them into freed memory and the game closed. These references are now
+  released at every map change (single player; online games are not affected).
+- **Scripted scenes no longer wait for events nothing sends.** The M02A intro stood still for 20 seconds at its
+  last wait, and M13A's execution scene for 5.5 seconds, because the 2005 data waits for events that no object of
+  those maps ever sends; such waits now count as already received.
+- **Vehicles stop at closed doors.** The Hummvee drove through the M02A stone door and the camp doors while they were
+  closed (UT2004's vehicle physics ignores moving doors); a vehicle now stops against a door that is in the way, and
+  passes once it is open.
+- **No more coloured crosses where an effect has no picture.** UT2004 draws its editor icon, a coloured "+", for a
+  particle effect that has no texture: it showed at the M10 hyperspace exit (Prometheus), on the M00 firing-range
+  status lights and when the Haaken shield deploys (and in a few other effects). These effects now draw nothing, as
+  on the Xbox, where those particles had no picture either.
+- **The M00 firing-range lamps keep their grey arm.** The top lamp of each pair had a green arm and cap because the
+  map data gives that lamp a green material that the 2005 game did not show (restored: the 2005 footage shows plain
+  grey arms).
+- **The tutorial's rotating red alarm beacons turn again (restored).** The three red beacons of the final alarm in
+  M00 sat still because UT2004 does not turn an object that rides a moving lift; the red beam now sweeps walls, doors
+  and characters as in 2005.
 
 ## Additions for PC playability and modern standards
 
@@ -622,13 +642,13 @@ Each entry says why it exists. No game data is in this repository; all fixes are
   holding it in the staff pose; they now hold it with their Zat animations.
 - **Charge percentage**: the HUD's charge number of the Zat gun, ribbon device and staff weapon reads as a
   percentage (70%).
-- **Multiplayer text chat** (user request): **T** talks to everyone, **Y** to your team (UT2004's Talk / TeamTalk),
+- **Multiplayer text chat**: **T** talks to everyone, **Y** to your team (UT2004's Talk / TeamTalk),
   new Controls rows *Chat* / *Team Chat* (and *Screenshot*, F12, so the screenshot key can be changed); new and
   existing players get T / Y where those keys are free. The 2005
   Xbox game used the headset; its PC code only sent the console's `say` lines to the dialogue box, one at a time for
   2 s. They are now a chat list under the portrait (names in team colour, fading after 10 s), and the typing line
   is drawn at the bottom left in the HUD's style.
-- **Discord feed: public chat** (user request): dedicated servers with the Discord feed also post players' public
+- **Discord feed: public chat**: dedicated servers with the Discord feed also post players' public
   chat in the server's channel (sanitised, rate-limited; never team chat, never bots); the event log keeps those
   lines.
 - **Quick voice menu** (user decision): in multiplayer, **V** (Controls row *Voice Menu*) opens a short list of
@@ -638,17 +658,32 @@ Each entry says why it exists. No game data is in this repository; all fixes are
   Deviation: the Jaffa (Horus, Serpent, Jackal) have no Taunt or Attack line in 2005, so their Taunt and Attack!
   entries play their own 2005 combat shouts (their attack recordings). Walter and Coulder, and the Goa'uld and Tok'ra,
   stay without lines (the SGC soldiers' voice pack is empty in the 2005 build).
-- The event horizon is round (user-requested change, not in 2005). In the 2005 data the horizon is an upright oval that spills over the inner ring at the top and bottom of the gate; it is now a circle that fits the opening.
-- The gate's symbol ring is brought forward (user-requested change, not in 2005). In the 2005 data the ring sits 33-38 units deep, behind the horizon; it is moved 33 units forward so the symbols show.
-- Blood (user-requested; option OFF by default). Options, Video, Blood: pools of blood under bodies and splats on walls and floors where a character is hit. The spray of the flesh-hit blood effect, which looked like a fountain, is also toned down (user-requested change, not in 2005).
-- A hand on the Zat in first person (user-requested change, not in 2005, where the Zat has no hand). The hand holds the grip and sits on the model without clipping. The Goa'uld use the Jaffa hand set for their hand on the weapon (user-requested change).
-- Shell casings also fly out of the M60 emplacements (M16A, M16B, M16G) and the Hummvee's gatling gun (user-requested change, not in 2005).
+- The event horizon is round (not in 2005). In the 2005 data the horizon is an upright oval that spills over the inner ring at the top and bottom of the gate; it is now a circle that fits the opening.
+- The gate's symbol ring is brought forward (not in 2005). In the 2005 data the ring sits 33-38 units deep, behind the horizon; it is moved 33 units forward so the symbols show.
+- Blood (option OFF by default). Options, Video, Blood: pools of blood under bodies and splats on walls and floors where a character is hit. The spray of the flesh-hit blood effect, which looked like a fountain, is also toned down (not in 2005).
+- A hand on the Zat in first person (not in 2005, where the Zat has no hand). The hand holds the grip and sits on the model without clipping. The Goa'uld use the Jaffa hand set for their hand on the weapon.
+- Shell casings also fly out of the M60 emplacements (M16A, M16B, M16G) and the Hummvee's gatling gun (not in 2005).
 - Xbox-style controllers work out of the box: the controller is turned on when the game starts, RT fires and LT uses the alternate fire (both ways Windows reports the triggers), and the pad buttons no longer repeat on their own when a menu opens.
 - Controller and keyboard/mouse work side by side: the on-screen button prompts follow the last device you used.
 - Menus are fully playable with the controller: left stick and d-pad move, A selects, B goes back, Start pauses, and YES/NO pages move left and right.
 - Squad orders with the controller as on the 2005 Xbox: hold RB, pick a squad member with the d-pad or the left stick, release on the target. A hint line shows how (keyboard: hold X and use the mouse wheel), and CLEAR ORDER is no longer cut at the screen edge.
 - Options, Controls, Controller: Off / On / Detect (restart). A controller switched on after the game started is not seen until the game restarts; Detect restarts the game to find it.
 - The installer option --gamepad on|off now also records your choice, so the game's own start-up detection does not turn the controller back on after --gamepad off.
+- **New option: Unlimited Sprint** (Options, Controls; Off by default). On: the sprint has no stamina limit and does not
+  stop when you strafe or turn sharply; releasing forward or crouching still stops it. Single-player story mode only:
+  online, the normal sprint rules always apply.
+- **Loading screen with a controller**: while you play with a controller, the loading screen is the 2005 one with the
+  controller layout (keyboard and mouse keep the PC screen). The first mission you load keeps that screen, paused,
+  until you press A (or Enter, Space, Esc, a click), so the layout can be read (change, not in 2005).
+- **The objective marker stays on its target while you drive.** In a vehicle the marker on the HUD turned with the
+  vehicle instead of staying where the objective is (change, not in 2005).
+- **Objectives without text are never shown**: no notification, no row in the list (their HUD marker stays). With no
+  objective to show, Mission Info opens on the BRIEFING tab only (change, not in 2005).
+- **Tutorial (M00)**: the final alarm is heard throughout the base, and a firing-range target that is hit always
+  finishes falling and counts; a second bullet or pellet no longer sends it back up (change, not in 2005).
+- **Shorter muzzle effects.** The muzzle light of the P90, pistol, sniper rifle, shotgun and Kull disruptor goes out
+  0.08 second after each shot (it lingered), the flame lasts 0.1 second and the smoke 0.3 second (it hung in front of
+  the weapon during bursts). The ribbon device keeps its 2005 timing (change, not in 2005).
 
 ## Perception's own PC code used instead of the Xbox variant
 
